@@ -6,12 +6,25 @@ import {
 
 import HEALTH_MASK_IMAGE from "../img/health-mask.png";
 import HEALTH_MASK_STEEL_IMAGE from "../img/health-mask-steel.png";
-import SOUL_ORB_IMAGE from "../img/soul-orb.png";
-import NOTCH_IMAGE from "../img/notch.png";
+import SILKBAR_LEFT_IMAGE from "../img/silkbar-left.png";
+import SILKBAR_MIDDLE_IMAGE from "../img/silkbar-middle.png";
+import SILKBAR_RIGHT_IMAGE from "../img/silkbar-right.png";
+/*import NOTCH_IMAGE from "../img/notch.png";
 import NOTCH_FILLED_IMAGE from "../img/notch-filled.png";
-import NOTCH_OVERCHARMED_IMAGE from "../img/notch-overcharmed.png";
-import GEO_IMAGE from "../img/geo.png";
-import GEO_SHADE_IMAGE from "../img/geo-shade.png";
+import NOTCH_OVERCHARMED_IMAGE from "../img/notch-overcharmed.png";*/
+import ROSARIES_IMAGE from "../img/rosaries.png";
+import ROSARIES_SHADE_IMAGE from "../img/cocoon.png";
+import SHELL_SHARDS_IMAGE from "../img/shell-shards.png";
+
+/* ------------------------ Crest Type ---------------------------------------------------------- */
+
+import ARCHITECT_CREST_IMAGE from "../img/architect-crest.png";
+import BEAST_CREST_IMAGE from "../img/beast-crest.png";
+import HUNTER_CREST_IMAGE from "../img/hunter-crest.png";
+import REAPER_CREST_IMAGE from "../img/reaper-crest.png";
+import SHAMAN_CREST_IMAGE from "../img/shaman-crest.png";
+import WANDERER_CREST_IMAGE from "../img/wanderer-crest.png";
+import WITCH_CREST_IMAGE from "../img/witch-crest.png";
 
 /* ------------------------- Constants ---------------------------------------------------------------------------------------- */
 
@@ -153,18 +166,32 @@ function GenerateInnerHTML(db) {
   let finalHTMLFill = "";
   let textFill = "";
 
-  let Img = "";
+  let Img = "";SILKBAR_LEFT_IMAGE
   let maskNormal = `<img src='${HEALTH_MASK_IMAGE}' class='health-mask' alt='health mask image' title='Health Mask'>`;
   let maskSteel = `<img src='${HEALTH_MASK_STEEL_IMAGE}' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>`;
-  let soulNormal = `<img src='${SOUL_ORB_IMAGE}' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>`;
-  let notchNormalImage = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Free)'>`;
-  let notchFilledImage = `<img src='${NOTCH_FILLED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Used)'>`;
-  let notchOvercharmedImage = `<img src='${NOTCH_OVERCHARMED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>`;
-  let geoNormalImage = `<img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image' title='Geo'>`;
-  let geoShadeImage = `<img src='${GEO_SHADE_IMAGE}' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>`;
+  let silkBarLeft = `<img src='${SILKBAR_LEFT_IMAGE}' class='silk-bar' alt='' title=''>`;
+  let silkBarMiddle = `<img src='${SILKBAR_MIDDLE_IMAGE}' class='silk-bar' alt='Silk Bar image' title='Single Silk Bar'>`;
+  let silkBarRight = `<img src='${SILKBAR_RIGHT_IMAGE}' class='silk-bar' alt='' title=''>`;
+  //let notchNormalImage = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Free)'>`;
+  //let notchFilledImage = `<img src='${NOTCH_FILLED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Used)'>`;
+  //let notchOvercharmedImage = `<img src='${NOTCH_OVERCHARMED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>`;
+  let rosariesNormalImage = `<img src='${ROSARIES_IMAGE}' class='rosaries-symbol' alt='Rosaries symbol image' title='Geo'>`;
+  let rosariesShadeImage = `<img src='${ROSARIES_SHADE_IMAGE}' class='rosaries-symbol' alt='shade geo symbol image' title='Shade Geo'>`;
+  let shellShardsImage = `<img src='${SHELL_SHARDS_IMAGE}' class='shell-shards-symbol' alt='shell shard symbol image' title='Shell Shard'>`;
   let div = `<div class='single-entry'>`;
   let divFlex = `<div class='flex-container align-center'>`;
 
+  //Crest
+  let hunterCrestImage = `<img src='${HUNTER_CREST_IMAGE}' class='crest' alt='Hunter image' title='Hunter Crest (Free)'>`;
+  let architectCrestImage = `<img src='${ARCHITECT_CREST_IMAGE}' class='crest' alt='Architect image' title='Architect Crest'>`;
+  let beastCrestImage = `<img src='${BEAST_CREST_IMAGE}' class='crest' alt='Beast image' title='Beast Crest'>`;
+  let reaperCrestImage = `<img src='${REAPER_CREST_IMAGE}' class='crest' alt='Reaper image' title='Reaper Crest'>`;
+  let shamanCrestImage = `<img src='${SHAMAN_CREST_IMAGE}' class='crest' alt='Shaman image' title='Shaman Crest'>`;
+  let wandererCrestImage = `<img src='${WANDERER_CREST_IMAGE}' class='crest' alt='Wanderer image' title='Wanderer Crest'>`;
+  let witchCrestImage = `<img src='${WITCH_CREST_IMAGE}' class='crest' alt='Witch image' title='Witch Crest'>`;
+
+
+  SHELL_SHARDS_IMAGE
 
   /* ############################## create all main entries ########################################################################## */
 
@@ -348,61 +375,87 @@ function GenerateInnerHTML(db) {
               obj.p = "";
               break;
 
-            case "soul":
+            case "silk":
               obj.div = divFlex;
               obj.span = ["", ""];
-              Img = soulNormal;
+              Img = silkBarMiddle;
 
-              for (let i = 0, total = Math.round(entries[entry].amountTotal / 33); i < total; i++) {
+              obj.textSuffix += silkBarLeft;
+
+              for (let i = 0, total = entries[entry].amountTotal; i < total; i++) {
                 obj.textSuffix += Img;
               }
+              obj.textSuffix += silkBarRight
 
-              obj.textSuffix += `${obj.p}<sup>(${Math.round(entries[entry].amountTotal / 33)})</sup>`;
+
+              obj.textSuffix += `${obj.p}<sup>(${entries[entry].amountTotal})</sup>`;
 
               obj.p = "";
               break;
 
-            case "notches":
+            case "crests":
               obj.div = divFlex;
               obj.span = ["", ""];
 
               /* First, check filled (used) notches and fill them (skips if no filled notches) */
-              if (entries[entry].amountFilled > 0) {
-                for (let i = 0, total = entries[entry].amountFilled; i < total; i++) {
+              /*if (entries[entry].amountFilled > 0) {
+                for (let i = 0, total = entries[entry].amountTotal; i < total; i++) {
                   obj.textSuffix += notchFilledImage;
                 }
-              }
+              }*/
 
               /* Second, check overcharmed notches and fill them (skips if player is not overcharmed) */
-              if (entries[entry].amountOvercharmed > 0) {
+              /*if (entries[entry].amountOvercharmed > 0) {
                 for (let i = 0, total = entries[entry].amountOvercharmed; i < total; i++) {
                   obj.textSuffix += notchOvercharmedImage;
                 }
-              }
+              }*/
 
               /* Last, fill all unused notches */
-              if (entries[entry].amountUnused > 0) {
+              /*if (entries[entry].amountUnused > 0) {
                 for (let i = 0, total = entries[entry].amountUnused; i < total; i++) {
                   obj.textSuffix += notchNormalImage;
                 }
-              }
+              }*/
+              
+              /*for (let i = 0, total = entries[entry].amountTotal; i < total; i++) {
+                  obj.textSuffix += notchNormalImage;
+              }*/
+
+              if (entries[entry].hunter) obj.textSuffix += hunterCrestImage;
+              if (entries[entry].toolmaster) obj.textSuffix += architectCrestImage ;
+              if (entries[entry].beast) obj.textSuffix += beastCrestImage ;
+              if (entries[entry].reaper) obj.textSuffix += reaperCrestImage ;
+              if (entries[entry].shaman) obj.textSuffix += shamanCrestImage ;
+              if (entries[entry].wanderer) obj.textSuffix += wandererCrestImage ;
+              if (entries[entry].witch) obj.textSuffix += witchCrestImage ;
+
 
               obj.textSuffix += `${obj.p}<sup>(${entries[entry].amountTotal})</sup>`;
 
               break;
 
-            case "geo":
+            case "rosaries":
               obj.div = divFlex;
               obj.span = ["", ""];
 
-              obj.textSuffix += `${geoNormalImage}<b>${entries[entry].amount}</b>`;
-              // Show Shade Geo value and image only if Shade has at least 1 Geo on it
-              if (entries[entry].amountShade > 0) obj.textSuffix += `${obj.p}+${geoShadeImage}<b>${entries[entry].amountShade}</b>`;
+              obj.textSuffix += `${rosariesNormalImage}<b>${entries[entry].amount}</b>`;
+              // Show Shade Rosaries value and image only if Shade has at least 1 Rosary on it
+              if (entries[entry].amountShade > 0) obj.textSuffix += `${obj.p}+${rosariesShadeImage}<b>${entries[entry].amountShade}</b>`;
 
-              // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
+              // Show also total Rosaries (Rosaries + Shade Rosaries) if player has at least 1 Rosary alongside the shade rosaries
               if (entries[entry].amount > 0 && entries[entry].amountShade > 0) {
                 obj.textSuffix += `${obj.p}=${obj.p}<b>${entries[entry].amountTotal}</b>`;
               }
+
+              obj.p = "";
+              break;
+              
+            case "shellShards":
+              obj.div = divFlex;
+              obj.span = ["", ""];
+
+              obj.textSuffix += `${shellShardsImage}<b>${entries[entry].amount}</b>`;
 
               obj.p = "";
               break;

@@ -16,11 +16,11 @@ const HK = {
       id: "hk-intro",
 
       percent: 0,
-      maxPercent: 112,
-      maxPercentDefault: 112,
+      /*maxPercent: 112,
+      maxPercentDefault: 112,*/
       maxPercentBaseGame: 100,
-      maxPercentGrimmTroupe: 106,
-      maxPercentLifeblood: 107,
+      /*maxPercentGrimmTroupe: 106,
+      maxPercentLifeblood: 107,*/
 
       extendedCompletionDone: 0,
       extendedCompletionTotal: 0,
@@ -40,11 +40,11 @@ const HK = {
           icon: "red",
           name: "Game Completion:",
           spoiler: 0,
-          spoilerAfter: "(out of 112 %)",
-          spoilerAfterDefault: "(out of 112 %)",
+          //spoilerAfter: "(out of 112 %)",
+          //spoilerAfterDefault: "(out of 112 %)",
           spoilerAfterBaseGame: "(out of 100 %)",
-          spoilerAfterGrimmTroupe: "(out of 106 %)",
-          spoilerAfterLifeblood: "(out of 107 %)",
+          //spoilerAfterGrimmTroupe: "(out of 106 %)",
+          //spoilerAfterLifeblood: "(out of 107 %)",
         },
         gameCompletionExtended: {
           id: "gameCompletionExtended",
@@ -68,31 +68,46 @@ const HK = {
           amountTotal: 5,
           permadeathMode: false,
         },
-        soul: {
-          id: "soul",
+        silk: {
+          id: "silk",
           icon: "none",
-          name: "Soul:",
+          name: "Silk:",
           spoiler: "",
-          amountTotal: 99
+          amountTotal: 5
         },
-        notches: {
-          id: "notches",
+        crests: {
+          id: "crests",
           icon: "none",
-          name: "Notches:",
+          name: "Crests:",
           spoiler: "",
-          amountTotal: 3,
-          amountFilled: 0,
+          amountTotal: 1,
+          hunter:true,
+          reaper:false,
+          wanderer:false,
+          beast:false,
+          witch:false,
+          toolmaster:false,
+          shaman:false,
+
+          /*amountFilled: 0,
           amountUnused: 3,
-          amountOvercharmed: 0
+          amountOvercharmed: 0*/
         },
-        geo: {
-          id: "geo",
+        rosaries: {
+          id: "rosaries",
           icon: "none",
-          name: "Geo:",
+          name: "Rosaries:",
           spoiler: "",
           amount: 0,
           amountShade: 0,
           amountTotal: 0
+        },
+        shellShards: {
+          id: "shellShards",
+          icon: "none",
+          name: "Shell Shards:",
+          spoiler: "",
+          amount: 0
         }
       },
     },

@@ -123,7 +123,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Soul Orbs ----------------- //
 
-    CheckSoulOrbs(HK.DIV_ID.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax);
+    CheckSoulOrbs(HK.DIV_ID.intro, HKPlayerData.MPReserveMax);
 
     // ---------------- Charm Notches (Slots) ----------------- //
 

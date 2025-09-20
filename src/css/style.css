@@ -31,7 +31,7 @@ html {
 body {
   font-family: 'Heebo', sans-serif;
   color: #fff;
-  background-color: #050d19;
+  background-color: #0c120f;
   margin: 0;
   overflow: auto;
 }
@@ -589,31 +589,34 @@ a.wiki {
   align-items: center;
 }
 
-.soul-orb:first-child {
-  margin-left: 0.3rem;
+.silk-bar:first-child {
+  padding-left: 0.3rem;
 }
 
 .health-mask,
-.soul-orb,
-.geo-symbol,
-.notch {
+/*.silk-bar,*/
+.rosaries-symbol,
+.shell-shards-symbol,
+.crest {
   width: auto;
   height: 1.48rem;
   margin: 0 0 0 0.3rem;
 }
 
-.notch {
-  padding-left: 0.3rem;
-  margin-left: -0.6rem;
+.crest {
+  padding-left: 0.1rem;
+  /*margin-left: 0.6rem;*/
 }
 
-.soul-orb {
+
+.silk-bar {
   height: 1.3rem;
-  padding-left: 0.3rem;
-  margin-left: -0.15rem;
+  /*padding-left: 0.3rem;
+  margin-left: -0.15rem;*/
 }
 
-.geo-symbol {
+.shell-shards-symbol,
+.rosaries-symbol {
   margin-right: 0.15rem;
 }
 

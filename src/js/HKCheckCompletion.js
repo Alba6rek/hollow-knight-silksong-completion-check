@@ -96,8 +96,8 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   if (jsonObject.hasOwnProperty("sceneData")) {
     HKSceneData = jsonObject.sceneData;
-    if (jsonObject.sceneData.hasOwnProperty("persistentBoolItems")) {
-      HKWorldItems = jsonObject.sceneData.persistentBoolItems;
+    if (jsonObject.sceneData.hasOwnProperty("persistentBools")) {
+      HKWorldItems = jsonObject.sceneData.persistentBools;
     } else {
       HK.saveAnalyzed = false;
       return false;
@@ -137,17 +137,21 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckHealthMasks(HK.sections.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode);
 
-  // ---------------- Soul Orbs ------------------------------------------------------------------------------------------------- //
+  // ---------------- Silk Bars ------------------------------------------------------------------------------------------------- //
 
-  CheckSoulOrbs(HK.sections.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax);
+  CheckSilkBar(HK.sections.intro, HKPlayerData.silkMax);
 
   // ---------------- Charm Notches (Slots) ------------------------------------------------------------------------------------- //
 
-  CheckNotches(HK.sections.intro, HKPlayerData.charmSlots, HKPlayerData.charmSlotsFilled);
+  CheckCrests(HK.sections.intro, HKPlayerData);
 
-  // ---------------- Geo Amount ------------------------------------------------------------------------------------------------ //
+  // ---------------- Rosary Amount ------------------------------------------------------------------------------------------------ //
 
-  CheckGeo(HK.sections.intro, HKPlayerData.geo, HKPlayerData.geoPool);
+  CheckRosary(HK.sections.intro, HKPlayerData.geo, HKPlayerData.HeroCorpseMoneyPool);
+
+    // ---------------- Shell Shards Amount ------------------------------------------------------------------------------------------------ //
+
+  CheckshellShards(HK.sections.intro, HKPlayerData.ShellShards);
 
   // ---------------- Bosses (Base Game) ---------------------------------------------------------------------------------------- //
 
@@ -215,6 +219,8 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   CheckHuntersJournal(HK, "huntersJournal", HKPlayerData);
   CheckHuntersJournal(HK, "huntersJournalOptional", HKPlayerData);
 
+/*
+  
   // ------------------------- Essentials % -> Collectibles --------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.essentialsCollectibles, jsonObject);
@@ -310,6 +316,8 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   // ------------------------- Godhome Statistics ------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.godhomeStatistics, jsonObject);
+
+  */
 
   /* ------------------------- Pantheon Statistics ------------------------------------------------------------------------------ */
 
@@ -423,7 +431,8 @@ function CheckCompletionPercent(section, playerData) {
   let completionPercentage = Math.round(playerData.completionPercentage);
   let maxPercent = 0;
 
-  /* Normal (current) game version behaviour: 112% */
+/*
+  // Normal (current) game version behaviour: 112%
   section.maxPercent = section.maxPercentDefault;
   maxPercent = section.maxPercentDefault;
   section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterDefault;
@@ -431,7 +440,7 @@ function CheckCompletionPercent(section, playerData) {
   section.percent = completionPercentage;
   section.entries.gameCompletion.spoiler = completionPercentage;
 
-  /* Lifeblood behaviour: 107% */
+  // Lifeblood behaviour: 107%
   if (!playerData.hasOwnProperty("hasGodfinder")) {
 
     section.maxPercent = section.maxPercentLifeblood;
@@ -439,26 +448,25 @@ function CheckCompletionPercent(section, playerData) {
     section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterLifeblood;
   }
 
-  /* Grimm Troupe bahaviour: 106% */
+  // Grimm Troupe bahaviour: 106%
   if (!playerData.hasOwnProperty("killedHiveKnight")) {
 
     section.maxPercent = section.maxPercentGrimmTroupe;
     maxPercent = section.maxPercentGrimmTroupe;
     section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterGrimmTroupe;
   }
+*/
 
   /* Base Game behaviour with no Content Packs: 100% */
-  if (!playerData.hasOwnProperty("gotCharm_37")) {
+  //if (!playerData.hasOwnProperty("gotCharm_37")) {
 
     section.maxPercent = section.maxPercentBaseGame;
     maxPercent = section.maxPercentBaseGame;
     section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterBaseGame;
-  }
+  //}
 
   (completionPercentage >= maxPercent) ? SetIconGreen(section, "gameCompletion"): SetIconRed(section, "gameCompletion");
 
-  /* let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)"; */
-  // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 
 /**
@@ -706,7 +714,7 @@ function CheckSaveFileVersion(section, saveVersion = HK.sections.intro.entries.s
 /**
  * Fills HTML with appropriate number of health mask images
  * @param {object} section ID of the HTML element for data appending
- * @param {number} masks Number of max health masks from the save (baseline without charms and lifeblood)
+ * @param {number} masks Number of max health masks from the save (baseline without tools and lifeblood)
  * @param {number} permadeathMode Value of permadeathMode property. 0 = Normal, 1 = Steel Soul, 2 = Steel Soul broken save
  */
 function CheckHealthMasks(section, masks = 5, permadeathMode = 0) {
@@ -738,9 +746,9 @@ function CheckHealthMasks(section, masks = 5, permadeathMode = 0) {
 /**
  * Fills HTML with appropriate number of soul orbs images
  * @param {object} section ID of the HTML element for data appending
- * @param {number} totalSoul Number of max Soul reserve from the save. 99 = full Soul Orb
+ * @param {number} totalSilk Number of max Silk reserve from the save. 18 = full Silk Bar
  */
-function CheckSoulOrbs(section, totalSoul) {
+function CheckSilkBar(section, totalSilk) {
 
   /* let icon = SYMBOL_EMPTY;
   let textFill = "<span>Soul:</span>";
@@ -752,7 +760,7 @@ function CheckSoulOrbs(section, totalSoul) {
       soulImages += soulImg;
   } */
 
-  section.entries.soul.amountTotal = totalSoul;
+  section.entries.silk.amountTotal = totalSilk;
 
   // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
 }
@@ -760,13 +768,13 @@ function CheckSoulOrbs(section, totalSoul) {
 /**
  * Fills HTML with the Geo value of the save file
  * @param {object} section ID of the HTML element for data appending
- * @param {number} geoValue Number of total Geo value
+ * @param {number} geoValue Number of total rosaries value
  */
-function CheckGeo(section, geoValue = 0, geoPoolValue = 0) {
+function CheckRosary(section, geoValue = 0, geoPoolValue = 0) {
 
-  section.entries.geo.amount = geoValue;
-  section.entries.geo.amountShade = geoPoolValue;
-  section.entries.geo.amountTotal = geoValue + geoPoolValue;
+  section.entries.rosaries.amount = geoValue;
+  section.entries.rosaries.amountShade = geoPoolValue;
+  section.entries.rosaries.amountTotal = geoValue + geoPoolValue;
 
   /* let icon = SYMBOL_EMPTY;
   let textFill = `<span>Geo:</span><img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image' title='Geo'><b>${geoValue}</b>`;
@@ -782,21 +790,42 @@ function CheckGeo(section, geoValue = 0, geoPoolValue = 0) {
 }
 
 /**
+ * Fills HTML with the shell shards value of the save file
+ * @param {object} section ID of the HTML element for data appending
+ * @param {number} geoValue Number of total shellShards value
+ */
+function CheckshellShards(section, shellShardsValue = 0) {
+
+  section.entries.shellShards.amount = shellShardsValue;
+  
+}
+
+/**
  * Fills HTML with appropriate number of notch images
  * @param {object} section ID of the HTML element for data appending
- * @param {number} totalNotches Number of total Charm Notches the player has. 11 = max
- * @param {number} filledNotches Number of total used Charm Notches (including overcharmed notches). 15 = max
+ * @param {object} PlayerData Contain the memory of the cerst.
  */
-function CheckNotches(section, notchesTotal = 3, notchesFilled = 0) {
+function CheckCrests(section, PlayerData) {
 
-  let {
-    notchesOvercharmed,
-    notchesUnused
-  } = 0;
+  let amountTotal = 1
 
-  section.entries.notches.amountTotal = notchesTotal;
+  section.entries.crests.reaper = PlayerData.completedMemory_reaper;
+  section.entries.crests.wanderer = PlayerData.completedMemory_wanderer;
+  section.entries.crests.beast = PlayerData.completedMemory_beast;
+  section.entries.crests.witch = PlayerData.completedMemory_witch;
+  section.entries.crests.toolmaster = PlayerData.completedMemory_toolmaster;
+  section.entries.crests.shaman = PlayerData.completedMemory_shaman;
+  
+  if(PlayerData.completedMemory_reaper) amountTotal++;
+  if(PlayerData.completedMemory_wanderer) amountTotal++;
+  if(PlayerData.completedMemory_beast) amountTotal++;
+  if(PlayerData.completedMemory_witch) amountTotal++;
+  if(PlayerData.completedMemory_toolmaster) amountTotal++;
+  if(PlayerData.completedMemory_shaman) amountTotal++;
+  
+  section.entries.crests.amountTotal = amountTotal;
 
-  // How many overcharmed notches images to show
+ /* // How many overcharmed notches images to show
   notchesOvercharmed = notchesFilled - notchesTotal;
   if (notchesOvercharmed < 1) notchesOvercharmed = 0;
 
@@ -811,7 +840,7 @@ function CheckNotches(section, notchesTotal = 3, notchesFilled = 0) {
   // Correct number of filled/used notches images to show when player is overcharmed
   if (notchesFilled > notchesTotal) notchesFilled = notchesTotal;
 
-  section.entries.notches.amountFilled = notchesFilled;
+  section.entries.notches.amountFilled = notchesFilled;*/
 
   /* let icon = SYMBOL_EMPTY;
   let textFill = `<span>Notches:</span>${pSpan}`;
