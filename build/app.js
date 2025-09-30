@@ -23114,12 +23114,12 @@ function CheckHuntersJournal(db, sectionName, playerData) {
     });
 
     //recorded and founded and reached to the requirement
-    if (MonsterInfo !== undefined && MonsterInfo.Record.HasBeenSeen && MonsterInfo.Record.Kills >= entries[entry].killRequire) {
+    if (MonsterInfo !== undefined && MonsterInfo.Record.Kills >= entries[entry].killRequire) {
       entries[entry].name = entries[entry].gameName;
       (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, entry);
     }
     // didnt reach the limit but at least kill him once.
-    else if (MonsterInfo !== undefined && MonsterInfo.Record.HasBeenSeen && MonsterInfo.Record.Kills >= 1) {
+    else if (MonsterInfo !== undefined && MonsterInfo.Record.Kills >= 1) {
       name = entries[entry].gameName + " (".concat(entries[entry].killRequire - MonsterInfo.Record.Kills, ")");
       entries[entry].name = name;
       (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartialJournal)(section, entry);
@@ -24784,7 +24784,7 @@ var HK = {
         },
         Memory_Silk_Heart_WardBoss: {
           name: "#2 Silk Heart",
-          spoiler: "Whiteward, Defeating The Unravelled, requires the Surgeon's Key",
+          spoiler: "Whiteward, Defeating The Unravelled, requires Surgeon's Key",
           wiki: "Silk+Heart"
         },
         Memory_Silk_Heart_LaceTower: {
@@ -24839,7 +24839,7 @@ var HK = {
         curveClaws: {
           id: "Curve Claws",
           name: "#6 Curveclaw",
-          spoiler: "Skarr: 140 Rosaries, or gauntlet north of skarr main location",
+          spoiler: "Skarr: 140 Rosaries, or above skarr main location",
           wiki: "Curveclaw"
         },
         shakraRing: {
@@ -24955,7 +24955,7 @@ var HK = {
         fracturedMask: {
           id: "Fractured Mask",
           name: "#5 Fractured Mask",
-          spoiler: "Skarr: 260 Rosaries, or gauntlet north of skarr main location",
+          spoiler: "Skarr: 260 Rosaries, or above skarr main location",
           wiki: "Fractured+Mask"
         },
         multibind: {
@@ -25309,7 +25309,7 @@ var HK = {
         },
         wormwayMask: {
           name: "#2 Mask Shards",
-          spoiler: "Wormways, Behind a breakable wall, just in front of the door.",
+          spoiler: "Wormways, Behind a breakable wall",
           wiki: "All+Mask+Shard+Locations#Wormways",
           id: "Heart Piece",
           sceneName: "Crawl_02"
@@ -25665,23 +25665,1879 @@ var HK = {
       description: "All the 146 base-game Hunter's Journal entries that are counted for Hunter's Mark and Keen Hunter/True Hunter achievements. The 17 most commonly missed Journal entries are right at the top of this list.<br>\n      Numbers above: <b>Completed/Encountered</b> of <b>146</b> Base Total<br>\n      <i class=\"icon-ok-squared\"></i>= note completed.<br>\n      <i class=\"icon-ok-squared partial\"></i>= entry discovered, but note not completed.<br>\n      <i class=\"icon-cancel\"></i>= entry not yet discovered.<br>\n      <b>(no.)</b> = amount left to complete note.",
       percent: 0,
       midPercent: 0,
-      maxPercent: 146,
+      maxPercent: 237,
       entries: {
         mossBoneCrawler: {
           gameName: "Mossgrub",
           databaseName: "MossBone Crawler",
-          name: "",
-          spoiler: "aaaaaaaaaaa",
-          killRequire: 100,
+          name: "Mossgrub (25)",
+          spoiler: "Moss Grotto and Memorium",
+          killRequire: "25",
           wiki: "Mossgrub"
         },
         mossBoneCrawlerFat: {
           gameName: "Massive Mossgrub",
           databaseName: "MossBone Crawler Fat",
-          name: "",
-          spoiler: "bbbbbbbbb",
-          killRequire: 3,
-          wiki: "Mossgrub"
+          name: "Massive Mossgrub (3)",
+          spoiler: "Memorium",
+          killRequire: "3",
+          wiki: "Massive+Mossgrub"
+        },
+        mossBoneFly: {
+          gameName: "Mossmir",
+          databaseName: "MossBone Fly",
+          name: "Mossmir (20)",
+          spoiler: "Moss Grotto",
+          killRequire: "20",
+          wiki: "Mossmir"
+        },
+        mossboneMother: {
+          gameName: "Moss Mother",
+          databaseName: "Mossbone Mother",
+          name: "Moss Mother (3)",
+          spoiler: "Ruined Chapel, Weavenest Atla (act 1/2), and Moss Grotto (Act3)",
+          killRequire: "3",
+          wiki: "Moss+Mother"
+        },
+        aspidCollector: {
+          gameName: "Aknid",
+          databaseName: "Aspid Collector",
+          name: "Aknid (15)",
+          spoiler: "Mosshome and Bone Bottom",
+          killRequire: "15",
+          wiki: "Aknid"
+        },
+        boneGoomba: {
+          gameName: "Skull Scuttler",
+          databaseName: "Bone Goomba",
+          name: "Skull Scuttler (35)",
+          spoiler: "The Marrows",
+          killRequire: "35",
+          wiki: "Skull+Scuttler"
+        },
+        boneGoombaBounceFly: {
+          gameName: "Skullwing",
+          databaseName: "Bone Goomba Bounce Fly",
+          name: "Skullwing (15)",
+          spoiler: "Weavenest Atla",
+          killRequire: "15",
+          wiki: "Skullwing"
+        },
+        boneGoombaLarge: {
+          gameName: "Skull Brute",
+          databaseName: "Bone Goomba Large",
+          name: "Skull Brute (15)",
+          spoiler: "The Marrow",
+          killRequire: "15",
+          wiki: "Skull+Brute"
+        },
+        skullKing: {
+          gameName: "Skull Tyrant",
+          databaseName: "Skull King",
+          name: "Skull Tyrant (1)",
+          spoiler: "The Marrow",
+          killRequire: "1",
+          wiki: "Skull+Tyrant"
+        },
+        boneCrawler: {
+          gameName: "Kilik",
+          databaseName: "Bone Crawler",
+          name: "Kilik (25)",
+          spoiler: "The Marrow",
+          killRequire: "25",
+          wiki: "Kilik"
+        },
+        boneFlyer: {
+          gameName: "Beastfly",
+          databaseName: "Bone Flyer",
+          name: "Beastfly (30)",
+          spoiler: "The Marrow",
+          killRequire: "30",
+          wiki: "Beastfly"
+        },
+        boneFlyerGiant: {
+          gameName: "Savage Beastfly",
+          databaseName: "Bone Flyer Giant",
+          name: "Savage Beastfly (2)",
+          spoiler: "Chapel of the Beast, and Savage Beastfly Wish",
+          killRequire: "2",
+          wiki: "Savage+Beastfly"
+        },
+        boneCircler: {
+          gameName: "Caranid",
+          databaseName: "Bone Circler",
+          name: "Caranid (25)",
+          spoiler: "Deep Docks, The Marrow, and Far Fields",
+          killRequire: "25",
+          wiki: "Caranid"
+        },
+        boneCirclerVicious: {
+          gameName: "Vicious Caranid",
+          databaseName: "Bone Circler Vicious",
+          name: "Vicious Caranid (15)",
+          spoiler: "Far Fields",
+          killRequire: "15",
+          wiki: "Vicious+Caranid"
+        },
+        boneHopper: {
+          gameName: "Hardbone Hopper",
+          databaseName: "Bone Hopper",
+          name: "Hardbone Hopper (20)",
+          spoiler: "northeast Deep Docks",
+          killRequire: "20",
+          wiki: "Hardbone+Hopper"
+        },
+        boneHopperGiant: {
+          gameName: "Hardbone Elder",
+          databaseName: "Bone Hopper Giant",
+          name: "Hardbone Elder (10)",
+          spoiler: "northeast Far Fields (Act 3)",
+          killRequire: "10",
+          wiki: "Hardbone+Elder"
+        },
+        boneSpitter: {
+          gameName: "Tarmite",
+          databaseName: "Bone Spitter",
+          name: "Tarmite (10)",
+          spoiler: "southeast Far Fields",
+          killRequire: "10",
+          wiki: "Tarmite"
+        },
+        boneRoller: {
+          gameName: "Mawling",
+          databaseName: "Bone Roller",
+          name: "Mawling (30)",
+          spoiler: "Moss Grotto, Weavenest Atla, and Memorium",
+          killRequire: "30",
+          wiki: "Mawling"
+        },
+        boneThumper: {
+          gameName: "Marrowmaw",
+          databaseName: "Bone Thumper",
+          name: "Marrowmaw (8)",
+          spoiler: "west Weavenest Atla and east of the bench in the Memorium",
+          killRequire: "8",
+          wiki: "Marrowmaw"
+        },
+        spineFloater: {
+          gameName: "Hoker",
+          databaseName: "Spine Floater",
+          name: "Hoker (15)",
+          spoiler: "Far Fields",
+          killRequire: "15",
+          wiki: "Hoker"
+        },
+        rockRoller: {
+          gameName: "Flintbeetle",
+          databaseName: "Rock Roller",
+          name: "Flintbeetle (3)",
+          spoiler: "Volatile Flintbeetles Wish",
+          killRequire: "3",
+          wiki: "Flintbeetle"
+        },
+        rhino: {
+          gameName: "Rhinogrund",
+          databaseName: "Rhino",
+          name: "Rhinogrund (2)",
+          spoiler: "The Memorium (Act 1/2), Far Fields (Act 3)",
+          killRequire: "2",
+          wiki: "Rhinogrund"
+        },
+        cryptWorm: {
+          gameName: "Gromling",
+          databaseName: "Crypt Worm",
+          name: "Gromling (25)",
+          spoiler: "north-east Wormways",
+          killRequire: "25",
+          wiki: "Gromling"
+        },
+        boneWorm: {
+          gameName: "Grom",
+          databaseName: "Bone Worm",
+          name: "Grom (10)",
+          spoiler: "Wormways",
+          killRequire: "10",
+          wiki: "Grom"
+        },
+        boneBeast: {
+          gameName: "Bell Beast",
+          databaseName: "Bone Beast",
+          name: "Bell Beast (1)",
+          spoiler: "The Marrow's Bellway Station",
+          killRequire: "1",
+          wiki: "Bell+Beast"
+        },
+        pilgrim03: {
+          gameName: "Pilgrim Groveller",
+          databaseName: "Pilgrim 03",
+          name: "Pilgrim Groveller (35)",
+          spoiler: "Mosshome",
+          killRequire: "35",
+          wiki: "Pilgrim+Groveller"
+        },
+        pilgrim01: {
+          gameName: "Pilgrim Pouncer",
+          databaseName: "Pilgrim 01",
+          name: "Pilgrim Pouncer (35)",
+          spoiler: "Mosshome",
+          killRequire: "35",
+          wiki: "Pilgrim+Pouncer"
+        },
+        pilgrim04: {
+          gameName: "Pilgrim Hornfly",
+          databaseName: "Pilgrim 04",
+          name: "Pilgrim Hornfly (15)",
+          spoiler: "East Far Fields and west Bone Bottom",
+          killRequire: "15",
+          wiki: "Pilgrim+Hornfly"
+        },
+        pilgrim02: {
+          gameName: "Pilgrim Hulk",
+          databaseName: "Pilgrim 02",
+          name: "Pilgrim Hulk (10)",
+          spoiler: "East of the balloon in Far Fields",
+          killRequire: "10",
+          wiki: "Pilgrim+Hulk"
+        },
+        pilgrimBellThrower: {
+          gameName: "Pilgrim Bellbearer",
+          databaseName: "Pilgrim Bell Thrower",
+          name: "Pilgrim Bellbearer (10)",
+          spoiler: "Wormways",
+          killRequire: "10",
+          wiki: "Pilgrim+Bellbearer"
+        },
+        pilgrimFly: {
+          gameName: "Winged Pilgrim",
+          databaseName: "Pilgrim Fly",
+          name: "Winged Pilgrim (25)",
+          spoiler: "The Marrow and east of the balloon in Far Fields",
+          killRequire: "25",
+          wiki: "Winged+Pilgrim"
+        },
+        pilgrim05: {
+          gameName: "Elder Pilgrim",
+          databaseName: "Pilgrim 05",
+          name: "Elder Pilgrim (5)",
+          spoiler: "Bonegrave",
+          killRequire: "5",
+          wiki: "Elder+Pilgrim"
+        },
+        pilgrimBellthrowerFly: {
+          gameName: "Winged Pilgrim Bellbearer",
+          databaseName: "Pilgrim Bellthrower Fly",
+          name: "Winged Pilgrim Bellbearer (10)",
+          spoiler: "Greymoor and west Shellwood",
+          killRequire: "10",
+          wiki: "Winged+Pilgrim+Bellbearer"
+        },
+        pilgrimHiker: {
+          gameName: "Pilgrim Hiker",
+          databaseName: "Pilgrim Hiker",
+          name: "Pilgrim Hiker (10)",
+          spoiler: "Blasted Steps",
+          killRequire: "10",
+          wiki: "Pilgrim+Hiker"
+        },
+        pilgrimStaffWielder: {
+          gameName: "Pilgrim Guide",
+          databaseName: "Pilgrim StaffWielder",
+          name: "Pilgrim Guide (15)",
+          spoiler: "Greymoor in east of Halfway Home",
+          killRequire: "15",
+          wiki: "Pilgrim+Guide"
+        },
+        pilgrimMossSpitter: {
+          gameName: "Overgrown Pilgrim",
+          databaseName: "Pilgrim Moss Spitter",
+          name: "Overgrown Pilgrim (20)",
+          spoiler: "Mosshome",
+          killRequire: "20",
+          wiki: "Overgrown+Pilgrim"
+        },
+        rosaryPilgrim: {
+          gameName: "Covetous Pilgrim",
+          databaseName: "Rosary Pilgrim",
+          name: "Covetous Pilgrim (2)",
+          spoiler: "Shellwood and Bilewater",
+          killRequire: "2",
+          wiki: "Covetous+Pilgrim"
+        },
+        rosaryThief: {
+          gameName: "Snitchfly",
+          databaseName: "Rosary Thief",
+          name: "Snitchfly (4)",
+          spoiler: "Bone Bottom (Act 3) and Pilgrim's Rest (Act 3)",
+          killRequire: "4",
+          wiki: "Snitchfly"
+        },
+        tarSlug: {
+          gameName: "Lavalug",
+          databaseName: "Tar Slug",
+          name: "Lavalug (12)",
+          spoiler: "Deep Docks",
+          killRequire: "12",
+          wiki: "Lavalug"
+        },
+        tarSlugHuge: {
+          gameName: "Lavalarga",
+          databaseName: "Tar Slug Huge",
+          name: "Lavalarga (8)",
+          spoiler: "Deep Docks in a room with magma-walls & platforms",
+          killRequire: "8",
+          wiki: "Lavalarga"
+        },
+        dockWorker: {
+          gameName: "Smelt Shoveller",
+          databaseName: "Dock Worker",
+          name: "Smelt Shoveller (25)",
+          spoiler: "Deep Docks and the eastern edge of The Marrow",
+          killRequire: "25",
+          wiki: "Smelt+Shoveller"
+        },
+        dockFlyer: {
+          gameName: "Flintstone Flyer",
+          databaseName: "Dock Flyer",
+          name: "Flintstone Flyer (25)",
+          spoiler: "Deep Docks",
+          killRequire: "25",
+          wiki: "Flintstone+Flyer"
+        },
+        dockBomber: {
+          gameName: "Flintflame Flyer",
+          databaseName: "Dock Bomber",
+          name: "Flintflame Flyer (10)",
+          spoiler: "Deep Docks, require Simple Key",
+          killRequire: "10",
+          wiki: "Flintflame+Flyer"
+        },
+        shieldDockWorker: {
+          gameName: "Smokerock Sifter",
+          databaseName: "Shield Dock Worker",
+          name: "Smokerock Sifter (10)",
+          spoiler: "Deep Docks",
+          killRequire: "10",
+          wiki: "Smokerock+Sifter"
+        },
+        dockCharger: {
+          gameName: "Deep Diver",
+          databaseName: "Dock Charger",
+          name: "Deep Diver (5)",
+          spoiler: "Deep Docks, require Simple Key",
+          killRequire: "5",
+          wiki: "Deep+Diver"
+        },
+        dockGuardThrower: {
+          gameName: "Forebrothers Signis & Gron",
+          databaseName: "Dock Guard Thrower",
+          name: "Forebrothers Signis & Gron (1)",
+          spoiler: "south Deep Docks, require Simple Key",
+          killRequire: "1",
+          wiki: "Forebrothers+Signis+&+Gron"
+        },
+        smallCrab: {
+          gameName: "Cragglite",
+          databaseName: "Small Crab",
+          name: "Cragglite (3)",
+          spoiler: "Wormways, must defeat Craggler",
+          killRequire: "3",
+          wiki: "Cragglite"
+        },
+        roofCrab: {
+          gameName: "Craggler",
+          databaseName: "Roof Crab",
+          name: "Craggler (1)",
+          spoiler: "Wormways",
+          killRequire: "1",
+          wiki: "Craggler"
+        },
+        fieldsFlockFlyers: {
+          gameName: "Brushflit",
+          databaseName: "Fields Flock Flyers",
+          name: "Brushflit (15)",
+          spoiler: "Far Fields",
+          killRequire: "15",
+          wiki: "Brushflit"
+        },
+        fieldsGoomba: {
+          gameName: "Fertid",
+          databaseName: "Fields Goomba",
+          name: "Fertid (25)",
+          spoiler: "Far Fields",
+          killRequire: "25",
+          wiki: "Fertid"
+        },
+        fieldsFlyer: {
+          gameName: "Flapping Fertid",
+          databaseName: "Fields Flyer",
+          name: "Flapping Fertid (20)",
+          spoiler: "Far Fields",
+          killRequire: "20",
+          wiki: "Flapping+Fertid"
+        },
+        songGolem: {
+          gameName: "Fourth Chorus",
+          databaseName: "Song Golem",
+          name: "Fourth Chorus (1)",
+          spoiler: "Far Fields",
+          killRequire: "1",
+          wiki: "Fourth+Chorus"
+        },
+        boneHunterTiny: {
+          gameName: "Skarrlid",
+          databaseName: "Bone Hunter Tiny",
+          name: "Skarrlid (25)",
+          spoiler: "Hunter's March",
+          killRequire: "25",
+          wiki: "Skarrlid"
+        },
+        boneHunterBuzzer: {
+          gameName: "Skarrwing",
+          databaseName: "Bone Hunter Buzzer",
+          name: "Skarrwing (30)",
+          spoiler: "Hunter's March",
+          killRequire: "30",
+          wiki: "Skarrwing"
+        },
+        boneHunterChild: {
+          gameName: "Skarr Scout",
+          databaseName: "Bone Hunter Child",
+          name: "Skarr Scout (20)",
+          spoiler: "Hunter's March",
+          killRequire: "20",
+          wiki: "Skarr+Scout"
+        },
+        boneHunter: {
+          gameName: "Skarr Stalker",
+          databaseName: "Bone Hunter",
+          name: "Skarr Stalker (15)",
+          spoiler: "Hunter's March",
+          killRequire: "15",
+          wiki: "Skarr+Stalker"
+        },
+        boneHunterFly: {
+          gameName: "Spear Skarr",
+          databaseName: "Bone Hunter Fly",
+          name: "Spear Skarr (10)",
+          spoiler: "Hunter's March",
+          killRequire: "10",
+          wiki: "Spear+Skarr"
+        },
+        boneHunterThrow: {
+          gameName: "Skarrgard",
+          databaseName: "Bone Hunter Throw",
+          name: "Skarrgard (2)",
+          spoiler: "Hunter's March",
+          killRequire: "2",
+          wiki: "Skarrgard"
+        },
+        boneHunterTrapper: {
+          gameName: "Gurr the Outcast",
+          databaseName: "Bone Hunter Trapper",
+          name: "Gurr the Outcast (1)",
+          spoiler: "Guarding between The Marrow and Hunter's March, and storeroom at the top of Hunter's March",
+          killRequire: "1",
+          wiki: "Gurr+the+Outcast"
+        },
+        boneHunterChief: {
+          gameName: "Last Claw",
+          databaseName: "Bone Hunter Chief",
+          name: "Last Claw (6)",
+          spoiler: "Skarrsinger Karmelita's arena",
+          killRequire: "6",
+          wiki: "Last+Claw"
+        },
+        hunterQueen: {
+          gameName: "Skarrsinger Karmelita",
+          databaseName: "Hunter Queen",
+          name: "Skarrsinger Karmelita (1)",
+          spoiler: "Start from her statue in Hunter's Marchm Silk Soar required.",
+          killRequire: "1",
+          wiki: "Skarrsinger+Karmelita"
+        },
+        mite: {
+          gameName: "Mite",
+          databaseName: "Mite",
+          name: "Mite (30)",
+          spoiler: "Greymoor",
+          killRequire: "30",
+          wiki: "Mite"
+        },
+        mitefly: {
+          gameName: "Fluttermite",
+          databaseName: "Mitefly",
+          name: "Fluttermite (25)",
+          spoiler: "Greymoor",
+          killRequire: "25",
+          wiki: "Fluttermite"
+        },
+        gnatGiant: {
+          gameName: "Mitemother",
+          databaseName: "Gnat Giant",
+          name: "Mitemother (10)",
+          spoiler: "Greymoor",
+          killRequire: "10",
+          wiki: "Mitemother"
+        },
+        farmerCatcher: {
+          gameName: "Dreg Catcher",
+          databaseName: "Farmer Catcher",
+          name: "Dreg Catcher (20)",
+          spoiler: "Greymoor",
+          killRequire: "20",
+          wiki: "Dreg+Catcher"
+        },
+        farmerScissors: {
+          gameName: "Silk Snipper",
+          databaseName: "Farmer Scissors",
+          name: "Silk Snipper (25)",
+          spoiler: "Western towers of Greymoor",
+          killRequire: "25",
+          wiki: "Silk+Snipper"
+        },
+        farmerCentipede: {
+          gameName: "Thread Raker",
+          databaseName: "Farmer Centipede",
+          name: "Thread Raker (15)",
+          spoiler: "Outside Greymoor Bellway station",
+          killRequire: "15",
+          wiki: "Thread+Raker"
+        },
+        vampireGnat: {
+          gameName: "Moorwing",
+          databaseName: "Vampire Gnat",
+          name: "Moorwing (1)",
+          spoiler: "Greymoor",
+          killRequire: "1",
+          wiki: "Moorwing"
+        },
+        wisp: {
+          gameName: "Wisp",
+          databaseName: "Wisp",
+          name: "Wisp (15)",
+          spoiler: "Wisp Thicket",
+          killRequire: "15",
+          wiki: "Wisp"
+        },
+        farmerWisp: {
+          gameName: "Burning Bug",
+          databaseName: "Farmer Wisp",
+          name: "Burning Bug (8)",
+          spoiler: "Wisp Thicket",
+          killRequire: "8",
+          wiki: "Burning+Bug"
+        },
+        wispPyreEffigy: {
+          gameName: "Father of the Flame",
+          databaseName: "Wisp Pyre Effigy",
+          name: "Father of the Flame (1)",
+          spoiler: "Wisp Thicket",
+          killRequire: "1",
+          wiki: "Father+of+the+Flame"
+        },
+        crow: {
+          gameName: "Craw",
+          databaseName: "Crow",
+          name: "Craw (25)",
+          spoiler: "Greymoor, near Craw Lake",
+          killRequire: "25",
+          wiki: "Craw"
+        },
+        crowman: {
+          gameName: "Tallcraw",
+          databaseName: "Crowman",
+          name: "Tallcraw (20)",
+          spoiler: "Greymoor",
+          killRequire: "20",
+          wiki: "Tallcraw"
+        },
+        crowmanDagger: {
+          gameName: "Squatcraw",
+          databaseName: "Crowman Dagger",
+          name: "Squatcraw (15)",
+          spoiler: "Greymoor",
+          killRequire: "15",
+          wiki: "Squatcraw"
+        },
+        crowmanJurorTiny: {
+          gameName: "Craw Juror",
+          databaseName: "Crowman Juror Tiny",
+          name: "Craw Juror (15)",
+          spoiler: "Greymoor, near Craw Lake, require Craw Summon",
+          killRequire: "15",
+          wiki: "Craw+Juror"
+        },
+        crowmanJuror: {
+          gameName: "Tallcraw Juror",
+          databaseName: "Crowman Juror",
+          name: "Tallcraw Juror (10)",
+          spoiler: "Greymoor, near Craw Lake, require Craw Summon",
+          killRequire: "10",
+          wiki: "Tallcraw+Juror"
+        },
+        crowmanDaggerJuror: {
+          gameName: "Squatcraw Juror",
+          databaseName: "Crowman Dagger Juror",
+          name: "Squatcraw Juror (8)",
+          spoiler: "Greymoor, near Craw Lake, require Craw Summon",
+          killRequire: "8",
+          wiki: "Squatcraw+Juror"
+        },
+        crawfather: {
+          gameName: "Crawfather",
+          databaseName: "Crawfather",
+          name: "Crawfather (1)",
+          spoiler: "Greymoor, near Craw Lake, require Craw Summon",
+          killRequire: "1",
+          wiki: "Crawfather"
+        },
+        maggots: {
+          gameName: "Muckmaggot",
+          databaseName: "Maggots",
+          name: "Muckmaggot (80)",
+          spoiler: "the waters of Sinner's Road, Bilewater, and Putrified Ducts",
+          killRequire: "80",
+          wiki: "Muckmaggot"
+        },
+        dustroachPollywog: {
+          gameName: "Slubberlug",
+          databaseName: "Dustroach Pollywog",
+          name: "Slubberlug (12)",
+          spoiler: "Bilewater",
+          killRequire: "12",
+          wiki: "Slubberlug"
+        },
+        dustroach: {
+          gameName: "Muckroach",
+          databaseName: "Dustroach",
+          name: "Muckroach (20)",
+          spoiler: "Sinner's Road",
+          killRequire: "20",
+          wiki: "Muckroach"
+        },
+        bloatRoach: {
+          gameName: "Bloatroach",
+          databaseName: "Bloat Roach",
+          name: "Bloatroach (12)",
+          spoiler: "Bilewater",
+          killRequire: "12",
+          wiki: "Bloatroach"
+        },
+        roachfeederShort: {
+          gameName: "Roachcatcher",
+          databaseName: "Roachfeeder Short",
+          name: "Roachcatcher (20)",
+          spoiler: "Sinner's Road",
+          killRequire: "20",
+          wiki: "Roachcatcher"
+        },
+        roachfeederTall: {
+          gameName: "Roachfeeder",
+          databaseName: "Roachfeeder Tall",
+          name: "Roachfeeder (20)",
+          spoiler: "Sinner's Road",
+          killRequire: "20",
+          wiki: "Roachfeeder"
+        },
+        roachkeeper: {
+          gameName: "Roachkeeper",
+          databaseName: "Roachkeeper",
+          name: "Roachkeeper (10)",
+          spoiler: "Sinner's Road",
+          killRequire: "10",
+          wiki: "Roachkeeper"
+        },
+        roachkeeperChefTiny: {
+          gameName: "Roachserver",
+          databaseName: "Roachkeeper Chef Tiny",
+          name: "Roachserver (10)",
+          spoiler: "Disgraced Chef Lugoli's arena",
+          killRequire: "10",
+          wiki: "Roachserver"
+        },
+        roachkeeperChef: {
+          gameName: "Disgraced Chef Lugoli",
+          databaseName: "Roachkeeper Chef",
+          name: "Disgraced Chef Lugoli (1)",
+          spoiler: "Eastern end of Sinner's Road, requires Faydown Cloak",
+          killRequire: "1",
+          wiki: "Disgraced+Chef+Lugoli"
+        },
+        wraith: {
+          gameName: "Wraith",
+          databaseName: "Wraith",
+          name: "Wraith (10)",
+          spoiler: "The Mist",
+          killRequire: "10",
+          wiki: "Wraith"
+        },
+        swampDrifter: {
+          gameName: "Mothleaf Lagnia",
+          databaseName: "Swamp Drifter",
+          name: "Mothleaf Lagnia (25)",
+          spoiler: "Bilewater",
+          killRequire: "25",
+          wiki: "Mothleaf+Lagnia"
+        },
+        swampGoomba: {
+          gameName: "Miremite",
+          databaseName: "Swamp Goomba",
+          name: "Miremite (20)",
+          spoiler: "Bilewater",
+          killRequire: "20",
+          wiki: "Miremite"
+        },
+        swampMosquito: {
+          gameName: "Swamp Squit",
+          databaseName: "Swamp Mosquito",
+          name: "Swamp Squit (30)",
+          spoiler: "Bilewater",
+          killRequire: "30",
+          wiki: "Swamp+Squit"
+        },
+        swampMosquitoSkinny: {
+          gameName: "Spit Squit",
+          databaseName: "Swamp Mosquito Skinny",
+          name: "Spit Squit (20)",
+          spoiler: "Putrified Ducts",
+          killRequire: "20",
+          wiki: "Spit+Squit"
+        },
+        swampMuckman: {
+          gameName: "Stilkin",
+          databaseName: "Swamp Muckman",
+          name: "Stilkin (15)",
+          spoiler: "Bilewater",
+          killRequire: "15",
+          wiki: "Stilkin"
+        },
+        swampMuckmanTall: {
+          gameName: "Stilkin Trapper",
+          databaseName: "Swamp Muckman Tall",
+          name: "Stilkin Trapper (12)",
+          spoiler: "Groal the Great's boss arena, and Bilewater after defeating him",
+          killRequire: "12",
+          wiki: "Stilkin+Trapper"
+        },
+        swampShaman: {
+          gameName: "Groal the Great",
+          databaseName: "Swamp Shaman",
+          name: "Groal the Great (1)",
+          spoiler: "Bilewater",
+          killRequire: "1",
+          wiki: "Groal+the+Great"
+        },
+        swampBarnacle: {
+          gameName: "Barnak",
+          databaseName: "Swamp Barnacle",
+          name: "Barnak (8)",
+          spoiler: "Putrified Ducts",
+          killRequire: "8",
+          wiki: "Barnak"
+        },
+        swampDuctsucker: {
+          gameName: "Ductsucker",
+          databaseName: "Swamp Ductsucker",
+          name: "Ductsucker (6)",
+          spoiler: "Putrified Ducts",
+          killRequire: "6",
+          wiki: "Ductsucker"
+        },
+        pondSkater: {
+          gameName: "Pond Skipper",
+          databaseName: "Pond Skater",
+          name: "Pond Skipper (15)",
+          spoiler: "Shellwood",
+          killRequire: "15",
+          wiki: "Pond+Skipper"
+        },
+        pilgrimFisher: {
+          gameName: "Pondcatcher",
+          databaseName: "Pilgrim Fisher",
+          name: "Pondcatcher (20)",
+          spoiler: "Shellwood",
+          killRequire: "20",
+          wiki: "Pondcatcher"
+        },
+        shellwoodGnat: {
+          gameName: "Shellwood Gnat",
+          databaseName: "Shellwood Gnat",
+          name: "Shellwood Gnat (15)",
+          spoiler: "Shellwood",
+          killRequire: "15",
+          wiki: "Shellwood+Gnat"
+        },
+        shellwoodWasp: {
+          gameName: "Wood Wasp",
+          databaseName: "Shellwood Wasp",
+          name: "Wood Wasp (12)",
+          spoiler: "Shellwood",
+          killRequire: "12",
+          wiki: "Wood+Wasp"
+        },
+        stickInsect: {
+          gameName: "Splinter",
+          databaseName: "Stick Insect",
+          name: "Splinter (12)",
+          spoiler: "Shellwood",
+          killRequire: "12",
+          wiki: "Splinter"
+        },
+        stickInsectCharger: {
+          gameName: "Splinterhorn",
+          databaseName: "Stick Insect Charger",
+          name: "Splinterhorn (10)",
+          spoiler: "Shellwood",
+          killRequire: "10",
+          wiki: "Splinterhorn"
+        },
+        stickInsectFlyer: {
+          gameName: "Splinterbark",
+          databaseName: "Stick Insect Flyer",
+          name: "Splinterbark (10)",
+          spoiler: "Shellwood, or Sister Splinter arena",
+          killRequire: "10",
+          wiki: "Splinterbark"
+        },
+        splinterQueen: {
+          gameName: "Sister Splinter",
+          databaseName: "Splinter Queen",
+          name: "Sister Splinter (1)",
+          spoiler: "top of Shellwood",
+          killRequire: "1",
+          wiki: "Sister+Splinter"
+        },
+        flowerDrifter: {
+          gameName: "Phacia",
+          databaseName: "Flower Drifter",
+          name: "Phacia (25)",
+          spoiler: "Shellwood",
+          killRequire: "25",
+          wiki: "Phacia"
+        },
+        bloomShooter: {
+          gameName: "Pollenica",
+          databaseName: "Bloom Shooter",
+          name: "Pollenica (10)",
+          spoiler: "Shellwood",
+          killRequire: "10",
+          wiki: "Pollenica"
+        },
+        bloomPuncher: {
+          gameName: "Gahlia",
+          databaseName: "Bloom Puncher",
+          name: "Gahlia (20)",
+          spoiler: "Shellwood",
+          killRequire: "20",
+          wiki: "Gahlia"
+        },
+        seth: {
+          gameName: "Shrine Guardian Seth",
+          databaseName: "Seth",
+          name: "Shrine Guardian Seth (1)",
+          spoiler: "hidden area in Shellwood",
+          killRequire: "1",
+          wiki: "Shrine+Guardian+Seth"
+        },
+        flowerQueen: {
+          gameName: "Nyleth",
+          databaseName: "Flower Queen",
+          name: "Nyleth (1)",
+          spoiler: "hidden area in Shellwood",
+          killRequire: "1",
+          wiki: "Nyleth"
+        },
+        bellGoomba: {
+          gameName: "Furm",
+          databaseName: "Bell Goomba",
+          name: "Furm (25)",
+          spoiler: "bell tunnels around Bellhart",
+          killRequire: "25",
+          wiki: "Furm"
+        },
+        bellFly: {
+          gameName: "Winged Furm",
+          databaseName: "Bell Fly",
+          name: "Winged Furm (12)",
+          spoiler: "bell tunnels around Bellhart",
+          killRequire: "12",
+          wiki: "Winged+Furm"
+        },
+        bladeSpider: {
+          gameName: "Pharlid",
+          databaseName: "Blade Spider",
+          name: "Pharlid (20)",
+          spoiler: "Blasted Steps",
+          killRequire: "20",
+          wiki: "Pharlid"
+        },
+        bladeSpiderHang: {
+          gameName: "Pharlid Diver",
+          databaseName: "Blade Spider Hang",
+          name: "Pharlid Diver (10)",
+          spoiler: "Weavenest Atla",
+          killRequire: "10",
+          wiki: "Pharlid+Diver"
+        },
+        shellFossilMimic: {
+          gameName: "Shardillard",
+          databaseName: "Shell Fossil Mimic",
+          name: "Shardillard (3)",
+          spoiler: "Deep Docks, Greymoor, Sands of Karak, The Marrow",
+          killRequire: "3",
+          wiki: "Shardillard"
+        },
+        sandCentipede: {
+          gameName: "Sandcarver",
+          databaseName: "Sand Centipede",
+          name: "Sandcarver (40)",
+          spoiler: "Blasted Steps and the Sands of Karak",
+          killRequire: "40",
+          wiki: "Sandcarver"
+        },
+        coralJudgeChild: {
+          gameName: "Squirrm",
+          databaseName: "Coral Judge Child",
+          name: "Squirrm (4)",
+          spoiler: "secret room in Blasted Steps",
+          killRequire: "4",
+          wiki: "Squirrm"
+        },
+        coralJudge: {
+          gameName: "Judge",
+          databaseName: "Coral Judge",
+          name: "Judge (15)",
+          spoiler: "Blasted Steps",
+          killRequire: "15",
+          wiki: "Judge"
+        },
+        lastJudge: {
+          gameName: "Last Judge",
+          databaseName: "Last Judge",
+          name: "Last Judge (1)",
+          spoiler: "Blasted Steps",
+          killRequire: "1",
+          wiki: "Last+Judge"
+        },
+        coralSpikeGoomba: {
+          gameName: "Coral Furm",
+          databaseName: "Coral Spike Goomba",
+          name: "Coral Furm (15)",
+          spoiler: "Sands of Karak",
+          killRequire: "15",
+          wiki: "Coral+Furm"
+        },
+        coralConchShooter: {
+          gameName: "Driznit",
+          databaseName: "Coral Conch Shooter",
+          name: "Driznit (25)",
+          spoiler: "Blasted Steps",
+          killRequire: "25",
+          wiki: "Driznit"
+        },
+        coralConchShooterHeavy: {
+          gameName: "Driznarga",
+          databaseName: "Coral Conch Shooter Heavy",
+          name: "Driznarga (14)",
+          spoiler: "Sands of Karak and Memorium",
+          killRequire: "14",
+          wiki: "Driznarga"
+        },
+        coralConchStabber: {
+          gameName: "Pokenabbin",
+          databaseName: "Coral Conch Stabber",
+          name: "Pokenabbin (16)",
+          spoiler: "Sands of Karak",
+          killRequire: "16",
+          wiki: "Pokenabbin"
+        },
+        coralConchDriller: {
+          gameName: "Conchfly",
+          databaseName: "Coral Conch Driller",
+          name: "Conchfly (8)",
+          spoiler: "Sands of Karak",
+          killRequire: "8",
+          wiki: "Conchfly"
+        },
+        coralConchDrillerGiant: {
+          gameName: "Great Conchfly",
+          databaseName: "Coral Conch Driller Giant",
+          name: "Great Conchfly (2)",
+          spoiler: "Blasted Steps",
+          killRequire: "2",
+          wiki: "Great+Conchfly"
+        },
+        coralGoombas: {
+          gameName: "Crustcrawler",
+          databaseName: "Coral Goombas",
+          name: "Crustcrawler (10)",
+          spoiler: "Coral Tower",
+          killRequire: "10",
+          wiki: "Crustcrawler"
+        },
+        coralGoombaLarge: {
+          gameName: "Crustcrag",
+          databaseName: "Coral Goomba Large",
+          name: "Crustcrag (6)",
+          spoiler: "Memorium",
+          killRequire: "6",
+          wiki: "Crustcrag"
+        },
+        coralSwimmerFat: {
+          gameName: "Kai",
+          databaseName: "Coral Swimmer Fat",
+          name: "Kai (10)",
+          spoiler: "Coral Tower",
+          killRequire: "10",
+          wiki: "Kai"
+        },
+        pokeSwimmer: {
+          gameName: "Spinebeak Kai",
+          databaseName: "Poke Swimmer",
+          name: "Spinebeak Kai (10)",
+          spoiler: "Coral Tower",
+          killRequire: "10",
+          wiki: "Spinebeak+Kai"
+        },
+        spikeSwimmer: {
+          gameName: "Steelspine Kai",
+          databaseName: "Spike Swimmer",
+          name: "Steelspine Kai (15)",
+          spoiler: "Coral Tower",
+          killRequire: "15",
+          wiki: "Steelspine+Kai"
+        },
+        coralSwimmerSmall: {
+          gameName: "Yuma",
+          databaseName: "Coral Swimmer Small",
+          name: "Yuma (16)",
+          spoiler: "Coral Tower",
+          killRequire: "16",
+          wiki: "Yuma"
+        },
+        coralBigJellyfish: {
+          gameName: "Yumama",
+          databaseName: "Coral Big Jellyfish",
+          name: "Yumama (3)",
+          spoiler: "Coral Tower",
+          killRequire: "3",
+          wiki: "Yumama"
+        },
+        coralWarrior: {
+          gameName: "Karaka",
+          databaseName: "Coral Warrior",
+          name: "Karaka (10)",
+          spoiler: "Coral Tower",
+          killRequire: "10",
+          wiki: "Karaka"
+        },
+        coralFlyer: {
+          gameName: "Kakri",
+          databaseName: "Coral Flyer",
+          name: "Kakri (10)",
+          spoiler: "Coral Tower",
+          killRequire: "10",
+          wiki: "Kakri"
+        },
+        coralFlyerThrow: {
+          gameName: "Yago",
+          databaseName: "Coral Flyer Throw",
+          name: "Yago (12)",
+          spoiler: "Coral Tower",
+          killRequire: "12",
+          wiki: "Yago"
+        },
+        coralBrawler: {
+          gameName: "Karak Gor",
+          databaseName: "Coral Brawler",
+          name: "Karak Gor (8)",
+          spoiler: "Coral Tower",
+          killRequire: "8",
+          wiki: "Karak+Gor"
+        },
+        coralHunter: {
+          gameName: "Alita",
+          databaseName: "Coral Hunter",
+          name: "Alita (6)",
+          spoiler: "Coral Tower",
+          killRequire: "6",
+          wiki: "Alita"
+        },
+        coralBubbleBrute: {
+          gameName: "Corrcrust Karaka",
+          databaseName: "Coral Bubble Brute",
+          name: "Corrcrust Karaka (6)",
+          spoiler: "Coral Tower",
+          killRequire: "6",
+          wiki: "Corrcrust+Karaka"
+        },
+        coralKing: {
+          gameName: "Crust King Khann",
+          databaseName: "Coral King",
+          name: "Crust King Khann (1)",
+          spoiler: "Coral Tower",
+          killRequire: "1",
+          wiki: "Crust+King+Khann"
+        },
+        coralWarriorGrey: {
+          gameName: "Watcher at the Edge",
+          databaseName: "Coral Warrior Grey",
+          name: "Watcher at the Edge (1)",
+          spoiler: "hidden zone inside of Sands of Karak, require Silk Soar (Act 3)",
+          killRequire: "1",
+          wiki: "Watcher+at+the+Edge"
+        },
+        zapCoreEnemy: {
+          gameName: "Voltvyrm",
+          databaseName: "Zap Core Enemy",
+          name: "Voltvyrm (1)",
+          spoiler: "Sands of Karak.",
+          killRequire: "1",
+          wiki: "Voltvyrm"
+        },
+        citadelBat: {
+          gameName: "Drapefly",
+          databaseName: "Citadel Bat",
+          name: "Drapefly (30)",
+          spoiler: "Underworks and Slab",
+          killRequire: "30",
+          wiki: "Drapefly"
+        },
+        citadelBatLarge: {
+          gameName: "Drapelord",
+          databaseName: "Citadel Bat Large",
+          name: "Drapelord (4)",
+          spoiler: "East Memorium",
+          killRequire: "4",
+          wiki: "Drapelord"
+        },
+        miteHeavy: {
+          gameName: "Drapemite",
+          databaseName: "Mite Heavy",
+          name: "Drapemite (20)",
+          spoiler: "Underworks and Slab",
+          killRequire: "20",
+          wiki: "Drapemite"
+        },
+        understoreMiteGiant: {
+          gameName: "Giant Drapemite",
+          databaseName: "Understore Mite Giant",
+          name: "Giant Drapemite (6)",
+          spoiler: "High Halls",
+          killRequire: "6",
+          wiki: "Giant+Drapemite"
+        },
+        understoreSmall: {
+          gameName: "Underworker",
+          databaseName: "Understore Small",
+          name: "Underworker (15)",
+          spoiler: "Underworks ",
+          killRequire: "15",
+          wiki: "Underworker"
+        },
+        pilgrim03Understore: {
+          gameName: "Underscrub",
+          databaseName: "Pilgrim 03 Understore",
+          name: "Underscrub (20)",
+          spoiler: "Underworks ",
+          killRequire: "20",
+          wiki: "Underscrub"
+        },
+        pilgrimStaffUnderstore: {
+          gameName: "Undersweep",
+          databaseName: "Pilgrim Staff Understore",
+          name: "Undersweep (10)",
+          spoiler: "Underworks ",
+          killRequire: "10",
+          wiki: "Undersweep"
+        },
+        understorePoker: {
+          gameName: "Underpoke",
+          databaseName: "Understore Poker",
+          name: "Underpoke (25)",
+          spoiler: "Underworks ",
+          killRequire: "25",
+          wiki: "Underpoke"
+        },
+        understoreThrower: {
+          gameName: "Underloft",
+          databaseName: "Understore Thrower",
+          name: "Underloft (25)",
+          spoiler: "Underworks ",
+          killRequire: "25",
+          wiki: "Underloft"
+        },
+        understoreHeavy: {
+          gameName: "Undercrank",
+          databaseName: "Understore Heavy",
+          name: "Undercrank (4)",
+          spoiler: "Underworks ",
+          killRequire: "4",
+          wiki: "Undercrank"
+        },
+        songPilgrim01: {
+          gameName: "Envoy",
+          databaseName: "Song Pilgrim 01",
+          name: "Envoy (20)",
+          spoiler: "Choral Chambers",
+          killRequire: "20",
+          wiki: "Envoy"
+        },
+        pilgrim01Song: {
+          gameName: "Choir Pouncer",
+          databaseName: "Pilgrim 01 Song",
+          name: "Choir Pouncer (30)",
+          spoiler: "Choral Chambers",
+          killRequire: "30",
+          wiki: "Choir+Pouncer"
+        },
+        pilgrim02Song: {
+          gameName: "Choir Hornhead",
+          databaseName: "Pilgrim 02 Song",
+          name: "Choir Hornhead (15)",
+          spoiler: "Choral Chambers",
+          killRequire: "15",
+          wiki: "Choir+Hornhead"
+        },
+        pilgrim03Song: {
+          gameName: "Choir Bellbearer",
+          databaseName: "Pilgrim 03 Song",
+          name: "Choir Bellbearer (25)",
+          spoiler: "Choral Chambers",
+          killRequire: "25",
+          wiki: "Choir+Bellbearer"
+        },
+        pilgrim04Song: {
+          gameName: "Choir Flyer",
+          databaseName: "Pilgrim 04 Song",
+          name: "Choir Flyer (20)",
+          spoiler: "Choral Chambers",
+          killRequire: "20",
+          wiki: "Choir+Flyer"
+        },
+        pilgrimStomperSong: {
+          gameName: "Choir Elder",
+          databaseName: "Pilgrim Stomper Song",
+          name: "Choir Elder (6)",
+          spoiler: "Choral Chambers",
+          killRequire: "6",
+          wiki: "Choir+Elder"
+        },
+        songPilgrim03: {
+          gameName: "Choristor",
+          databaseName: "Song Pilgrim 03",
+          name: "Choristor (25)",
+          spoiler: "Choral Chambers",
+          killRequire: "25",
+          wiki: "Choristor"
+        },
+        songReed: {
+          gameName: "Reed",
+          databaseName: "Song Reed",
+          name: "Reed (30)",
+          spoiler: "Choral Chambers",
+          killRequire: "30",
+          wiki: "Reed"
+        },
+        songReedGrand: {
+          gameName: "Grand Reed",
+          databaseName: "Song Reed Grand",
+          name: "Grand Reed (12)",
+          spoiler: "Choral Chambers",
+          killRequire: "12",
+          wiki: "Grand+Reed"
+        },
+        songHeavySentry: {
+          gameName: "Choir Clapper",
+          databaseName: "Song Heavy Sentry",
+          name: "Choir Clapper (3)",
+          spoiler: "High Halls",
+          killRequire: "3",
+          wiki: "Choir+Clapper"
+        },
+        songHandmaiden: {
+          gameName: "Clawmaiden",
+          databaseName: "Song Handmaiden",
+          name: "Clawmaiden (10)",
+          spoiler: "Choral Chambers and High Halls",
+          killRequire: "10",
+          wiki: "Clawmaiden"
+        },
+        arboriumKeeper: {
+          gameName: "Memoria",
+          databaseName: "Arborium Keeper",
+          name: "Memoria (2)",
+          spoiler: "Memorium",
+          killRequire: "2",
+          wiki: "Memoria"
+        },
+        songAdministrator: {
+          gameName: "Minister",
+          databaseName: "Song Administrator",
+          name: "Minister (15)",
+          spoiler: "High Halls",
+          killRequire: "15",
+          wiki: "Minister"
+        },
+        songPilgrimMaestro: {
+          gameName: "Maestro",
+          databaseName: "Song Pilgrim Maestro",
+          name: "Maestro (6)",
+          spoiler: "High Halls",
+          killRequire: "6",
+          wiki: "Maestro"
+        },
+        songKnight: {
+          gameName: "Second Sentinel",
+          databaseName: "Song Knight",
+          name: "Second Sentinel (1)",
+          spoiler: "Final Audience Wish",
+          killRequire: "1",
+          wiki: "Second+Sentinel"
+        },
+        songThreadedHusk: {
+          gameName: "Dreg Husk",
+          databaseName: "Song Threaded Husk",
+          name: "Dreg Husk (8)",
+          spoiler: "The Unravelled",
+          killRequire: "8",
+          wiki: "Dreg+Husk"
+        },
+        songThreadedHuskSpin: {
+          gameName: "Dregwheel",
+          databaseName: "Song Threaded Husk Spin",
+          name: "Dregwheel (8)",
+          spoiler: "The Unravelled",
+          killRequire: "8",
+          wiki: "Dregwheel"
+        },
+        songPilgrim02: {
+          gameName: "Surgeon",
+          databaseName: "Song Pilgrim 02",
+          name: "Surgeon (3)",
+          spoiler: "Whiteward, specifically the Balm for the Wounded wish",
+          killRequire: "3",
+          wiki: "Surgeon"
+        },
+        songCreeper: {
+          gameName: "Mortician",
+          databaseName: "Song Creeper",
+          name: "Mortician (10)",
+          spoiler: "Whiteward",
+          killRequire: "10",
+          wiki: "Mortician"
+        },
+        conductorBoss: {
+          gameName: "The Unravelled",
+          databaseName: "Conductor Boss",
+          name: "The Unravelled (1)",
+          spoiler: "Whiteward, south-west, requires Surgeon's Key",
+          killRequire: "1",
+          wiki: "The+Unravelled"
+        },
+        understoreAutomaton: {
+          gameName: "Cogwork Underfly",
+          databaseName: "Understore Automaton",
+          name: "Cogwork Underfly (25)",
+          spoiler: "Underworks",
+          killRequire: "25",
+          wiki: "Cogwork+Underfly"
+        },
+        understoreAutomatonEX: {
+          gameName: "Cogwork Hauler",
+          databaseName: "Understore Automaton EX",
+          name: "Cogwork Hauler (12)",
+          spoiler: "Underworks",
+          killRequire: "12",
+          wiki: "Cogwork+Hauler"
+        },
+        songAutomatonGoomba: {
+          gameName: "Cogwork Crawler",
+          databaseName: "Song Automaton Goomba",
+          name: "Cogwork Crawler (15)",
+          spoiler: "Cogwork Core",
+          killRequire: "15",
+          wiki: "Cogwork+Crawler"
+        },
+        songAutomatonFly: {
+          gameName: "Cogworker",
+          databaseName: "Song Automaton Fly",
+          name: "Cogworker (15)",
+          spoiler: "Choral Chambers",
+          killRequire: "15",
+          wiki: "Cogworker"
+        },
+        songAutomatonFlySpike: {
+          gameName: "Cogwork Spine",
+          databaseName: "Song Automaton Fly Spike",
+          name: "Cogwork Spine (10)",
+          spoiler: "Choral Chambers",
+          killRequire: "10",
+          wiki: "Cogwork+Spine"
+        },
+        songAutomaton01: {
+          gameName: "Cogwork Choirbug",
+          databaseName: "Song Automaton 01",
+          name: "Cogwork Choirbug (20)",
+          spoiler: "Cogwork Core",
+          killRequire: "20",
+          wiki: "Cogwork+Choirbug"
+        },
+        songAutomaton02: {
+          gameName: "Cogwork Cleanser",
+          databaseName: "Song Automaton 02",
+          name: "Cogwork Cleanser (12)",
+          spoiler: "Cogwork Core",
+          killRequire: "12",
+          wiki: "Cogwork+Cleanser"
+        },
+        songAutomatonShield: {
+          gameName: "Cogwork Defender",
+          databaseName: "Song Automaton Shield",
+          name: "Cogwork Defender (8)",
+          spoiler: "Cogwork Core",
+          killRequire: "8",
+          wiki: "Cogwork+Defender"
+        },
+        songAutomatonBall: {
+          gameName: "Cogwork Clapper",
+          databaseName: "Song Automaton Ball",
+          name: "Cogwork Clapper (1)",
+          spoiler: "southeast room in Cogwork Core",
+          killRequire: "1",
+          wiki: "Cogwork+Clapper"
+        },
+        clockworkDancer: {
+          gameName: "Cogwork Dancers",
+          databaseName: "Clockwork Dancer",
+          name: "Cogwork Dancers (1)",
+          spoiler: "Cogwork Core",
+          killRequire: "1",
+          wiki: "Cogwork+Dancers"
+        },
+        songScholarAcolyte: {
+          gameName: "Vaultborn",
+          databaseName: "Song Scholar Acolyte",
+          name: "Vaultborn (20)",
+          spoiler: "Whispering Vaults",
+          killRequire: "20",
+          wiki: "Vaultborn"
+        },
+        lightbearer: {
+          gameName: "Lampbearer",
+          databaseName: "Lightbearer",
+          name: "Lampbearer (20)",
+          spoiler: "Whispering Vaults",
+          killRequire: "20",
+          wiki: "Lampbearer"
+        },
+        scrollkeeper: {
+          gameName: "Scrollreader",
+          databaseName: "Scrollkeeper",
+          name: "Scrollreader (15)",
+          spoiler: "Whispering Vaults",
+          killRequire: "15",
+          wiki: "Scrollreader"
+        },
+        scholar: {
+          gameName: "Vaultkeeper",
+          databaseName: "Scholar",
+          name: "Vaultkeeper (10)",
+          spoiler: "Whispering Vaults",
+          killRequire: "10",
+          wiki: "Vaultkeeper"
+        },
+        trobbio: {
+          gameName: "Trobbio",
+          databaseName: "Trobbio",
+          name: "Trobbio (1)",
+          spoiler: "The Stage between Choral Chambers and Whispering Vaults",
+          killRequire: "1",
+          wiki: "Trobbio"
+        },
+        tormentedTrobbio: {
+          gameName: "Tormented Trobbio",
+          databaseName: "Tormented Trobbio",
+          name: "Tormented Trobbio (1)",
+          spoiler: "The Stage, Pain, Anguish and Misery wish",
+          killRequire: "1",
+          wiki: "Tormented+Trobbio"
+        },
+        slabPrisonerLeaperNew: {
+          gameName: "Penitent",
+          databaseName: "Slab Prisoner Leaper New",
+          name: "Penitent (8)",
+          spoiler: "The Slab",
+          killRequire: "8",
+          wiki: "Penitent"
+        },
+        slabPrisonerFlyNew: {
+          gameName: "Puny Penitent",
+          databaseName: "Slab Prisoner Fly New",
+          name: "Puny Penitent (6)",
+          spoiler: "The Slab",
+          killRequire: "6",
+          wiki: "Puny+Penitent"
+        },
+        slabFlySmallFresh: {
+          gameName: "Freshfly",
+          databaseName: "Slab Fly Small Fresh",
+          name: "Freshfly (20)",
+          spoiler: "The Wailing Mother Wish",
+          killRequire: "20",
+          wiki: "Freshfly"
+        },
+        slabFlySmall: {
+          gameName: "Scabfly",
+          databaseName: "Slab Fly Small",
+          name: "Scabfly (15)",
+          spoiler: "The Slab",
+          killRequire: "15",
+          wiki: "Scabfly"
+        },
+        slabFlyMid: {
+          gameName: "Guardfly",
+          databaseName: "Slab Fly Mid",
+          name: "Guardfly (10)",
+          spoiler: "The Slab",
+          killRequire: "10",
+          wiki: "Guardfly"
+        },
+        slabFlyLarge: {
+          gameName: "Wardenfly",
+          databaseName: "Slab Fly Large",
+          name: "Wardenfly (8)",
+          spoiler: "The Slab",
+          killRequire: "8",
+          wiki: "Wardenfly"
+        },
+        slabFlyBroodmother: {
+          gameName: "Broodmother",
+          databaseName: "Slab Fly Broodmother",
+          name: "Broodmother (1)",
+          spoiler: "Grand Hunt wish",
+          killRequire: "1",
+          wiki: "Broodmother"
+        },
+        peaksDrifter: {
+          gameName: "Driftlin",
+          databaseName: "Peaks Drifter",
+          name: "Driftlin (20)",
+          spoiler: "Mount Fay",
+          killRequire: "20",
+          wiki: "Driftlin"
+        },
+        crystalDrifter: {
+          gameName: "Mnemonid",
+          databaseName: "Crystal Drifter",
+          name: "Mnemonid (10)",
+          spoiler: "Mount Fay",
+          killRequire: "10",
+          wiki: "Mnemonid"
+        },
+        crystalDrifterGiant: {
+          gameName: "Mnemonord",
+          databaseName: "Crystal Drifter Giant",
+          name: "Mnemonord (3)",
+          spoiler: "Mount Fay in Brightvein",
+          killRequire: "3",
+          wiki: "Mnemonord"
+        },
+        weaverServitor: {
+          gameName: "Servitor Ignim",
+          databaseName: "Weaver Servitor",
+          name: "Servitor Ignim (8)",
+          spoiler: "Weavenest Atla",
+          killRequire: "8",
+          wiki: "Servitor+Ignim"
+        },
+        weaverServitorLarge: {
+          gameName: "Servitor Boran",
+          databaseName: "Weaver Servitor Large",
+          name: "Servitor Boran (5)",
+          spoiler: "Mount Fay",
+          killRequire: "5",
+          wiki: "Servitor+Boran"
+        },
+        lifebloodFly: {
+          gameName: "Winged Lifeseed",
+          databaseName: "Lifeblood Fly",
+          name: "Winged Lifeseed (8)",
+          spoiler: "Wormways",
+          killRequire: "8",
+          wiki: "Winged+Lifeseed"
+        },
+        boneWormBlueBlood: {
+          gameName: "Plasmid",
+          databaseName: "Bone Worm BlueBlood",
+          name: "Plasmid (15)",
+          spoiler: "Wormways (Act 3)",
+          killRequire: "15",
+          wiki: "Plasmid"
+        },
+        boneWormBlueTurret: {
+          gameName: "Plasmidas",
+          databaseName: "Bone Worm BlueTurret",
+          name: "Plasmidas (6)",
+          spoiler: "Wormways (Act 3)",
+          killRequire: "6",
+          wiki: "Plasmidas"
+        },
+        blueAssistant: {
+          gameName: "Plasmified Zango",
+          databaseName: "Blue Assistant",
+          name: "Plasmified Zango (1)",
+          spoiler: "Wormways (Act 3)",
+          killRequire: "1",
+          wiki: "Plasmified+Zango"
+        },
+        lilypadFly: {
+          gameName: "Leaf Glider",
+          databaseName: "Lilypad Fly",
+          name: "Leaf Glider (12)",
+          spoiler: "Lost Verdania",
+          killRequire: "12",
+          wiki: "Leaf+Glider"
+        },
+        grassGoomba: {
+          gameName: "Leaf Roller",
+          databaseName: "Grass Goomba",
+          name: "Leaf Roller (10)",
+          spoiler: "Lost Verdania",
+          killRequire: "10",
+          wiki: "Leaf+Roller"
+        },
+        hornetDragonfly: {
+          gameName: "Pendra",
+          databaseName: "Hornet Dragonfly",
+          name: "Pendra (10)",
+          spoiler: "Lost Verdania",
+          killRequire: "10",
+          wiki: "Pendra"
+        },
+        dragonflyLarge: {
+          gameName: "Pendragor",
+          databaseName: "Dragonfly Large",
+          name: "Pendragor (10)",
+          spoiler: "Lost Verdania",
+          killRequire: "10",
+          wiki: "Pendragor"
+        },
+        lilypadTrap: {
+          gameName: "Nuphar",
+          databaseName: "Lilypad Trap",
+          name: "Nuphar (6)",
+          spoiler: "Lost Verdania",
+          killRequire: "6",
+          wiki: "Nuphar"
+        },
+        cloverstag: {
+          gameName: "Cloverstag",
+          databaseName: "Cloverstag",
+          name: "Cloverstag (6)",
+          spoiler: "Lost Verdania",
+          killRequire: "6",
+          wiki: "Cloverstag"
+        },
+        cloverstagWhite: {
+          gameName: "Palestag",
+          databaseName: "Cloverstag White",
+          name: "Palestag (1)",
+          spoiler: "Lost Verdania",
+          killRequire: "1",
+          wiki: "Palestag"
+        },
+        grasshopperChild: {
+          gameName: "Kindanir",
+          databaseName: "Grasshopper Child",
+          name: "Kindanir (10)",
+          spoiler: "Lost Verdania",
+          killRequire: "10",
+          wiki: "Kindanir"
+        },
+        grasshopperSlasher: {
+          gameName: "Verdanir",
+          databaseName: "Grasshopper Slasher",
+          name: "Verdanir (10)",
+          spoiler: "Lost Verdania",
+          killRequire: "10",
+          wiki: "Verdanir"
+        },
+        grasshopperFly: {
+          gameName: "Escalion",
+          databaseName: "Grasshopper Fly",
+          name: "Escalion (10)",
+          spoiler: "Lost Verdania",
+          killRequire: "10",
+          wiki: "Escalion"
+        },
+        cloverDancer: {
+          gameName: "Clover Dancers",
+          databaseName: "Clover Dancer",
+          name: "Clover Dancers (1)",
+          spoiler: "Lost Verdania",
+          killRequire: "1",
+          wiki: "Clover+Dancers"
+        },
+        abyssCrawler: {
+          gameName: "Shadow Creeper",
+          databaseName: "Abyss Crawler",
+          name: "Shadow Creeper (16)",
+          spoiler: "The Abyss",
+          killRequire: "16",
+          wiki: "Shadow+Creeper"
+        },
+        abyssCrawlerLarge: {
+          gameName: "Shadow Charger",
+          databaseName: "Abyss Crawler Large",
+          name: "Shadow Charger (6)",
+          spoiler: "The Abyss",
+          killRequire: "6",
+          wiki: "Shadow+Charger"
+        },
+        gloomfly: {
+          gameName: "Gloomsac",
+          databaseName: "Gloomfly",
+          name: "Gloomsac (15)",
+          spoiler: "The Abyss",
+          killRequire: "15",
+          wiki: "Gloomsac"
+        },
+        gloomBeast: {
+          gameName: "Gargant Gloom",
+          databaseName: "Gloom Beast",
+          name: "Gargant Gloom (4)",
+          spoiler: "The Abyss",
+          killRequire: "4",
+          wiki: "Gargant+Gloom"
+        },
+        voidTendrils: {
+          gameName: "Void Tendrils",
+          databaseName: "Void Tendrils",
+          name: "Void Tendrils (1)",
+          spoiler: "Weavenest Absolom, in the lower eastern section of the Abyss",
+          killRequire: "1",
+          wiki: "Void+Tendrils"
+        },
+        blackThreadCore: {
+          gameName: "Void Mass",
+          databaseName: "Black Thread Core",
+          name: "Void Mass (8)",
+          spoiler: "Around the map (Act 3)",
+          killRequire: "8",
+          wiki: "Void+Mass"
+        },
+        whitePalaceFly: {
+          gameName: "Wingmould",
+          databaseName: "White Palace Fly",
+          name: "Wingmould (10)",
+          spoiler: "Red Memory",
+          killRequire: "10",
+          wiki: "Wingmould"
+        },
+        centipedeTrap: {
+          gameName: "Garpid",
+          databaseName: "Centipede Trap",
+          name: "Garpid (30)",
+          spoiler: "Secret area above The Cradle",
+          killRequire: "30",
+          wiki: "Garpid"
+        },
+        spikeLazyFlyer: {
+          gameName: "Imoba",
+          databaseName: "Spike Lazy Flyer",
+          name: "Imoba (4)",
+          spoiler: "Secret area above The Cradle",
+          killRequire: "4",
+          wiki: "Imoba"
+        },
+        surfaceScuttler: {
+          gameName: "Skrill",
+          databaseName: "Surface Scuttler",
+          name: "Skrill (10)",
+          spoiler: "The ruins of The Cradle",
+          killRequire: "10",
+          wiki: "Skrill"
+        },
+        giantCentipede: {
+          gameName: "Bell Eater",
+          databaseName: "Giant Centipede",
+          name: "Bell Eater (1)",
+          spoiler: "Any Bellway Station in beginning of Act 3 ",
+          killRequire: "1",
+          wiki: "Bell+Eater"
+        },
+        giantFlea: {
+          gameName: "Huge Flea",
+          databaseName: "Giant Flea",
+          name: "Huge Flea (1)",
+          spoiler: "Memorium",
+          killRequire: "1",
+          wiki: "Huge+Flea"
+        },
+        garmond: {
+          gameName: "Lost Garmond",
+          databaseName: "Garmond",
+          name: "Lost Garmond (1)",
+          spoiler: "Hero's Call wish",
+          killRequire: "1",
+          wiki: "Lost+Garmond"
+        },
+        pinstressBoss: {
+          gameName: "Pinstress",
+          databaseName: "Pinstress Boss",
+          name: "Pinstress (1)",
+          spoiler: "Fatal Resolve wish",
+          killRequire: "1",
+          wiki: "Pinstress"
+        },
+        spinnerBoss: {
+          gameName: "Widow",
+          databaseName: "Spinner Boss",
+          name: "Widow (1)",
+          spoiler: "Bellhart above the town",
+          killRequire: "1",
+          wiki: "Widow"
+        },
+        firstWeaver: {
+          gameName: "First Sinner",
+          databaseName: "First Weaver",
+          name: "First Sinner (1)",
+          spoiler: "the Slab, require Key of Apostate",
+          killRequire: "1",
+          wiki: "First+Sinner"
+        },
+        phantom: {
+          gameName: "Phantom",
+          databaseName: "Phantom",
+          name: "Phantom (1)",
+          spoiler: "Bilewater through The Mist in Sinner's Road",
+          killRequire: "1",
+          wiki: "Phantom"
+        },
+        lace: {
+          gameName: "Lace",
+          databaseName: "Lace",
+          name: "Lace (2)",
+          spoiler: "Deep Docks and the Cradle",
+          killRequire: "2",
+          wiki: "Lace"
+        },
+        silkBoss: {
+          gameName: "Grand Mother Silk",
+          databaseName: "Silk Boss",
+          name: "Grand Mother Silk (1)",
+          spoiler: "the Cradle",
+          killRequire: "1",
+          wiki: "Grand+Mother+Silk"
+        },
+        lostLace: {
+          gameName: "Lost Lace",
+          databaseName: "Lost Lace",
+          name: "Lost Lace (1)",
+          spoiler: "The Abyss, require Everbloom",
+          killRequire: "1",
+          wiki: "Lost+Lace"
         }
       }
     },
@@ -32721,7 +34577,6 @@ function GenerateInnerHTML(db) {
   var shamanCrestImage = "<img src='".concat(_img_shaman_crest_png__WEBPACK_IMPORTED_MODULE_13__, "' class='crest' alt='Shaman image' title='Shaman Crest'>");
   var wandererCrestImage = "<img src='".concat(_img_wanderer_crest_png__WEBPACK_IMPORTED_MODULE_14__, "' class='crest' alt='Wanderer image' title='Wanderer Crest'>");
   var witchCrestImage = "<img src='".concat(_img_witch_crest_png__WEBPACK_IMPORTED_MODULE_15__, "' class='crest' alt='Witch image' title='Witch Crest'>");
-  _img_shell_shards_png__WEBPACK_IMPORTED_MODULE_8__;
 
   /* ############################## create all main entries ########################################################################## */
 

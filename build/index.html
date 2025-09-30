@@ -126,7 +126,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <title>Save Completion Analyzer for Hollow Knight Online</title>
+  <title>Save Completion Analyzer for Hollow Knight: Silksong Online</title>
 
   <meta name="description"
     content="A simple open source tool for checking every single thing you missed for your Game Completion Percentage.">
@@ -136,7 +136,7 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Save Completion Analyzer for Hollow Knight Online">
+  <meta property="og:title" content="Save Completion Analyzer for Hollow Knight: Silksong Online">
   <meta property="og:description"
     content="A simple open source tool for checking what you missed for your Game Completion Percentage.">
   <meta property="og:image"
@@ -144,7 +144,7 @@
   <meta property="og:url" content="https://reznormichael.github.io/hollow-knight-completion-check/">
 
   <!-- Twitter -->
-  <meta property="twitter:title" content="Save Completion Analyzer for Hollow Knight Online">
+  <meta property="twitter:title" content="Save Completion Analyzer for Hollow Knight: Silksong Online">
   <meta property="twitter:description"
     content="A simple open source tool for checking what you missed for your Game Completion Percentage.">
   <meta property="twitter:card" content="summary_large_image">
@@ -166,9 +166,14 @@
   <div id="content">
 
     <h1 id="h1-title">Save Completion Analyzer</h1>
-    <div id="sub-title">for Hollow Knight</div>
+    <div id="sub-title">for Hollow Knight: Silksong</div>
 
-    <p class="smalltext">
+      <p class="smalltext">
+      <a class="link-social" href="https://github.com/Alba6rek/hollow-knight-silksong-completion-check" target="_blank"><i
+          class="simpleicon-github"></i>GitHub<i class="simpleicon-github"></i></a>
+      </p>
+    <!--
+      <p class="smalltext">
       <a class="link-social" href="https://www.paypal.me/ReznoRMichael" target="_blank"><i
           class="simpleicon-paypal"></i>Support Analyzer and get Featured!<i class="simpleicon-paypal"></i></a>
       <br>
@@ -183,10 +188,12 @@
       <a class="link-social" href="https://github.com/ReznoRMichael/hollow-knight-completion-check" target="_blank"><i
           class="simpleicon-github"></i>GitHub</a>
       <br>
+      -->
+
       <!-- <a href="https://pastebin.com/raw/shfZ4Vqs" target="_blank">[ Decoded 5% Save Example ]</a><br> -->
 
       <div class="tooltip">
-        <input type="text" id="save-location-input" value="%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight\"
+        <input type="text" id="save-location-input" value="%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong\"
           readonly>
         <!-- <textarea id="save-location-input" value="%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight\" readonly></textarea> -->
         <span class="tooltip-text" id="save-location-input-tooltip">Click once to copy to clipboard</span>
@@ -211,7 +218,7 @@
           
           <button id="save-area-read" class="button button-large hidden" type="button" title="Press this button after pasting your Save Text from the Save Editor into the text box below.">Analyze Save Text</button>
 
-          <a class="button button-square" href="https://store.steampowered.com/account/remotestorageapp/?appid=367520"
+          <a class="button button-square" href="https://store.steampowered.com/account/remotestorageapp/?appid=1030300"
             target="_blank" title="Download a Save File from your Steam Cloud Storage for Hollow Knight."><i class="icon-download-cloud"></i></a>
         </div>
 
@@ -236,13 +243,15 @@
         <!-- </div> -->
 
         <div class="checkboxes">
-
+        
+        <input type="hidden" name="checkboxes" id="checkbox-hints" value="hints-off">
+        <!-- The hint are removed for the current time -->
+        <!--
           <input type="checkbox" name="checkboxes" id="checkbox-hints" value="hints-off">
           <label for="checkbox-hints" class="checkbox-label"
             title="Check to see an optional clue for your first playthrough based on your save's progress.">
-            <!-- <input type="checkbox" name="checkboxes" id="checkbox-hints" value="hints-off" onclick="CheckboxHintsToggle();"> -->
             <span class="checkmark"></span><strong>Hints</strong>
-          </label>
+          </label>-->
 
           <input type="checkbox" name="checkboxes" id="checkbox-spoilers" value="spoilers-off">
           <label for="checkbox-spoilers" class="checkbox-label"
@@ -266,35 +275,23 @@
 
     <div style="margin-bottom: 20px;"></div>
 
-    <h6>Secrets!</h6>
+    <!--<h6>Secrets!</h6>
 
     <p class="smalltext">
       Did you know? You can press <strong>Ctrl + Shift + I</strong> and choose the <strong>Console Tab</strong> to view some extra secret
       data not currently shown in the tool. (after loading any save file)
-    </p>
+    </p>-->
 
     <div style="margin-bottom: 20px;"></div>
 
     <div class="hall-of-fame-border">
 
-      <h6 class="hall-of-fame">Analyzer Supporters</h6>
+      <h6 class="hall-of-fame">Thank you</h6>
 
       <p class="smalltext">
-        <b class="pp-gold">Klaudia</b>&nbsp;(Lvl&nbsp;45) - 
-        <b class="pp-silver">Rohit</b>&nbsp;(Lvl&nbsp;7) - 
-        <b class="pp-silver">Dominic</b>&nbsp;(Lvl&nbsp;6) - 
-        <b class="pp-silver">David</b>&nbsp;(Lvl&nbsp;5) - 
-        <b class="pp-silver">Peter</b>&nbsp;(Lvl&nbsp;5) - 
-        <b class="pp-silver">Ruben</b>&nbsp;(Lvl&nbsp;5) - 
-        <b class="pp-bronze">AnonymousCanada</b>&nbsp;(Lvl&nbsp;3) - 
-        <b class="pp-bronze">Mozzie</b>&nbsp;(Lvl&nbsp;2)
-      </p>
+              Thank you <a href="https://github.com/ReznoRMichael/hollow-knight-completion-check"
+        target="_blank">rezno[R]</a> for your hardwork and thank you to everyone who support this community
 
-      <p class="smalltext">
-        You too can get immortalized here. <a href="https://www.paypal.me/ReznoRMichael" target="_blank"><i
-            class="simpleicon-paypal"></i>Donate<i
-            class="simpleicon-paypal"></i></a> at least $1 for the Analyzer!<br>
-        Lvl indicates your amount of support.
       </p>
 
     </div>
@@ -302,15 +299,17 @@
     <div style="margin-bottom: 20px;"></div>
 
     <p class="smalltext">
-      v2.2.0. Work-In-Progress. Ideas &amp; Bug Reports: <a
+      v0.1.0. Work-In-Progress. <!--Ideas &amp; Bug Reports: <a
         href="https://steamcommunity.com/app/367520/discussions/0/2915472677711090083/" target="_blank"><i
           class="simpleicon-steam"></i>Steam Discussions</a> <a
         href="https://steamcommunity.com/sharedfiles/filedetails/?id=2209910193" target="_blank"><i
-          class="simpleicon-steam"></i>Steam Guide</a>.<br>
+          class="simpleicon-steam"></i>Steam Guide</a>.--><br>
       Programmed, written and created by 🉑 <a href="https://github.com/ReznoRMichael/hollow-knight-completion-check"
         target="_blank">rezno[R]</a> &copy; 2020–2022<br>
-      <a href="https://store.steampowered.com/app/367520/Hollow_Knight/" target="_blank">Hollow Knight</a> by <a
-        href="https://teamcherry.com.au/" target="_blank">Team Cherry</a> &copy; 2017–2022<br>
+      Redesigned by <a href="https://github.com/Alba6rek/hollow-knight-silksong-completion-check"
+        target="_blank">Alba6rek</a> &copy; 2025<br>
+        <a href="https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/" target="_blank">Hollow Knight: Silksong</a> by <a
+        href="https://teamcherry.com.au/" target="_blank">Team Cherry</a> &copy; 2017–2025<br>
     </p>
 
   </div> <!-- end content -->

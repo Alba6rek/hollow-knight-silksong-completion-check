@@ -19,7 +19,7 @@
 */
 
 :root {
-  --rt-main: #1e4d6c;
+  --rt-main: #1e6c38;
   cursor: default;
 }
 
@@ -42,11 +42,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #1e4d6c;
+  background-color: #1e6c38;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #2e5d7c;
+  background-color: #2e7c38;
 }
 
 ::-webkit-scrollbar-track,
@@ -55,8 +55,8 @@ body {
 }
 
 ::-webkit-resizer {
-  background-color: #050d19;
-  color: #1e4d6c;
+  background-color: #051905;
+  color: #1e6c38;
 }
 
 #background {
@@ -85,7 +85,7 @@ body {
 
 b {
   font-weight: 500;
-  color: #aac7d4;
+  color: #aad4b4;
 }
 
 p {
@@ -154,12 +154,12 @@ h6 {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.6rem;
-  color: rgb(0, 255, 221);
+  color: rgb(0, 255, 98);
   margin-bottom: 1rem;
 }
 
 .hall-of-fame-border {
-  border: 0.2rem solid rgba(0, 255, 220, 0.6);
+  border: 0.2rem solid rgba(0, 255, 106, 0.6);
   border-radius: 1rem;
   border-style: double;
   padding: 0.7rem 1.3rem 0.7rem 1.3rem;
@@ -167,7 +167,7 @@ h6 {
 }
 
 #hk-hints {
-  border: 0.2rem solid rgba(231, 251, 255, 0.33);
+  border: 0.2rem solid rgba(231, 255, 234, 0.33);
   border-radius: 1rem;
   border-style: double;
   padding: 1.3rem;
@@ -190,7 +190,7 @@ h6 {
   text-align: center;
   font-size: 0.8rem;
   margin: 0 1.3rem 1.3rem 1.3rem;
-  color: rgba(129, 221, 224, 0.85);
+  color: rgba(129, 224, 134, 0.85);
 }
 
 #save-location-input {
@@ -198,8 +198,8 @@ h6 {
   font-family: 'Consolas', monospace;
   font-size: 0.75rem;
   text-align: center;
-  width: 32em;
-  max-width: 32em;
+  width: 37em;
+  max-width: 37em;
   color: #fff;
   background-color: rgba(128, 128, 128, 0.5);
   margin: 0.4rem auto 0.6rem auto;
@@ -387,9 +387,9 @@ input[type="file"] {
   font-weight: 500;
   font-family: 'Heebo', sans-serif;
   text-align: center;
-  background-color: #1e4d6c;
-  color: #aac7d4;
-  border: 2px solid #183c55;
+  background-color: #1e6c38;
+  color: #aad4b4;
+  border: 2px solid #185520;
   border-radius: 2px;
   padding: 0.3rem 1rem;
   margin: 0.25rem 0.5rem 0.25rem 0.25rem;
@@ -401,17 +401,17 @@ input[type="file"] {
 }
 
 .button:hover {
-  color: #d9f3ff;
-  background-color: #2e5d7c;
-  border-color: #2e5d7c;
+  color: #d9ffdc;
+  background-color: #2e7c38;
+  border-color: #2e7c38;
   cursor: pointer;
 }
 
 .button:focus,
 .input-file:focus+label {
-  /* outline: 2px solid #5e8dac; */
+  /* outline: 2px solid #5eac65; */
   outline: 0;
-  border-color: #5e8dac;
+  border-color: #5eac65;
   /* outline-offset: -2px; */
 }
 
@@ -430,13 +430,13 @@ input[type="file"] {
 
 .tab-switch {
   background-color: rgba(0, 0, 0, 0);
-  color: rgb(0, 180, 156);
+  color: rgb(0, 180, 69);
   border: 2px solid rgba(0, 0, 0, 0);
   border-radius: 1rem 0 1rem 0;
 }
 
 .tab-switch:hover {
-  background-color: rgb(0, 180, 156);
+  background-color: rgb(0, 180, 69);
   color: rgb(0, 0, 0);
   border: 2px solid rgba(0, 0, 0, 0);
 }
@@ -445,13 +445,13 @@ input[type="file"] {
   background-color: rgb(235, 235, 235);
   color: rgb(0, 39, 34);
   border: 2px solid rgba(0, 0, 0, 0);
-  box-shadow: 0 0 1rem rgb(0, 180, 156);
-  text-shadow: 0 0 0.5rem #97fff1;
+  box-shadow: 0 0 1rem rgb(0, 180, 69);
+  text-shadow: 0 0 0.5rem #9aff97;
 }
 
 .tab-switch:focus {
   outline: 0;
-  border-color: rgb(0, 255, 221);
+  border-color: rgb(0, 255, 98);
 }
 
 .tab-switch:focus:not(:focus-visible) {
@@ -517,14 +517,14 @@ a,
 a:active,
 a:visited {
   display: inline-block;
-  color: #aac7d4;
+  color: #aad4b4;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 a:hover {
-  color: #d9f3ff;
+  color: #d9ffdc;
   text-decoration: none;
   text-shadow: 0 0 0.6em #1bff73;
 }
@@ -565,12 +565,12 @@ a.wiki {
 }
 
 .icon-info-circled {
-  color: #479ae7;
+  color: #47e762;
 }
 
 .icon-download-cloud,
 .icon-doc-text-inv {
-  color: #d9f3ff;
+  color: #d9ffdc;
 }
 
 .flex-container {
@@ -635,7 +635,7 @@ a.wiki {
   width: 50px;
   height: 50px;
   text-decoration: none;
-  background-color: #1e4d6c;
+  background-color: #1e6c38;
   border: 0;
   border-radius: 2px;
   outline: 0;
@@ -648,7 +648,7 @@ a.wiki {
 }
 
 .scroll-up-button:hover {
-  background-color: #2e5d7c;
+  background-color: #2e7c38;
   cursor: pointer;
 }
 
@@ -658,7 +658,7 @@ a.wiki {
   top: 3px;
   width: 12px;
   height: 12px;
-  border: solid #aac7d4;
+  border: solid #aad4b4;
   border-width: 2px 0px 0px 2px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -762,8 +762,8 @@ input[type="radio"] {
   left: 0.27em;
   height: 1.3em;
   width: 1.3em;
-  background-color: #aac7d4;
-  border: 1px solid #1e4d6c;
+  background-color: #aad4b4;
+  border: 1px solid #1e6c38;
   border: 1px solid var(--rt-main);
   transition: all 0.3s ease;
 }
@@ -785,21 +785,21 @@ input[type="radio"] {
 /* On mouse-over change background color */
 .radio-label:hover .radiomark,
 .checkbox-label:hover .checkmark {
-  background-color: #d9f3ff;
+  background-color: #d9ffdc;
 }
 
 /* When the checkbox is checked change background color */
 input:checked + label .radiomark,
 input:checked + label .checkmark {
-  background-color: #1e4d6c;
+  background-color: #1e6c38;
   background-color: var(--rt-main);
 }
 
 /* When the checkbox is checked change background color on hover */
 input:checked + label:hover .radiomark,
 input:checked + label:hover .checkmark {
-  background-color: #2e5d7c;
-  border-color: #2e5d7c;
+  background-color: #2e7c38;
+  border-color: #2e7c38;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -822,7 +822,7 @@ input:checked + label .checkmark:after {
   top: 2px;
   width: 6px;
   height: 12px;
-  border: solid #aac7d4;
+  border: solid #aad4b4;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -842,7 +842,7 @@ input:checked + label .checkmark:after {
 input[type="checkbox"]:focus + label,
 input[type="radio"]:focus + label {
     outline: 0;
-    box-shadow: 0 0 0.2rem #aac7d4;
+    box-shadow: 0 0 0.2rem #aad4b4;
 }
 
 input[type="checkbox"]:focus:not(:focus-visible) + label,
@@ -861,8 +861,8 @@ input[type="radio"]:focus:not(:focus-visible) + label {
 .tooltip .tooltip-text {
   visibility: hidden;
   width: max-content;
-  background-color: #1e4d6c;
-  color: #d9f3ff;
+  background-color: #1e6c38;
+  color: #d9ffdc;
   font-size: 0.85rem;
   text-align: center;
   border-radius: 3px;
@@ -884,7 +884,7 @@ input[type="radio"]:focus:not(:focus-visible) + label {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #1e4d6c transparent transparent transparent;
+  border-color: #1e6c38 transparent transparent transparent;
 }
 
 .tooltip:hover .tooltip-text {
@@ -905,11 +905,11 @@ input[type="radio"]:focus:not(:focus-visible) + label {
   font-size: 1.1rem;
   font-weight: 700;
   vertical-align: middle;
-  color: #d9f3ff;
+  color: #d9ffdc;
   margin: 0 0.5rem 0rem 0.5rem;
   padding: 0.2rem 1.2rem 0.2rem 1.2rem;
-  background: #1e4d6c;
-  border: 2px solid #3e6d8c;
+  background: #1e6c38;
+  border: 2px solid #3e8c4b;
   border-radius: 4px;
 }
 
