@@ -30,14 +30,14 @@ import {
 
 // ---------------- Load image files (necessary for Webpack) ----------------------------------------------------------------------- //
 
-import HEALTH_MASK_IMAGE from "../img/health-mask.png";
+/*import HEALTH_MASK_IMAGE from "../img/health-mask.png";
 import HEALTH_MASK_STEEL_IMAGE from "../img/health-mask-steel.png";
 import SOUL_ORB_IMAGE from "../img/soul-orb.png";
 import NOTCH_IMAGE from "../img/notch.png";
 import NOTCH_FILLED_IMAGE from "../img/notch-filled.png";
 import NOTCH_OVERCHARMED_IMAGE from "../img/notch-overcharmed.png";
 import GEO_IMAGE from "../img/geo.png";
-import GEO_SHADE_IMAGE from "../img/geo-shade.png";
+import GEO_SHADE_IMAGE from "../img/geo-shade.png";*/
 
 // ---------------- Constants ------------------------------------------------------------------------------------------------------- //
 
@@ -48,7 +48,7 @@ const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
 const SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
 const SYMBOL_EMPTY = "<span class='padding-left'></span>";
 const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
-const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
+const WIKI_LINK = "https://hollowknightsilksong.wiki.fextralife.com/";
 
 // ---------------- Variables ------------------------------------------------------------------------------------------------------- //
 
@@ -141,7 +141,7 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckSilkBar(HK.sections.intro, HKPlayerData.silkMax);
 
-  // ---------------- Charm Notches (Slots) ------------------------------------------------------------------------------------- //
+  // ---------------- Check Crests ------------------------------------------------------------------------------------- //
 
   CheckCrests(HK.sections.intro, HKPlayerData);
 
@@ -149,17 +149,71 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckRosary(HK.sections.intro, HKPlayerData.geo, HKPlayerData.HeroCorpseMoneyPool);
 
-    // ---------------- Shell Shards Amount ------------------------------------------------------------------------------------------------ //
+  // ---------------- Shell Shards Amount ------------------------------------------------------------------------------------------------ //
 
   CheckshellShards(HK.sections.intro, HKPlayerData.ShellShards);
 
+  // ---------------- Crests Crests Crests Crests Crests Crests  ---------------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.crests, HK.sections.crests.entries, HKPlayerData);
+
+  // ---------------- Needle Upgrades --------------------------------------------------------------------------------------------- //
+
+  CheckNeedleUpgrades(HK.sections.NeedleUpgrades, HK.sections.NeedleUpgrades.entries, HKPlayerData);
+
+  // ---------------- Silk Heart --------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.silkHeart, HK.sections.silkHeart.entries, HKPlayerData);
+
+  // ---------------- Tools ---------------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.redTools, HK.sections.redTools.entries, HKPlayerData.Tools.savedData);
+  CheckIfDataTrue(HK.sections.blueTools, HK.sections.blueTools.entries, HKPlayerData.Tools.savedData);
+  CheckIfDataTrue(HK.sections.yellowTools, HK.sections.yellowTools.entries, HKPlayerData.Tools.savedData);
+
+  // ---------------- Equipment (Abilities) ------------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.equipment, HK.sections.equipment.entries, HKPlayerData.Tools.savedData);
+
+  // ---------------- skills ---------------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.skills, HK.sections.skills.entries, HKPlayerData);
+
+    // ---------------- Miscellaneous ---------------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.miscellaneous, HK.sections.miscellaneous.entries, HKPlayerData);
+
+  // ---------------- Mask Shards ----------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.maskShards, HK.sections.maskShards.entries, HKPlayerData, HKWorldItems);
+
+  // ---------------- Spool Fragments ------------------------------------------------------------------------------------------ //
+
+  CheckIfDataTrue(HK.sections.spoolFragments, HK.sections.spoolFragments.entries, HKPlayerData, HKWorldItems);
+
+  // ---------------- Crafting Kit Upgrades ------------------------------------------------------------------------------------------ //
+
+  CheckIfDataTrue(HK.sections.craftingKitUpgrades, HK.sections.craftingKitUpgrades.entries, HKPlayerData, HKWorldItems);
+
+  // ---------------- Tool Pouch Upgrades ------------------------------------------------------------------------------------------ //
+
+  CheckIfDataTrue(HK.sections.toolPouchUpgrades, HK.sections.toolPouchUpgrades.entries, HKPlayerData, HKWorldItems);
+
+  // ---------------- flea ---------------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.flea, HK.sections.flea.entries, HKPlayerData);
+
+  
+  ////////////////////////////////////////////////////////// UNDER THIS LINE ARE NOT FINSIHED /////////////////////////////////////////
+  ////////////////////////////////////////////////////////// UNDER THIS LINE ARE NOT FINSIHED /////////////////////////////////////////
+  ////////////////////////////////////////////////////////// UNDER THIS LINE ARE NOT FINSIHED /////////////////////////////////////////
+  ////////////////////////////////////////////////////////// UNDER THIS LINE ARE NOT FINSIHED /////////////////////////////////////////
+  ////////////////////////////////////////////////////////// UNDER THIS LINE ARE NOT FINSIHED /////////////////////////////////////////
+  ////////////////////////////////////////////////////////// UNDER THIS LINE ARE NOT FINSIHED /////////////////////////////////////////
+/*
   // ---------------- Bosses (Base Game) ---------------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.bosses, HK.sections.bosses.entries, HKPlayerData, HKWorldItems);
-
-  // ---------------- Charms ---------------------------------------------------------------------------------------------------- //
-
-  CheckIfDataTrue(HK.sections.charms, HK.sections.charms.entries, HKPlayerData);
 
   // ---------------- Colosseum of Fools ---------------------------------------------------------------------------------------- //
 
@@ -173,29 +227,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckIfDataTrue(HK.sections.dreamNail, HK.sections.dreamNail.entries, HKPlayerData);
 
-  // ---------------- Equipment ------------------------------------------------------------------------------------------------- //
-
-  CheckIfDataTrue(HK.sections.equipment, HK.sections.equipment.entries, HKPlayerData);
-
-  // ---------------- Nail Upgrades --------------------------------------------------------------------------------------------- //
-
-  CheckNailUpgrades(HK.sections.nailUpgrades, HK.sections.nailUpgrades.entries, HKPlayerData);
-
-  // ---------------- Mask Shards ----------------------------------------------------------------------------------------------- //
-
-  CheckIfDataTrue(HK.sections.maskShards, HK.sections.maskShards.entries, HKPlayerData, HKWorldItems);
 
   // ---------------- Nail Arts ------------------------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.nailArts, HK.sections.nailArts.entries, HKPlayerData);
-
-  // ---------------- Spells ---------------------------------------------------------------------------------------------------- //
-
-  CheckSpellLevel(HK.sections.spells, HK.sections.spells.entries, HKPlayerData);
-
-  // ---------------- Vessel Fragments ------------------------------------------------------------------------------------------ //
-
-  CheckIfDataTrue(HK.sections.vesselFragments, HK.sections.vesselFragments.entries, HKPlayerData, HKWorldItems);
 
   // ---------------- Warrior Dreams -------------------------------------------------------------------------------------------- //
 
@@ -212,12 +247,12 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   // ---------------- Godmaster Content Pack ------------------------------------------------------------------------------------ //
 
   CheckIfDataTrue(HK.sections.godmaster, HK.sections.godmaster.entries, HKPlayerData);
-
+*/
   // ------------------------- Hunter's Journal --------------------------------------------------------------------------------- //
   /* Must be checked before Statistics (for correct entry numbers) */
 
   CheckHuntersJournal(HK, "huntersJournal", HKPlayerData);
-  CheckHuntersJournal(HK, "huntersJournalOptional", HKPlayerData);
+  //CheckHuntersJournal(HK, "huntersJournalOptional", HKPlayerData);
 
 /*
   
@@ -321,13 +356,12 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   /* ------------------------- Pantheon Statistics ------------------------------------------------------------------------------ */
 
-  CheckPantheon(HK, "pantheonOfTheMaster", HKPlayerData);
-  CheckPantheon(HK, "pantheonOfTheArtist", HKPlayerData);
+  /*CheckPantheon(HK, "pantheonOfTheArtist", HKPlayerData);
   CheckPantheon(HK, "pantheonOfTheSage", HKPlayerData);
   CheckPantheon(HK, "pantheonOfTheKnight", HKPlayerData);
   CheckPantheon(HK, "pantheonOfHallownest", HKPlayerData);
 
-  CheckHallOfGods(HK, HKPlayerData);
+  CheckHallOfGods(HK, HKPlayerData);*/
 
   // ------------------------- Hints ---------------------------------------------------------------------------------------------- //
 
@@ -431,7 +465,7 @@ function CheckCompletionPercent(section, playerData) {
   let completionPercentage = Math.round(playerData.completionPercentage);
   let maxPercent = 0;
 
-/*
+
   // Normal (current) game version behaviour: 112%
   section.maxPercent = section.maxPercentDefault;
   maxPercent = section.maxPercentDefault;
@@ -439,7 +473,7 @@ function CheckCompletionPercent(section, playerData) {
 
   section.percent = completionPercentage;
   section.entries.gameCompletion.spoiler = completionPercentage;
-
+/*
   // Lifeblood behaviour: 107%
   if (!playerData.hasOwnProperty("hasGodfinder")) {
 
@@ -493,7 +527,8 @@ function CheckExtendedCompletion(db) {
       case "intro":
       case "hints":
       case "huntersJournal":
-      case "huntersJournalOptional":
+      //case "huntersJournalOptional":
+      //case "flea":
 
         continue;
 
@@ -897,7 +932,137 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
     textSuffix = dataObject[i].spoiler;
     (dataObject[i].hasOwnProperty("wiki")) ? wiki = dataObject[i].wiki: wiki = ""; */
 
-    switch (i) {
+    if (section.id === "hk-redTools" 
+      || section.id === "hk-blueTools"
+      || section.id === "hk-yellowTools"
+      || section.id === "hk-equipment")
+    {
+      switch (i)
+      {
+        case "webShot":
+          //check if he have any type of webshot which count as 1% (the player cant have multiple of it)
+              let foundArchitect = playerData.find(playerData => playerData.Name === "WebShot Architect");
+              let foundForge  = playerData.find(playerData => playerData.Name === "WebShot Forge");
+              let foundWeaver = playerData.find(playerData => playerData.Name === "WebShot Weaver");
+               ((foundArchitect !== undefined && foundArchitect.Data.IsUnlocked === true)
+               || (foundForge !== undefined && foundForge.Data.IsUnlocked === true)
+               || (foundWeaver !== undefined && foundWeaver.Data.IsUnlocked === true)
+               ) ? SetIconGreen(section, i): SetIconRed(section, i);
+
+        break;
+
+        case "curveClaws":
+              //check if he have any type of curveClaws which count as 1% (normal or upgraded one)
+              let foundClaws = playerData.find(playerData => playerData.Name === "Curve Claws");
+              let foundClawsUpgrade  = playerData.find(playerData => playerData.Name === "Curve Claws Upgraded");
+               ((foundClaws !== undefined && foundClaws.Data.IsUnlocked === true)
+               || (foundClawsUpgrade !== undefined && foundClawsUpgrade.Data.IsUnlocked === true)
+               ) ? SetIconGreen(section, i): SetIconRed(section, i);
+
+        break;
+
+        case "mosscreepTool":
+              //check if he have any type of Mosscreep which count as 1% (normal or upgraded one)
+              let foundMosscreep = playerData.find(playerData => playerData.Name === "Mosscreep Tool 1");
+              let foundMosscreepUpgrade  = playerData.find(playerData => playerData.Name === "Mosscreep Tool 2");
+               ((foundMosscreep !== undefined && foundMosscreep.Data.IsUnlocked === true)
+               || (foundMosscreepUpgrade !== undefined && foundMosscreepUpgrade.Data.IsUnlocked === true)
+               ) ? SetIconGreen(section, i): SetIconRed(section, i);
+
+        break;
+
+        case "DazzleBind":
+              //check if he have any type of Dazzle Bind which count as 1% (normal or upgraded one)
+              let foundDazzle = playerData.find(playerData => playerData.Name === "Dazzle Bind");
+              let foundDazzleUpgrade  = playerData.find(playerData => playerData.Name === "Dazzle Bind Upgraded");
+               ((foundDazzle !== undefined && foundDazzle.Data.IsUnlocked === true)
+               || (foundDazzleUpgrade !== undefined && foundDazzleUpgrade.Data.IsUnlocked === true)
+               ) ? SetIconGreen(section, i): SetIconRed(section, i);
+
+        break;
+
+        case "deadMansPurse":
+              //check if he have any type of Bomb for normal and steel mod which count as 1% (normal or upgraded one)
+              let foundBombNormal = playerData.find(playerData => playerData.Name === "Dead Mans Purse");
+              let foundBombSteel  = playerData.find(playerData => playerData.Name === "Shell Satchel");
+               ((foundBombNormal !== undefined && foundBombNormal.Data.IsUnlocked === true)
+               || (foundBombSteel !== undefined && foundBombSteel.Data.IsUnlocked === true)
+               ) ? SetIconGreen(section, i): SetIconRed(section, i);
+
+        break;
+
+              
+
+        default:
+              let foundData = playerData.find(playerData => playerData.Name === dataObject[i].id);
+              (foundData !== undefined && foundData.Data.IsUnlocked === true) ? SetIconGreen(section, i): SetIconRed(section, i);
+
+
+      }
+
+
+
+      
+    }
+    // CHECK SILK HEART
+    else if (section.id === "hk-silkHeart")
+    {
+      let exist = playerData.scenesVisited.indexOf(i);
+      (exist >= 0) ? SetIconGreen(section, i): SetIconRed(section, i);
+    }
+    //CHECK SILK HEART MASK AND SPOOL SILK (they change it from old design)
+    else if (section.id === "hk-maskshards" 
+      || section.id === "hk-spoolFragments"
+      || section.id === "hk-toolPouchUpgrades"
+      || section.id === "hk-craftingKitUpgrades")
+    {
+          switch (i) {
+            //buy from sellers
+            case "PurchasedBonebottomHeartPiece":
+            case "MerchantEnclaveShellFragment":
+            case "PurchasedBelltownSpoolSegment":
+            case "MetCaravanTroupeLeaderJudge":
+            case "MerchantEnclaveSpoolPiece":
+            case "purchasedGrindleSpoolPiece":
+            case "PurchasedForgeToolKit":
+            case "PurchasedArchitectToolKit":
+            case "purchasedGrindleToolKit":
+            case "PurchasedPilgrimsRestToolPouch":
+              (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
+              break;
+
+            //Finishing wishes
+            case "beastflyHuntWish":
+            case "sprintmasterRaceWish":
+            case "destroyThreadCoresWish":
+            case "destroyThreadCoresWish":
+            case "antTrapperWish":
+            case "saveShermaWish":
+            case "crowFeathersWish":
+            case "journalWish":
+              let wishList = playerData.QuestCompletionData.savedData;
+              let foundWish = wishList.find(wishList => wishList.Name === dataObject[i].sceneName);
+               (foundWish !== undefined && foundWish.Data.IsCompleted === true) ? SetIconGreen(section, i): SetIconRed(section, i);
+              break;
+
+            //I hate that caravan....
+            case "CaravanTroupeLocation":
+              (playerData[i] === 3) ? SetIconGreen(section, i): SetIconRed(section, i);
+              break;
+
+            //World Scene
+              default:
+              let sceneList = worldData.serializedList;
+              let sceneInfo = sceneList.find(sceneList => sceneList.SceneName === dataObject[i].sceneName && sceneList.ID === dataObject[i].id);
+              (sceneInfo !== undefined && sceneInfo.Value === true) ? SetIconGreen(section, i): SetIconRed(section, i);
+              break;
+
+          }
+    }
+      else
+    {
+      
+    /*switch (i) {
       case "gotCharm_36":
         // prevents green checkbox and adding 1% when only got one white fragment
         (playerData.gotQueenFragment === true && playerData.gotKingFragment === true) ? SetIconGreen(section, i): SetIconRed(section, i);
@@ -916,7 +1081,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
         if (playerData.hasOwnProperty(i) === false) {
           SetIconNone(section, i);
           dataObject[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
+        //textPrefix = `<del>${textPrefix}</del>`;
 
           break;
         }
@@ -925,7 +1090,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
         if (i === "grimmChildLevel") {
           // (playerData.grimmChildLevel >= 4) ? SetIconGreen(section, i): SetIconRed(section, i);
 
-          /* Check if Nightmare King or Banishment by looking at grimmChildLevel */
+          // Check if Nightmare King or Banishment by looking at grimmChildLevel
           switch (playerData[i]) {
 
             case 4:
@@ -1049,7 +1214,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
         if (checkText === "PropertyNotFound") {
           SetIconNone(section, i);
           dataObject[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
+          //textPrefix = `<del>${textPrefix}</del>`;
           break;
 
         } else if (checkText === "PantheonCompleted") {
@@ -1063,6 +1228,8 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
 
       default:
         (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
+    }*/
+    (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
     }
 
     /* sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki); */
@@ -1141,22 +1308,22 @@ function CheckGodmasterDoors(dataObject, playerData) {
 }
 
 /**
- * Verifies the level of player's nail upgrades, and appends HTML accordingly.
+ * Verifies the level of player's needle upgrades, and appends HTML accordingly.
  * @param {object} section ID of the HTML element for data appending
- * @param {object} dataObject Object containing nail upgrades data to be verified
+ * @param {object} dataObject Object containing needle upgrades data to be verified
  * @param {object} playerData Reference/pointer to specific data where to search in the save file
  */
-function CheckNailUpgrades(section, dataObject, playerData) {
+function CheckNeedleUpgrades(section, dataObject, playerData) {
 
   // appends "Nail" to every array element
   // same as names in the database object
-  let nail = ["old", "sharpened", "channeled", "coiled", "pure"].map((element) => element + "Nail");
+  let Needle = ["starting", "sharpened", "shining", "hivesteel", "paleSteel"].map((element) => element + "Needle");
 
   let sFillText = "";
 
   for (let i = 0; i < 5; i++) {
-    (playerData.nailSmithUpgrades >= i) ? SetIconGreen(section, nail[i]): SetIconRed(section, nail[i]);
-    sFillText += PrepareHTMLString(section, dataObject[nail[i]].name, dataObject[nail[i]].spoiler, dataObject[nail[i]].wiki);
+    (playerData.nailUpgrades >= i) ? SetIconGreen(section, Needle[i]): SetIconRed(section, Needle[i]);
+    sFillText += PrepareHTMLString(section, dataObject[Needle[i]].name, dataObject[Needle[i]].spoiler, dataObject[Needle[i]].wiki);
   }
   if (section.percent) section.percent--; // subject one for the Old Nail
 }
@@ -2017,136 +2184,39 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
   let section = db.sections[sectionName];
   let entries = db.sections[sectionName].entries;
-  let entriesStatistics = db.sections.statistics.entries;
+  //let entriesStatistics = db.sections.statistics.entries; // Alba: disabled for future use
   let name = "";
   let nameDefault = "";
   let amountKillsLeft = 0;
+  let journalPlayerList = playerData.EnemyJournalKillData.list
 
   for (let entry in entries) {
 
-    name = entries[entry].nameDefault;
-    nameDefault = entries[entry].nameDefault;
+    let MonsterInfo = journalPlayerList.find(journalPlayerList => journalPlayerList.Name === entries[entry].databaseName);
 
-    entries[entry].name = nameDefault;
-
-    /* Entry Shade always unlocked */
-    if (entry === "ShadeJournal") {
+    //recorded and founded and reached to the requirement
+    if (MonsterInfo !== undefined 
+      && MonsterInfo.Record.Kills >= entries[entry].killRequire) 
+    {
+      entries[entry].name = entries[entry].gameName;
       SetIconGreen(section, entry);
-
-      /* Proceed to next entry immediately */
-      continue;
-    }
-
-    if (playerData.hasOwnProperty(`kills${entry}`)) {
-
-      switch (entry) {
-
-        case "GreyPrince":
-        case "ZotelingBalloon":
-        case "ZotelingHopper":
-        case "ZotelingBuzzer":
-
-          /* When Zote == OFF (Neglect route), fade the entry and move to the next iteration */
-          if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
-
-            entries[entry].disabled = true;
-            entries[entry].name = nameDefault;
-            SetIconNone(section, entry);
-
-            continue;
-          }
-
-          break;
-
-        case "FlameBearerLarge":
-
-          /* If the troupe was banished and the player didn't defeat any Grimmkin Nightmare, then it's entry cannot be obtained on this save */
-          if (playerData.destroyedNightmareLantern === true && playerData.killedFlameBearerLarge === false) {
-
-            entries[entry].disabled = true;
-            entries[entry].name = nameDefault;
-            SetIconNone(section, entry);
-
-            continue;
-          }
-
-          break;
-
-        case "NightmareGrimm":
-
-          /* if the troupe was banished, the Nightmare King entry cannot be obtained on this save */
-          if (playerData.destroyedNightmareLantern === true) {
-
-            entries[entry].disabled = true;
-            entries[entry].name = nameDefault;
-            SetIconNone(section, entry);
-
-            continue;
-          }
-
-          break;
-      }
-
-      amountKillsLeft = playerData[`kills${entry}`];
-
-      /* When the Hunter's Note is unlocked, the entry has a green symbol */
-      if (amountKillsLeft === 0) {
-
-        SetIconGreen(section, entry);
-
-      /* If not, show how many remain to defeat in the name */
-      } else {
-
-        name += ` (${amountKillsLeft})`;
+    }    
+    // didnt reach the limit but at least kill him once.
+    else if (MonsterInfo !== undefined 
+      && MonsterInfo.Record.Kills >= 1) 
+    {
+        name = entries[entry].gameName + ` (${(entries[entry].killRequire-MonsterInfo.Record.Kills)})`;
         entries[entry].name = name;
-
-        /* When killed at least 1, the entry has a gray symbol */
-        if (playerData[`killed${entry}`] === true) {
-
-          SetIconPartialJournal(section, entry);
-
-        /* When not killed, the entry is undiscovered */
-        } else {
-
-          SetIconRed(section, entry);
-        }
-      }
-
-      /* Void Idol backwards compatibility */
-      if (entry === "VoidIdol_1") {
-        if (playerData.killedVoidIdol_1 === false &&
-          (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) {
-
-          SetIconGreen(section, entry);
-          entries[entry].name = nameDefault;
-        }
-      }
-
-      /* Earlier save files backwards compatibility (no undefined) */
-    } else {
-
-      amountKillsLeft = 0;
-      entries[entry].disabled = true;
-      entries[entry].name = name;
-
-      /* Subtract one from maximum of journal entries (for extended completion and green icons) */
-      switch (entry) {
-        case "VoidIdol_1":
-        case "VoidIdol_2":
-        case "VoidIdol_3":
-        case "BindingSeal":
-        case "GodseekerMask":
-
-          break;
-
-        default:
-
-          entriesStatistics.journalEntriesCompleted.max--;
-          entriesStatistics.journalNotesCompleted.max--;
-      }
-
-      SetIconNone(section, entry);
+        SetIconPartialJournal(section, entry);
     }
+    else 
+    {
+        name = entries[entry].gameName + ` (${(entries[entry].killRequire)})`;
+        entries[entry].name = name;
+        SetIconRed(section, entry);
+    }
+
+
   }
 }
 

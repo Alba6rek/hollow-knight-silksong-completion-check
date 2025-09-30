@@ -16,10 +16,15 @@ const HK = {
       id: "hk-intro",
 
       percent: 0,
-      /*maxPercent: 112,
-      maxPercentDefault: 112,*/
+      maxPercent: 100,
+      maxPercentDefault: 100,
       maxPercentBaseGame: 100,
-      /*maxPercentGrimmTroupe: 106,
+
+      /*percent: 0,
+      maxPercent: 112,
+      maxPercentDefault: 112,
+      maxPercentBaseGame: 100,
+      maxPercentGrimmTroupe: 106,
       maxPercentLifeblood: 107,*/
 
       extendedCompletionDone: 0,
@@ -40,11 +45,14 @@ const HK = {
           icon: "red",
           name: "Game Completion:",
           spoiler: 0,
-          //spoilerAfter: "(out of 112 %)",
-          //spoilerAfterDefault: "(out of 112 %)",
+          spoilerAfter: "(out of 100 %)",
+          spoilerAfterDefault: "(out of 100 %)",
           spoilerAfterBaseGame: "(out of 100 %)",
-          //spoilerAfterGrimmTroupe: "(out of 106 %)",
-          //spoilerAfterLifeblood: "(out of 107 %)",
+          /*spoilerAfter: "(out of 112 %)",
+          spoilerAfterDefault: "(out of 112 %)",
+          spoilerAfterBaseGame: "(out of 100 %)",
+          spoilerAfterGrimmTroupe: "(out of 106 %)",
+          spoilerAfterLifeblood: "(out of 107 %)",*/
         },
         gameCompletionExtended: {
           id: "gameCompletionExtended",
@@ -187,9 +195,1366 @@ const HK = {
       },
     },
 
+    /* ################ Crests ################### */
+
+    crests: {
+      h2: "Crests",
+      id: "hk-crests",
+      description: "special implements help you to progress in the game. Each new Crest learned provides 1% Game Completion.",
+      percent: 0,
+      maxPercent: 6,
+      entries: {
+        completedMemory_reaper: {
+          name: "Reaper",
+          spoiler: "Greymoor, west",
+          wiki: "Reaper"
+        },
+        completedMemory_wanderer: {
+          name: "Wanderer",
+          spoiler: "Moss Grotto, Bonegrave",
+          wiki: "Wanderer"
+        },
+        completedMemory_beast: {
+          name: "Beast",
+          spoiler: "Hunter's March, defeat Savage Beastfly boss",
+          wiki: "Beast"
+        },
+        completedMemory_witch: {
+          name: "Witch",
+          spoiler: "Greymoor, complete Twisted Bud and Infestation Operation Wishs",
+          wiki: "Witch"
+        },
+        completedMemory_toolmaster: {
+          name: "Architect",
+          spoiler: "Underworks, (must have 30 tools to buy architect key from Twelfth architect) ",
+          wiki: "Architect"
+        },
+        completedMemory_shaman: {
+          name: "Shaman",
+          spoiler: "Moss Grotto, Ruined Chapel, Act 3",
+          wiki: "Shaman"
+        }
+      },
+    },
+
+    /* ################ Needle Upgrades ################### */
+
+    NeedleUpgrades: {
+      h2: "Needle Upgrades",
+      id: "hk-Needleupgrades",
+      description: "Upgrades to the Hornet's main weapon damage. Each upgrade provides 1% Game Completion.",
+      percent: 0,
+      maxPercent: 4,
+      entries: {
+        startingNeedle: {
+          name: "#0 Starting Needle",
+          spoiler: "Starting Weapon",
+          wiki: "Needle"
+        },
+        sharpenedNeedle: {
+          name: "#1 Sharpened Needle",
+          spoiler: "Pinmaster Plinney on Bellhart for free",
+          wiki: "Pinmaster+Plinney"
+        },
+        shiningNeedle: {
+          name: "#2 Shining Needle",
+          spoiler: "find missing pale oil",
+          wiki: "Pale+Oil"
+        },
+        hivesteelNeedle: {
+          name: "#3 Hivesteel Needle",
+          spoiler: "find missing pale oil",
+          wiki: "Pale+Oil"
+        },
+        paleSteelNeedle: {
+          name: "#4 Pale Steel Needle",
+          spoiler: "find missing pale oil",
+          wiki: "Pale+Oil"
+        },
+      },
+    },
+
+    /* ################ Silk Heart ################### */
+
+    silkHeart: {
+      h2: "Silk Heart",
+      id: "hk-silkHeart",
+      description: `Item that grant Hornet automatic Silk regeneration..<br>
+      Each new Silk Heart learned provides 1% Game Completion.`,
+      percent: 0,
+      maxPercent: 3,
+      entries: {
+        Memory_Silk_Heart_BellBeast: {
+          name: "#1 Silk Heart",
+          spoiler: "The Marrow, Defeating the Bell Beast",
+          wiki: "Silk+Heart"
+        },
+        Memory_Silk_Heart_WardBoss: {
+          name: "#2 Silk Heart",
+          spoiler: "Whiteward, Defeating The Unravelled, requires the Surgeon's Key",
+          wiki: "Silk+Heart"
+        },
+        Memory_Silk_Heart_LaceTower: {
+          name: "#3 Silk Heart",
+          spoiler: "The Cradle, Defeating Lace for the second time",
+          wiki: "Silk+Heart"
+        },
+    },
+  },
+
+    /* #################### Red Tools ################### */
+
+    redTools: {
+      h2: "Red Tools",
+      id: "hk-redTools",
+      description: `Active tools that are almost always limited-use consumables.<br>
+      Each Tool found in the game provides 1% Game Completion.`,
+      /*description: `Each Charm found in the game provides 1% Game Completion.<br>
+      Note: 4 new Charms were added to the game in <a href="https://steamcommunity.com/app/367520/discussions/0/1480982338946444782/" target="_blank" title="See the official Patch Notes.">patch version 1.2.1.0</a>. They are part of the Grimm Troupe Content Pack section below.`,*/
+      percent: 0,
+      maxPercent: 18,
+      // reference: https://radiance.host/apidocs/Charms.html
+      entries: {
+        straightPin: {
+          id: "Straight Pin",
+          name: "#1 Straight Pin",
+          spoiler: "The Marrow, inside of Grindle's cell",
+          wiki: "Straight+Pin"
+        },
+        triPin: {
+          id: "Tri Pin",          
+          name: "#2 Threefold Pin",
+          spoiler: "Greymoor, above Craw Lake, hidden cave",
+          wiki: "Threefold+Pin"
+        },
+        stingShard: {
+          id: "Sting Shard",
+          name: "#3 Sting Shard",
+          spoiler: "Forge Daughter: 140 Rosaries and 1 Craftmetal",
+          wiki: "Sting+Shard"
+        },
+        Tack: {
+          id:"Tack",
+          name: "#4 Tacks",
+          spoiler: "complete the Roach Guts Wish",
+          wiki: "Tacks"
+        },
+        harpoon: {
+          id: "Harpoon",
+          name: "#5 Longpin",
+          spoiler: "Shellwood, main Bellhart entrance, behind Wood Wasp",
+          wiki: "Longpin"
+        },
+        curveClaws: {
+          id: "Curve Claws",
+          name: "#6 Curveclaw",
+          spoiler: "Skarr: 140 Rosaries, or gauntlet north of skarr main location",
+          wiki: "Curveclaw"
+        },
+        shakraRing: {
+          id: "Shakra Ring",
+          name: "#7 Throwing Ring",
+          spoiler: "complete Trail's End wish",
+          wiki: "Throwing+Ring"
+        },
+        pimpilo: {
+          id: "Pimpilo",
+          name: "#8 Pimpillo",
+          spoiler: "Greymoor, northwest, above Yarnaby's home",
+          wiki: "Pimpillo"
+        },
+        conchDrill: {
+          id: "Conch Drill",
+          name: "#9 Conchcutter",
+          spoiler: "Sands of Karak, Coral Tower",
+          wiki: "Conchcutter"
+        },
+        webShot: {
+          id: "WebShot",
+          name: "#10 Silkshot",
+          spoiler: "Royal Waterways, defeat Dung Defender",
+          wiki: "Silkshot"
+        },
+        screwAttack: {
+          id: "Screw Attack",
+          name: "#11 Delver's Drill",
+          spoiler: "Underworks, bottom left",
+          wiki: "Delver's+Drill"
+        },
+        cogworkSaw: {
+          id: "Cogwork Saw",
+          name: "#12 Cogwork Wheel",
+          spoiler: "Twelfth Architect: 360 Rosaries and 1 Craftmetal.",
+          wiki: "Cogwork+Wheel"
+        },
+        cogworkFlier: {
+          id: "Cogwork Flier",
+          name: "#13 Cogfly",
+          spoiler: "High Halls, crafting bench, Requires 1 Craftmetal",
+          wiki: "Cogfly"
+        },
+        rosaryCannon: {
+          id: "Rosary Cannon",
+          name: "#14 Rosary Cannon",
+          spoiler: " High Halls, est of The Forum, behind locked door",
+          wiki: "Rosary+Cannon"
+        },
+        lightningRod: {
+          id: "Lightning Rod",
+          name: "#15 Voltvessels",
+          spoiler: "Memorium, top-right, behind a hidden wall",
+          wiki: "Voltvessels"
+        }, 
+        flintstone: {
+          id: "Flintstone",
+          name: "#16 Flintslate",
+          spoiler: "Deep Docks, behind the Simple Key door",
+          wiki: "Flintslate"
+        },
+        fleaBrew: {
+          id: "Flea Brew",
+          name: "#17 Flea Brew",
+          spoiler: "Helping out the Flea Caravan",
+          wiki: "Flea+Brew"
+        },
+        lifebloodSyringe: {
+          id: "Lifeblood Syringe",
+          name: "#18 Plasmium Phial",
+          spoiler: "Complete Alchemist's Assistant Wish",
+          wiki: "Plasmium+Phial"
+        },
+      },
+    },
+
+    /* #################### Blue Tools ################### */
+
+    blueTools: {
+      h2: "Blue Tools",
+      id: "hk-blueTools",
+      description: `Combat-focused passive tools. Each Tool found in the game provides 1% Game Completion.`,
+      /*description: `Each Charm found in the game provides 1% Game Completion.<br>
+      Note: 4 new Charms were added to the game in <a href="https://steamcommunity.com/app/367520/discussions/0/1480982338946444782/" target="_blank" title="See the official Patch Notes.">patch version 1.2.1.0</a>. They are part of the Grimm Troupe Content Pack section below.`,*/
+      percent: 0,
+      maxPercent: 21,
+      // reference: https://radiance.host/apidocs/Charms.html
+      entries: {
+        mosscreepTool: {
+          id: "Mosscreep Tool",
+          name: "#1 Druid's Eye",
+          spoiler: "Salubra: 220 Geo",
+          wiki: "Druid's+Eye"
+        },
+        lavaCharm: {
+          id: "Lava Charm",
+          name: "#2 Magma Bell",
+          spoiler: "Complete Rite of the Pollip Wish",
+          wiki: "Magma+Bell"
+        },
+        bellBind: {
+          id: "Bell Bind",
+          name: "#3 Warding Bell",
+          spoiler: "lower Far Fields",
+          wiki: "Warding+Bell"
+        },
+        poisonPouch: {
+          id: "Poison Pouch",
+          name: "#4 Pollip Pouch",
+          spoiler: "Forgotten Crossroads, requires Crystal Heart",
+          wiki: "Pollip+Pouch"
+        },
+        fracturedMask: {
+          id: "Fractured Mask",
+          name: "#5 Fractured Mask",
+          spoiler: "Skarr: 260 Rosaries, or gauntlet north of skarr main location",
+          wiki: "Fractured+Mask"
+        },
+        multibind: {
+          id: "Multibind",
+          name: "#6 Multibinder",
+          spoiler: "Frey: 800 after comleting My Missing Courier Wish",
+          wiki: "Multibinder"
+        },
+        whiteRing: {
+          id: "White Ring",
+          name: "#7 Weavelight",
+          spoiler: "Weavenest Atla, defeating the 2nd Moss Mother",
+          wiki: "Weavelight"
+        },
+        brollySpike: {
+          id: "Brolly Spike",
+          name: "#8 Sawtooth Circlet",
+          spoiler: "Twelfth Architect: 230 Rosaries and 1 Craftmetal",
+          wiki: "Sawtooth+Circlet"
+        },
+        quickbind: {
+          id: "Quickbind",
+          name: "#9 Injector Band",
+          spoiler: "Whiteward",
+          wiki: "Injector+Band"
+        },
+        spoolExtender: {
+          id: "Spool Extender",
+          name: "#10 Spool Extender",
+          spoiler: "Jubilana: 720 Rosaries",
+          wiki: "Spool+Extender"
+        },
+        reserveBind: {
+          id: "Reserve Bind",
+          name: "#11 Reserve Bind",
+          spoiler: "complete Final Audience Wish",
+          wiki: "Reserve+Bind"
+        },
+        DazzleBind: {
+          id: "Dazzle Bind",
+          name: "#12 Claw Mirror",
+          spoiler: "Defeat Trobbio",
+          wiki: "Claw+Mirror"
+        },
+        revengeCrystal: {
+          id: "Revenge Crystal",
+          name: "#13 Memory Crystal",
+          spoiler: "Mount Fay, southwest, breakable wall next to bench",
+          wiki: "Memory+Crystal"
+        },
+        thiefClaw: {
+          id: "Thief Claw",
+          name: "#14 Snitch Pick",
+          spoiler: "Grindle : 740 Rosaries",
+          wiki: "Snitch Pick"
+        },
+        zapImbuement: {
+          id: "Zap Imbuement",
+          name: "#15 Volt Filament",
+          spoiler: "Defeat Voltvyrm",
+          wiki: "Volt+Filament"
+        },
+        quickSling: {
+          id: "Quick Sling",
+          name: "#16 Quick Sling",
+          spoiler: "2nd room above Bilewater word, breakable ceiling",
+          wiki: "Quick+Sling"
+        },
+        maggotCharm: {
+          id: "Maggot Charm",
+          name: "#17 Wreath of Purity",
+          spoiler: "Putrified Ducts, secret passage",
+          wiki: "Wreath+of+Purity"
+        },
+        longneedle: {
+          id: "Longneedle",
+          name: "#18 Longclaw",
+          spoiler: "complete Broodfeast or Runtfeast Wish",
+          wiki: "Longclaw"
+        },
+        wispLantern: {
+          id: "Wisp Lantern",
+          name: "#19 Wispfire Lantern",
+          spoiler: "Defeat Father of the Flame in Wisp Thicket",
+          wiki: "Wispfire+Lantern"
+        },
+        fleaCharm: {
+          id: "Flea Charm",
+          name: "#20 Egg of Flealia",
+          spoiler: "Fleamaster Mooshka: Find all the 30 fleas",
+          wiki: "Egg+of+Flealia"
+        },
+        pinstressTool: {
+          id: "Pinstress Tool",
+          name: "#21 Pin Badge",
+          spoiler: "Defeat Pinstress",
+          wiki: "Pin+Badge"
+        },
+      },
+    },
+
+        /* #################### Red tools ################### */
+
+    yellowTools: {
+      h2: "Yellow Tools",
+      id: "hk-yellowTools",
+      description: `miscellaneous passive tools. Each Tool found in the game provides 1% Game Completion.`,
+      /*description: `Each Charm found in the game provides 1% Game Completion.<br>
+      Note: 4 new Charms were added to the game in <a href="https://steamcommunity.com/app/367520/discussions/0/1480982338946444782/" target="_blank" title="See the official Patch Notes.">patch version 1.2.1.0</a>. They are part of the Grimm Troupe Content Pack section below.`,*/
+      percent: 0,
+      maxPercent: 12,
+      // reference: https://radiance.host/apidocs/Charms.html
+      entries: {
+        compass: {
+          id: "Compass",
+          name: "#1 Compass",
+          spoiler: "Shakra: 70 Rosaries",
+          wiki: "Compass"
+        },
+        boneNecklace: {
+          id: "Bone Necklace",
+          name: "#2 Shard Pendant",
+          spoiler: "The Marrow, left side of the collapsing platforms",
+          wiki: "Magnetite+Brooch"
+        },
+        rosaryMagnet: {
+          id: "Rosary Magnet",
+          name: "#3 Magnetite Brooch",
+          spoiler: "Pebb: 120 Rosaries",
+          wiki: "Grubberfly's+Elegy"
+        },
+        weightedAnklet: {
+          id: "Weighted Anklet",
+          name: "#4 Weighted Belt",
+          spoiler: "Mort: 160",
+          wiki: "Weighted+Belt"
+        },
+        barbedWire: {
+          id: "Barbed Wire",
+          name: "#5 Barbed Bracelet",
+          spoiler: "Sinner's Road, souteast",
+          wiki: "Barbed+Bracelet"
+        },
+        deadMansPurse: {
+          id: "Dead Mans Purse",
+          name: "#6 Dead Bug's Purse",
+          spoiler: "Wormways",
+          wiki: "Dead+Bug's+Purse"
+        },
+        magnetiteDice: {
+          id: "Magnetite Dice",
+          name: "#7 Magnetite Dice",
+          spoiler: "Given by Lumble the Lucky, or Grindle: 300 on Act 3",
+          wiki: "Magnetite+Dice"
+        },
+        scuttlebrace: {
+          id: "Scuttlebrace",
+          name: "#8 Scuttlebrace",
+          spoiler: "Twelfth Architect: 140 Rosaries and 1 Craftmetal",
+          wiki: "Scuttlebrace"
+        },
+        Wallcling: {
+          id: "Wallcling",
+          name: "#9 Ascendant's Grip",
+          spoiler: "Jubilana: 350 Rosaries",
+          wiki: "Ascendant's+Grip"
+        },
+        musicianCharm: {
+          id: "Musician Charm",
+          name: "#10 Silkspeed Anklets",
+          spoiler: "Jubilana: 350 Rosaries after Lost Merchant Wish",
+          wiki: "Silkspeed+Anklets"
+        },
+        sprintmaster: {
+          id: "Sprintmaster",
+          name: "#11 Silkspeed Anklets",
+          spoiler: "Far Fields, inside Weavenest Cindril",
+          wiki: "Silkspeed+Anklets"
+        },
+        thiefCharm: {
+          id: "Thief Charm",
+          name: "#12 Thief's Mark",
+          spoiler: "Grindle: 350 Rosaries",
+          wiki: "Thief's+Mark"
+        },
+      },
+    },
+
+    /* ################ Equipment ################### */
+
+    equipment: {
+      h2: "Equipment",
+      id: "hk-equipment",
+      description: "Also known as Abilities. Each piece of equipment collected provides 1% Game Completion.",
+      percent: 0,
+      maxPercent: 6,
+      entries: {
+        silkSpear: {
+          id: "Silk Spear",
+          name: "Silkspear",
+          spoiler: "Mosshome",
+          wiki: "Silkspear"
+        },
+        threadSphere: {
+          id: "Thread Sphere",
+          name: "Thread Storm",
+          spoiler: "Greymoor",
+          wiki: "Thread+Storm"
+        },
+        Parry: {
+          id: "Parry",
+          name: "Cross Stitch",
+          spoiler: "Bilewater, Exhaust Organ, Defeat Phantom",
+          wiki: "Cross+Stitch"
+        },
+        silkCharge: {
+          id: "Silk Charge",
+          name: "Sharpdart",
+          spoiler: "Wormways",
+          wiki: "Sharpdart"
+        },
+        silkBomb: {
+          id: "Silk Bomb",
+          name: "Rune Rage",
+          spoiler: "The Slab, Kill the First Sinner",
+          wiki: "Rune Rage"
+        },
+        silkBossNeedle: {
+          id: "Silk Boss Needle",
+          name: "Pale Nails",
+          spoiler: "Kingdom's Edge, defeat Hornet Sentinel",
+          wiki: "Pale+Nails"
+        },
+      },
+
+      /*
+      entries: {
+        hasDash: {
+          name: "Mothwing Cloak",
+          spoiler: "Greenpath: Dash ability",
+          wiki: "Mothwing_Cloak"
+        },
+        hasWalljump: {
+          name: "Mantis Claw",
+          spoiler: "Mantis Village: Wall Jump ability",
+          wiki: "Mantis_Claw"
+        },
+        hasSuperDash: {
+          name: "Crystal Heart",
+          spoiler: "Crystal Peak: Super Dash ability",
+          wiki: "Crystal_Heart"
+        },
+        hasDoubleJump: {
+          name: "Monarch Wings",
+          spoiler: "Ancient Basin: Double Jump ability",
+          wiki: "Monarch_Wings"
+        },
+        hasAcidArmour: {
+          name: "Isma's Tear",
+          spoiler: "Royal Waterways: Acid Armour ability",
+          wiki: "Isma's_Tear"
+        },
+        hasKingsBrand: {
+          name: "King's Brand",
+          spoiler: "Kingdom's Edge, defeat Hornet Sentinel",
+          wiki: "King's_Brand"
+        },
+        hasShadowDash: {
+          name: "Shade Cloak",
+          spoiler: "The Abyss: Shadow Dash ability",
+          wiki: "Shade_Cloak"
+        }
+      },
+      */
+    },
+
+    /* ################ Skills ################### */
+
+    skills: {
+      h2: "Skills",
+      id: "hk-skills",
+      description: "Skills help you to progress in the game. Each new Skill learned provides 1% Game Completion.",
+      percent: 0,
+      maxPercent: 6,
+      entries: {
+        hasDash: {
+          name: "Swift Step",
+          spoiler: "Deep Docks",
+          wiki: "Swift+Step"
+        },
+        hasWalljump: {
+          name: "Cling Grip",
+          spoiler: "Shellwood",
+          wiki: "Cling+Grip"
+        },
+        hasHarpoonDash: {
+          name: "Clawline",
+          spoiler: "Underworks",
+          wiki: "Clawline"
+        },
+        hasNeedolin: {
+          name: "Needolin",
+          spoiler: "Bellhart, defeat Widow",
+          wiki: "Needolin"
+        },
+        hasChargeSlash: {
+          name: "Needle Strike",
+          spoiler: "Blasted Steps: from the Pinstress",
+          wiki: "Needle+Strike"
+        },
+        hasSuperJump: {
+          name: "Silk Soar",
+          spoiler: "The Abyss, Weavenest Absolom, Act 3",
+          wiki: "Silk+Soar"
+        }
+      },
+    },
+
+    /* ################ Miscellaneous ################### */
+
+    miscellaneous : {
+      h2: "Miscellaneous",
+      id: "hk-miscellaneous",
+      description: "Extra miscellaneous. Each miscellaneous provides 1% Game Completion.",
+      percent: 0,
+      maxPercent: 2,
+      entries: {
+        HasSeenEvaHeal: {
+          name: "Sylphsong Step",
+          spoiler: "Eva: Require 6 crests and 18 memory lockets.",
+          wiki: "Sylphsong"
+        },
+        CompletedRedMemory: {
+          name: "Everbloom",
+          spoiler: "Complete The Old Hearts Wish, Act 3",
+          wiki: "Everbloom"
+        },
+      },
+    },
+
+    /* ################ Mask Shards ################### */
+
+    maskShards: {
+      h2: "Mask Shards",
+      id: "hk-maskshards",
+      description: "Shards for increasing max health. Each 4 Mask Fragments collected (a full Mask) provide 1% Game Completion.",
+      percent: 0,
+      maxPercent: 5,
+      entries: {
+        PurchasedBonebottomHeartPiece: {
+          name: "#1 Mask Shards",
+          spoiler: "Pebb: 300 Rosariy, or  Grindle: 320 Rosairy if Pebb left",
+          wiki: "All+Mask+Shard+Locations#BoneBottom",
+          id: "",
+          sceneName: ""
+        },
+        wormwayMask: {
+          name: "#2 Mask Shards",
+          spoiler: "Wormways, Behind a breakable wall, just in front of the door.",
+          wiki: "All+Mask+Shard+Locations#Wormways",
+          id: "Heart Piece",
+          sceneName: "Crawl_02"
+        },
+        deepDocksMask: {
+          name: "#3 Mask Shards ",
+          spoiler: "Between the Marrow and Deep Docks, Cling Grip recommended",
+          wiki: "All+Mask+Shard+Locations#DeepDocks",
+          id: "Heart Piece",
+          sceneName: "Dock_08"
+        },
+        farFieldsMask1: {
+          name: "#4 Mask Shards",
+          spoiler: "Area above Seamstress's home in Far Fields, requires Drifter's Cloak",
+          wiki: "All+Mask+Shard+Locations#FarFields",
+          id: "Heart Piece",
+          sceneName: "Bone_East_20"
+        },
+        shellwoodMask: {
+          name: "#5 Mask Shard",
+          spoiler: "Centre of Shellwood, behind a breakable wall",
+          wiki: "All+Mask+Shard+Locations#Shellwood",
+          id: "Heart Piece",
+          sceneName: "Shellwood_14"
+        },
+        weavenestAtlaMask: {
+          name: "#6 Mask Shard",
+          spoiler: "East Weavenest Atla, behind breakable wall, requires Cling Grip",
+          wiki: "All+Mask+Shard+Locations#WeavenestAtla",
+          id: "Heart Piece",
+          sceneName: "Weave_05b"
+        },
+        MerchantEnclaveShellFragment: {
+          name: "#7 Mask Shard",
+          spoiler: "Jubilana: 750 Rosaries, after complete The Wandering Merchant Wish",
+          wiki: "All+Mask+Shard+Locations#ChoralChambers",
+          id: "",
+          sceneName: ""
+        },
+        cogworkCoreMask: {
+          name: "#8 Mask Shard",
+          spoiler: "West Cogwork Core past enemy gauntlet, defeat Cogwork Dancers",
+          wiki: "All+Mask+Shard+Locations#CogworkCore",
+          id: "Heart Piece",
+          sceneName: "Song_09"
+        },
+        libraryMask: {
+          name: "#9 Mask Shard",
+          spoiler: "Behind moving box puzzle in central Whispering Vaults",
+          wiki: "All+Mask+Shard+Locations#WhisperingVaults",
+          id: "Heart Piece",
+          sceneName: "Library_05"
+        },
+        beastflyHuntWish: {
+          name: "#10 Mask Shard",
+          spoiler: "Reward for completing the Savage Beastfly Wish",
+          wiki: "All+Mask+Shard+Locations#Bellhart",
+          id: "",
+          sceneName: "Beastfly Hunt"
+        },
+        boneBuildingMask: {
+          name: "#11 Mask Shard",
+          spoiler: "East Far Fields, inside bone building, requires Clawline and Drifter's Cloak ",
+          wiki: "All+Mask+Shard+Locations#FarFields",
+          id: "Heart Piece (1)",
+          sceneName: "Bone_East_LavaChallenge"
+        },
+         mountFayMask: {
+          name: "#12 Mask Shard",
+          spoiler: "Mount Fay, soutwest, west of the bench, requires Faydown Cloak",
+          wiki: "All+Mask+Shard+Locations#MountFay",
+          id: "Heart Piece",
+          sceneName: "Peak_04c"
+        },
+        slabMask: {
+          name: "#13 Mask Shard",
+          spoiler: "the Slab, Northeast, require key of Apostate and Faydown Cloak",
+          wiki: "All+Mask+Shard+Locations#TheSlab",
+          id: "Heart Piece",
+          sceneName: "Slab_17"
+        },
+        bilewaterMask: {
+          name: "#14 Mask Shard",
+          spoiler: "Bilewater, east, end of a hallway filled with Slubberlugs",
+          wiki: "All+Mask+Shard+Locations#Bilewater",
+          id: "Heart Piece",
+          sceneName: "Shadow_13"
+        },
+        wispThicketMask: {
+          name: "#15 Mask Shard",
+          spoiler: "Wisp Thicket, east, requires Faydown Cloak",
+          wiki: "All+Mask+Shard+Locations#WispThicket",
+          id: "Heart Piece",
+          sceneName: "Wisp_07"
+        },
+        blastedStepsMask: {
+          name: "#16 Mask Shard",
+          spoiler: "Blasted Steps, west, requires Clawline and Faydown Cloak.",
+          wiki: "All+Mask+Shard+Locations#BlastedSteps",
+          id: "Heart Piece",
+          sceneName: "Coral_19b"
+        },
+        brightveinMask: {
+          name: "#17 Mask Shard",
+          spoiler: "Brightvein, requires Silk Soar",
+          wiki: "All+Mask+Shard+Locations#MountFay",
+          id: "Heart Piece",
+          sceneName: "Peak_06"
+        },
+        sprintmasterRaceWish: {
+          name: "#18 Mask Shard",
+          spoiler: "Far Fields, east, complete Fastest in Pharloom wish",
+          wiki: "All+Mask+Shard+Locations#FarFields",
+          id: "",
+          sceneName: "Sprintmaster Race"
+        },
+        destroyThreadCoresWish: {
+          name: "#19 Mask Shard",
+          spoiler: "Bellhart Wishwall, complete Dark Hearts wish",
+          wiki: "All+Mask+Shard+Locations#Bellhart",
+          id: "",
+          sceneName: "Destroy Thread Cores"
+        },
+        antTrapperWish: {
+          name: "#20 Mask Shard",
+          spoiler: "Bellhart Wishwall, complete Hidden Hunter wish",
+          wiki: "All+Mask+Shard+Locations#Bellhart",
+          id: "",
+          sceneName: "Ant Trapper"
+        },
+      },
+    },
+
+    /* ################ Spool Fragments ################### */
+
+    spoolFragments: {
+      h2: "Spool Fragments",
+      id: "hk-spoolFragments",
+      description: "Fragments for increasing max silk capacity.. Each 2 Spool Fragments collected (a full spool) provide 1% Game Completion.",
+      percent: 0,
+      maxPercent: 9,
+      entries: {
+        boneBottomSpool: {
+          name: "#1 Fragments",
+          spoiler: "Bone Bottom, Mosshome, behind a breakable wall",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Bone_11b"
+        },
+        deepDocksSpool1: {
+          name: "#2 Fragments",
+          spoiler: "Deep Docks, lower left (too lazy to explane the location..)",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Bone_East_13"
+        },
+        greymoorSpool: {
+          name: "#3 Fragments",
+          spoiler: "Greymoor, above Shakra's bench",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Greymoor_02"
+        },
+        PurchasedBelltownSpoolSegment: {
+          name: "#4 Fragments",
+          spoiler: "Frey: 270 Rosaries, Complete My Missing Courier Wish",
+          wiki: "Spool+Fragment",
+          id: "",
+          sceneName: ""
+        },
+        weavenestAtlaSpool: {
+          name: "#5 Fragments",
+          spoiler: "Weavenest Atla, require Needolin",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Weave_11"
+        },
+        slabSpool: {
+          name: "#6 Fragments",
+          spoiler: "The Slab, west, require Cling Grip",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Peak_01"
+        },
+        grandGateSpool: {
+          name: "#7 Fragments",
+          spoiler: "Grand Gate, top",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Song_19_entrance"
+        },
+        UnderworksSpool1: {
+          name: "#8 Fragments",
+          spoiler: "Underworks, pass a challenging battle area",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Under_10"
+        },
+        MetCaravanTroupeLeaderJudge: {
+          name: "#9 Fragments",
+          spoiler: "Grand Gate, Flea Caravan, requires 12 fleas and Last Judge defeated",
+          wiki: "Spool+Fragment",
+          id: "",
+          sceneName: ""
+        },
+        whitewardSpool: {
+          name: "#10 Fragments",
+          spoiler: "Whiteward, under the lift, require White Key",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Ward_01"
+        },
+        cogworkCoreSpool: {
+          name: "#11 Fragments",
+          spoiler: "Cogwork Core, Southeast",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Cog_07"
+        },
+        UnderworksSpool2: {
+          name: "#12 Fragments",
+          spoiler: "Underworks, east of the Cauldron",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Library_11b"
+        },
+        saveShermaWish: {
+          name: "#13 Fragments",
+          spoiler: "complete Balm For The Wounded Wish",
+          wiki: "Quests",
+          id: "",
+          sceneName: "Save Sherma"
+        },
+        MerchantEnclaveSpoolPiece: {
+          name: "#14 Fragments",
+          spoiler: "Jubilana: 500 rosaries, after complete Lost Merchant Wish",
+          wiki: "Quests",
+          id: "",
+          sceneName: ""
+        },
+        deepDocksSpool2: {
+          name: "#15 Fragments",
+          spoiler: "Deep Docks, Southeast, require Clawline and Cling Grip",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Dock_03c"
+        },
+         highHallsSpool: {
+          name: "#16 Fragments",
+          spoiler: "High Halls, top of left vertical room, require Faydown Cloak and Clawline",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Hang_03_top"
+        },
+        MemoriumSpool: {
+          name: "#17 Fragments",
+          spoiler: "Memorium, western section, requires Faydown Cloak and Clawline",
+          wiki: "Spool+Fragment",
+          id: "Silk Spool",
+          sceneName: "Arborium_09"
+        },
+        purchasedGrindleSpoolPiece: {
+          name: "#18 Fragments",
+          spoiler: "Grindle: 680 rosaries, requires Faydown Cloak and Cling Grip",
+          wiki: "Spool+Fragment",
+          id: "",
+          sceneName: ""
+        },
+      },
+    },
+
+
+    /* ################ Crafting Kit Upgrades ################### */
+
+    craftingKitUpgrades: {
+      h2: "Crafting Kit Upgrades",
+      id: "hk-craftingKitUpgrades",
+      description: "Upgrade that increase Red Tool damage by +60%.. Each upgrade provide 1% Game Completion.",
+      percent: 0,
+      maxPercent: 4,
+      entries: {
+        PurchasedForgeToolKit: {
+          name: "#1 Upgrades",
+          spoiler: "Forge Daughter: 180 rosaries",
+          wiki: "Crafting+Kit",
+          id: "",
+          sceneName: ""
+        },
+        crowFeathersWish: {
+          name: "#2 Upgrades",
+          spoiler: "complete Crawbug Clearing Wish",
+          wiki: "Crafting+Kit",
+          id: "",
+          sceneName: "Crow Feathers"
+        },
+        PurchasedArchitectToolKit: {
+          name: "#3 Upgrades",
+          spoiler: "Twelfth Architect: 450 rosaries, requires Clawline",
+          wiki: "Crafting+Kit",
+          id: "",
+          sceneName: ""
+        },
+        purchasedGrindleToolKit: {
+          name: "#4 Upgrades",
+          spoiler: "Grindle: 700 rosaries, requires Faydown Cloak",
+          wiki: "Crafting+Kit",
+          id: "",
+          sceneName: ""
+        },
+        
+      }
+    },
+
+    /* ################ Tool Pouch Upgrades ################### */
+
+    toolPouchUpgrades: {
+      h2: "Tool Pouch Upgrades",
+      id: "hk-toolPouchUpgrades",
+      description: "Upgrade that increase Red Tool damage by +60%.. Each upgrade provide 1% Game Completion.",
+      percent: 0,
+      maxPercent: 4,
+      entries: {
+        PurchasedPilgrimsRestToolPouch: {
+          name: "#1 Upgrades",
+          spoiler: "Mort: 220 rosaries, or Grindle: 220 (Act 3)",
+          wiki: "Tool+Pouch",
+          id: "",
+          sceneName: ""
+        },
+        ladybugCraftPickupToolPouch: {
+          name: "#2 Upgrades",
+          spoiler: "The Marrow, Lodie Callange (Act 1 & 2), on table (Act 3)",
+          wiki: "Tool+Pouch",
+          id: "Ladybug Craft Pickup",
+          sceneName: "Bone_12"
+        },
+        journalWish: {
+          name: "#3 Upgrades",
+          spoiler: "complete Nuu's Wish: Bugs of Pharloom",
+          wiki: "Tool+Pouch",
+          id: "",
+          sceneName: "Journal"
+        },
+        CaravanTroupeLocation: {
+          name: "#4 Upgrades",
+          spoiler: "Mooshka after helping the Flea Caravan move to Putrified Ducts",
+          wiki: "Tool+Pouch",
+          id: 3,
+          sceneName: "CaravanTroupeLocation"
+        },
+        
+      }
+    },
+
+    /* ################ Hunter's Journal ################### */
+
+    huntersJournal: {
+      h2: "Hunter's Journal",
+      id: "hk-journal",
+      description: `All the 146 base-game Hunter's Journal entries that are counted for Hunter's Mark and Keen Hunter/True Hunter achievements. The 17 most commonly missed Journal entries are right at the top of this list.<br>
+      Numbers above: <b>Completed/Encountered</b> of <b>146</b> Base Total<br>
+      <i class="icon-ok-squared"></i>= note completed.<br>
+      <i class="icon-ok-squared partial"></i>= entry discovered, but note not completed.<br>
+      <i class="icon-cancel"></i>= entry not yet discovered.<br>
+      <b>(no.)</b> = amount left to complete note.`,
+      percent: 0,
+      midPercent: 0,
+      maxPercent: 237,
+      entries: {
+        mossBoneCrawler: {
+          gameName: "Mossgrub",
+          databaseName: "MossBone Crawler",
+          name: "",
+          spoiler: "Moss Grotto or Memorium",
+          killRequire: 25,
+          wiki: "Mossgrub"
+        },
+        mossBoneCrawlerFat: {
+          gameName: "Massive Mossgrub",
+          databaseName: "MossBone Crawler Fat",
+          name: "",
+          spoiler: "Memorium",
+          killRequire: 3,
+          wiki: "Massive+Mossgrub"
+        },
+        mossBoneFly: {
+          gameName: "Mossmir",
+          databaseName: "MossBone Fly",
+          name: "",
+          spoiler: "Moss Grotto",
+          killRequire: 20,
+          wiki: "Mossmir"
+        },
+        mossGrotto: {
+          gameName: "Moss Mother",
+          databaseName: "Moss Grotto",
+          name: "",
+          spoiler: "Ruined Chapel, Weavenest Atla (act 1/2), and Moss Grotto (Act3)",
+          killRequire: 3,
+          wiki: "Moss+Mother"
+        },
+        aspidCollector: {
+          gameName: "Aknid",
+          databaseName: "Aspid Collector",
+          name: "",
+          spoiler: "Mosshome and Bone Bottom",
+          killRequire: 15,
+          wiki: "Aknid"
+        },
+        boneGoomba: {
+          gameName: "Skull Scuttler",
+          databaseName: "Bone Goomba",
+          name: "",
+          spoiler: "The Marrows",
+          killRequire: 35,
+          wiki: "Skull+Scuttler"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaa: {
+          gameName: "",
+          databaseName: "",
+          name: "",
+          spoiler: "",
+          killRequire: 1,
+          wiki: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+        },
+
+      },
+    },
+
+    /* ################### Flea Save ################### */
+
+    flea: {
+      h2: "Flea",
+      id: "hk-flea",
+      description: `Flea that belong to Flea Caravan. Help them and the caravan will reward you. they dont count as part of the`,
+      percent: 0,
+      maxPercent: 30,
+      entries: {
+        SavedFlea_Bone_06: {
+          name: "#1 The Marrow",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#themarrow"
+        },
+        SavedFlea_Dock_16: {
+          name: "#2 Deep Docks",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#deepdocks"
+        },
+        SavedFlea_Bone_East_05: {
+          name: "#3 Deep Docks",
+          spoiler: "Swift Step",
+          wiki: "All+Lost+Flea+Locations#deepdocks"
+        },
+        SavedFlea_Dock_03d: {
+          name: "#4 Deep Docks",
+          spoiler: "Clawline",
+          wiki: "All+Lost+Flea+Locations#deepdocks"
+        },
+        SavedFlea_Ant_03: {
+          name: "#5 Hunter's March",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#huntersmarch"
+        },
+        SavedFlea_Bone_East_17b: {
+          name: "#6 Far Fields",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#farfields"
+        },
+        SavedFlea_Bone_East_10_Church: {
+          name: "#7 Far Fields",
+          spoiler: "Require Drifter's Cloak and Cling Grip",
+          wiki: "All+Lost+Flea+Locations#farfields"
+        },
+        SavedFlea_Crawl_06: {
+          name: "#8 Wormways",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#wormways"
+        },        
+        SavedFlea_Greymoor_15b: {
+          name: "#9 Greymoor",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#crawlake"
+        },        
+        SavedFlea_Greymoor_06: {
+          name: "#10 Greymoor",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#greymoor"
+        },        
+        CaravanLechReturnedToCaravan: {
+          name: "#11 Greymoor (Kratt)",
+          spoiler: "Nothing required",
+          wiki: "Kratt"
+        },        
+        SavedFlea_Belltown_04: {
+          name: "#12 Bellhart",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#bellhart"
+        },        
+        SavedFlea_Shellwood_03: {
+          name: "#13 Shellwood",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#shellwood"
+        },        
+        SavedFlea_Coral_35: {
+          name: "#14 Blasted Steps",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#blastedsteps"
+        },        
+        SavedFlea_Dust_12: {
+          name: "#15 Sinner's Road",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#sinnersroad"
+        },        
+        SavedFlea_Shadow_28: {
+          name: "#16 Bilewater",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#bilewater"
+        },        
+        SavedFlea_Dust_09: {
+          name: "#17 Bilewater",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#bilewater"
+        },        
+        SavedFlea_Shadow_10: {
+          name: "#18 Bilewater",
+          spoiler: "Require Cling Grip",
+          wiki: "All+Lost+Flea+Locations#bilewater"
+        },        
+        SavedFlea_Under_23: {
+          name: "#19 Underworks",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#wispthicket"
+        },        
+        SavedFlea_Under_21: {
+          name: "#20 Underworks",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#underworks"
+        },        
+        SavedFlea_Song_14: {
+          name: "#21 Choral Chambers",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#choralchambers"
+        },        
+        SavedFlea_Song_11: {
+          name: "#22 Choral Chambers",
+          spoiler: "Drifter's Cloak (or needle-bounce)",
+          wiki: "All+Lost+Flea+Locations#choralchambers"
+        },        
+        SavedFlea_Library_09: {
+          name: "#23 Choral Chambers",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#songclave"
+        },        
+        tamedGiantFlea: {
+          name: "#24 Memorium",
+          spoiler: "Defeat the Huge Flea in the top",
+          wiki: "All+Lost+Flea+Locations#memorium"
+        },        
+        SavedFlea_Slab_Cell: {
+          name: "#25 The Slab",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#theslab"
+        },        
+        SavedFlea_Slab_06: {
+          name: "#26 The Slab",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#theslab"
+        },        
+        SavedFlea_Peak_05c: {
+          name: "#27 Mount Fay",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#mountfay"
+        },        
+        SavedFlea_Coral_24: {
+          name: "#28 Sands of Karak",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#sandsofkarak"
+        },        
+        MetTroupeHunterWild: {
+          name: "#29 Putrified Ducts (Vog)",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#putrifiedducts"
+        },        
+        SavedFlea_Library_01: {
+          name: "#30 Whispering Vaults",
+          spoiler: "Nothing required",
+          wiki: "All+Lost+Flea+Locations#whisperingvaults"
+        },
+      },
+    },
+    
+    /********************************************************************************************************* */
+    /********************************************************************************************************* */
+    /********************************************************************************************************* */
+    /********************************************************************************************************* */
+    /********************************************************************************************************* */
+    /********************************************************************************************************* */
+    /********************************************************************************************************* */
+
     /* ################### Bosses ################### */
 
-    bosses: {
+    /*bosses: {
       h2: "Bosses",
       id: "hk-bosses",
       description: `Each boss from this list provides 1% Game Completion.<br>
@@ -277,306 +1642,24 @@ const HK = {
           wiki: "Watcher_Knight"
         }
       },
-    },
-
-    /* #################### Charms ################### */
-
-    charms: {
-      h2: "Charms",
-      id: "hk-charms",
-      description: `Each Charm found in the game provides 1% Game Completion.<br>
-      Note: 4 new Charms were added to the game in <a href="https://steamcommunity.com/app/367520/discussions/0/1480982338946444782/" target="_blank" title="See the official Patch Notes.">patch version 1.2.1.0</a>. They are part of the Grimm Troupe Content Pack section below.`,
-      percent: 0,
-      maxPercent: 36,
-      // reference: https://radiance.host/apidocs/Charms.html
-      entries: {
-        gotCharm_1: {
-          name: "#1 Gathering Swarm",
-          spoiler: "Sly: 300 Geo",
-          wiki: "Gathering_Swarm"
-        }, // 1
-        gotCharm_2: {
-          name: "#2 Wayward Compass",
-          spoiler: "Iselda: 220 Geo",
-          wiki: "Wayward_Compass"
-        }, // 1
-        gotCharm_3: {
-          name: "#3 Grubsong",
-          spoiler: "Grubfather: 10 Grubs rescued",
-          wiki: "Grubsong"
-        }, // 1
-        gotCharm_4: {
-          name: "#4 Stalwart Shell",
-          spoiler: "Sly: 200 Geo",
-          wiki: "Stalwart_Shell"
-        }, // 2
-        gotCharm_5: {
-          name: "#5 Baldur Shell",
-          spoiler: "Howling Cliffs, bottom, near Greenpath",
-          wiki: "Baldur_Shell"
-        }, // 2
-        gotCharm_6: {
-          name: "#6 Fury of the Fallen",
-          spoiler: "King's Pass, nail-bounce spikes",
-          wiki: "Fury_of_the_Fallen"
-        }, // 2
-        gotCharm_7: {
-          name: "#7 Quick Focus",
-          spoiler: "Salubra: 800 Geo",
-          wiki: "Quick_Focus"
-        }, // 3
-        gotCharm_8: {
-          name: "#8 Lifeblood Heart",
-          spoiler: "Salubra: 250 Geo",
-          wiki: "Lifeblood_Heart"
-        }, // 2
-        gotCharm_9: {
-          name: "#9 Lifeblood Core",
-          spoiler: "The Abyss: 15 Lifeblood masks",
-          wiki: "Lifeblood_Core"
-        }, // 3
-        gotCharm_10: {
-          name: "#10 Defender's Crest",
-          spoiler: "Royal Waterways, defeat Dung Defender",
-          wiki: "Defender's_Crest"
-        }, // 1
-        gotCharm_11: {
-          name: "#11 Flukenest",
-          spoiler: "Royal Waterways, defeat Flukemarm",
-          wiki: "Flukenest"
-        }, // 3
-        gotCharm_12: {
-          name: "#12 Thorns of Agony",
-          spoiler: "Greenpath, requires Mothwing Cloak",
-          wiki: "Thorns_of_Agony"
-        }, // 1
-        gotCharm_13: {
-          name: "#13 Mark of Pride",
-          spoiler: "Mantis Village, defeat Mantis Lords",
-          wiki: "Mark_of_Pride"
-        }, // 3
-        gotCharm_14: {
-          name: "#14 Steady Body",
-          spoiler: "Salubra: 120 Geo",
-          wiki: "Steady_Body"
-        }, // 1
-        gotCharm_15: {
-          name: "#15 Heavy Blow",
-          spoiler: "Sly: 350 Geo + Shopkeeper's Key",
-          wiki: "Heavy_Blow"
-        }, // 2
-        gotCharm_16: {
-          name: "#16 Sharp Shadow",
-          spoiler: "Deepnest, requires Shade Cloak",
-          wiki: "Sharp_Shadow"
-        }, // 2
-        gotCharm_17: {
-          name: "#17 Spore Shroom",
-          spoiler: "Fungal Wastes, near Queen's Gardens",
-          wiki: "Spore_Shroom"
-        }, // 1
-        gotCharm_18: {
-          name: "#18 Longnail",
-          spoiler: "Salubra: 300 Geo",
-          wiki: "Longnail"
-        }, // 2
-        gotCharm_19: {
-          name: "#19 Shaman Stone",
-          spoiler: "Salubra: 220 Geo",
-          wiki: "Shaman_Stone"
-        }, // 3
-        gotCharm_20: {
-          name: "#20 Soul Catcher",
-          spoiler: "Forgotten Crossroads: Ancestral Mound",
-          wiki: "Soul_Catcher"
-        }, // 2
-        gotCharm_21: {
-          name: "#21 Soul Eater",
-          spoiler: "Resting Grounds, requires Desolate Dive",
-          wiki: "Soul_Eater"
-        }, // 4
-        gotCharm_22: {
-          name: "#22 Glowing Womb",
-          spoiler: "Forgotten Crossroads, requires Crystal Heart",
-          wiki: "Glowing_Womb"
-        }, // 2
-        gotCharm_23: {
-          name: "#23 Fragile Heart",
-          spoiler: "Leg Eater: 350 Geo (280 with Defender's Crest)",
-          wiki: "Fragile_Heart"
-        }, // 2
-        gotCharm_24: {
-          name: "#24 Fragile Greed",
-          spoiler: "Leg Eater: 250 Geo (200 with Defender's Crest)",
-          wiki: "Fragile_Greed"
-        }, // 2
-        gotCharm_25: {
-          name: "#25 Fragile Strength",
-          spoiler: "Leg Eater: 600 Geo (480 with Defender's Crest)",
-          wiki: "Fragile_Strength"
-        }, // 3
-        gotCharm_26: {
-          name: "#26 Nailmaster’s Glory",
-          spoiler: "Sly: Learn all Nail Arts",
-          wiki: "Nailmaster's_Glory"
-        }, // 1
-        gotCharm_27: {
-          name: "#27 Joni’s Blessing",
-          spoiler: "Howling Cliffs: Joni's Repose",
-          wiki: "Joni's_Blessing"
-        }, // 4
-        gotCharm_28: {
-          name: "#28 Shape of Unn",
-          spoiler: "Greenpath: Lake of Unn, requires Isma's Tear",
-          wiki: "Shape_of_Unn"
-        }, // 2
-        gotCharm_29: {
-          name: "#29 Hiveblood",
-          spoiler: "The Hive, defeat Hive Knight",
-          wiki: "Hiveblood"
-        }, // 4
-        gotCharm_30: {
-          name: "#30 Dream Wielder",
-          spoiler: "Seer: 500 Essence",
-          wiki: "Dream_Wielder"
-        }, // 1
-        gotCharm_31: {
-          name: "#31 Dashmaster",
-          spoiler: "Fungal Wastes, below bench, near Bretta",
-          wiki: "Dashmaster"
-          /* 
-          "id": "Shiny Item Stand",
-          "sceneName": "Fungus2_23",
-          */
-        }, // 2
-        gotCharm_32: {
-          name: "#32 Quick Slash",
-          spoiler: "Kingdom's Edge, requires Desolate Dive",
-          wiki: "Quick_Slash"
-        }, // 3
-        gotCharm_33: {
-          name: "#33 Spell Twister",
-          spoiler: "City of Tears: Soul Sanctum",
-          wiki: "Spell_Twister"
-        }, // 2
-        gotCharm_34: {
-          name: "#34 Deep Focus",
-          spoiler: "Crystal Peak, requires Crystal Heart",
-          wiki: "Deep_Focus"
-        }, // 4
-        gotCharm_35: {
-          name: "#35 Grubberfly’s Elegy",
-          spoiler: "Grubfather: All 46 Grubs rescued",
-          wiki: "Grubberfly's_Elegy"
-        }, // 3
-        gotCharm_36: {
-          name: "#36 Kingsoul",
-          spoiler: "Queen's Gardens (Shade Cloak) + White Palace (Awoken Dream Nail)",
-          wiki: "Kingsoul"
-        }, // 5
-      },
-    },
-
-    /* ################ Equipment ################### */
-
-    equipment: {
-      h2: "Equipment",
-      id: "hk-equipment",
-      description: "Also known as Abilities. Each piece of equipment collected provides 2% Game Completion.",
-      percent: 0,
-      maxPercent: 14,
-      entries: {
-        hasDash: {
-          name: "Mothwing Cloak",
-          spoiler: "Greenpath: Dash ability",
-          wiki: "Mothwing_Cloak"
-        },
-        hasWalljump: {
-          name: "Mantis Claw",
-          spoiler: "Mantis Village: Wall Jump ability",
-          wiki: "Mantis_Claw"
-        },
-        hasSuperDash: {
-          name: "Crystal Heart",
-          spoiler: "Crystal Peak: Super Dash ability",
-          wiki: "Crystal_Heart"
-        },
-        hasDoubleJump: {
-          name: "Monarch Wings",
-          spoiler: "Ancient Basin: Double Jump ability",
-          wiki: "Monarch_Wings"
-        },
-        hasAcidArmour: {
-          name: "Isma's Tear",
-          spoiler: "Royal Waterways: Acid Armour ability",
-          wiki: "Isma's_Tear"
-        },
-        hasKingsBrand: {
-          name: "King's Brand",
-          spoiler: "Kingdom's Edge, defeat Hornet Sentinel",
-          wiki: "King's_Brand"
-        },
-        hasShadowDash: {
-          name: "Shade Cloak",
-          spoiler: "The Abyss: Shadow Dash ability",
-          wiki: "Shade_Cloak"
-        }
-      },
-    },
-
-    /* ################ Nail Upgrades ################### */
-
-    nailUpgrades: {
-      h2: "Nail Upgrades",
-      id: "hk-nailupgrades",
-      description: "Upgrades to the Knight's main weapon damage. Each upgrade provides 1% Game Completion.",
-      percent: 0,
-      maxPercent: 4,
-      entries: {
-        oldNail: {
-          name: "#0 Old Nail",
-          spoiler: "Starting Weapon",
-          wiki: "Nail"
-        },
-        sharpenedNail: {
-          name: "#1 Sharpened Nail",
-          spoiler: "Nailsmith: 250 Geo",
-          wiki: "Nail#Nail_Upgrades"
-        },
-        channeledNail: {
-          name: "#2 Channeled Nail",
-          spoiler: "Nailsmith: 800 Geo + 1 Pale Ore",
-          wiki: "Nail#Nail_Upgrades"
-        },
-        coiledNail: {
-          name: "#3 Coiled Nail",
-          spoiler: "Nailsmith: 2000 Geo + 2 Pale Ore",
-          wiki: "Nail#Nail_Upgrades"
-        },
-        pureNail: {
-          name: "#4 Pure Nail",
-          spoiler: "Nailsmith: 4000 Geo + 3 Pale Ore",
-          wiki: "Nail#Nail_Upgrades"
-        }
-      },
-    },
+    },*/
 
     /* ################ Nail Arts ################### */
 
-    nailArts: {
+    /*nailArts: {
       h2: "Nail Arts",
       id: "hk-nailarts",
       description: "Advanced weapon combat techniques. Each new technique learned provides 1% Game Completion.",
       percent: 0,
       maxPercent: 3,
       entries: {
-        /* this is correct - somehow Team Cherry switched the names here */
+        // this is correct - somehow Team Cherry switched the names here
         hasDashSlash: {
           name: "Great Slash",
           spoiler: "Nailmaster Sheo: Greenpath",
           wiki: "Great_Slash"
         },
-        /* this is correct - somehow Team Cherry switched the names here */
+        // this is correct - somehow Team Cherry switched the names here 
         hasUpwardSlash: {
           name: "Dash Slash",
           spoiler: "Nailmaster Oro: Kingdom's Edge, 800 Geo",
@@ -588,244 +1671,12 @@ const HK = {
           wiki: "Cyclone_Slash"
         },
       },
-    },
+    },*/
 
-    /* ################ Spells ################### */
-
-    spells: {
-      h2: "Spells",
-      id: "hk-spells",
-      description: "Skills that consume Soul. Each new spell learned or upgraded provides 1% Game Completion.",
-      percent: 0,
-      maxPercent: 6,
-      entries: {
-        vengefulSpirit: {
-          fireballLevel: 1,
-          name: "Vengeful Spirit",
-          spoiler: "Forgotten Crossroads: Ancestral Mound",
-          wiki: "Vengeful_Spirit"
-        },
-        shadeSoul: {
-          fireballLevel: 2,
-          name: "Shade Soul",
-          spoiler: "City of Tears: Soul Sanctum + Elegant Key",
-          wiki: "Shade_Soul"
-        },
-        desolateDive: {
-          quakeLevel: 1,
-          name: "Desolate Dive",
-          spoiler: "City of Tears: Soul Sanctum",
-          wiki: "Desolate_Dive"
-        },
-        descendingDark: {
-          quakeLevel: 2,
-          name: "Descending Dark",
-          spoiler: "Crystal Peak: Crystallised Mound",
-          wiki: "Descending_Dark"
-        },
-        howlingWraiths: {
-          screamLevel: 1,
-          name: "Howling Wraiths",
-          spoiler: "Fog Canyon: Overgrown Mound",
-          wiki: "Howling_Wraiths"
-        },
-        abyssShriek: {
-          screamLevel: 2,
-          name: "Abyss Shriek",
-          spoiler: "The Abyss, use Howling Wraiths on podium",
-          wiki: "Abyss_Shriek"
-        }
-      },
-    },
-
-    /* ################ Mask Shards ################### */
-
-    maskShards: {
-      h2: "Mask Shards",
-      id: "hk-maskshards",
-      description: "Fragments for increasing max health. Each 4 Mask Fragments collected (a full Mask) provide 1% Game Completion.",
-      percent: 0,
-      maxPercent: 4,
-      entries: {
-        slyShellFrag1: {
-          name: "Mask Shard #1",
-          spoiler: "Sly: 150 Geo",
-          wiki: "Mask_Shard"
-        },
-        slyShellFrag2: {
-          name: "Mask Shard #2",
-          spoiler: "Sly: 500 Geo",
-          wiki: "Mask_Shard"
-        },
-        slyShellFrag3: {
-          name: "Mask Shard #3",
-          spoiler: "Sly: 800 Geo + Shopkeeper's Key",
-          wiki: "Mask_Shard"
-        },
-        slyShellFrag4: {
-          name: "Mask Shard #4",
-          spoiler: "Sly: 1500 Geo + Shopkeeper's Key",
-          wiki: "Mask_Shard"
-        },
-        dreamReward7: {
-          name: "Mask Shard #5",
-          spoiler: "Seer: 1500 Essence",
-          wiki: "Mask_Shard"
-        },
-        /* ########## Mask Shards World ########## */
-        /* "Heart Piece" sceneData.persistentBoolItems.id */
-        maskShardCrossroadsSprings: {
-          name: "Mask Shard #6",
-          spoiler: "Forgotten Crossroads: below Hot Springs",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Crossroads_13"
-        },
-        maskShardCrossroadsMawlek: {
-          name: "Mask Shard #7",
-          spoiler: "Forgotten Crossroads: defeat Brooding Mawlek",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Crossroads_09"
-        },
-        maskShardGrubfather: {
-          name: "Mask Shard #8",
-          spoiler: "Grubfather: 5 Grubs rescued",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Crossroads_38"
-        },
-        maskShardBretta: {
-          name: "Mask Shard #9",
-          spoiler: "Dirtmouth: Bretta's Room, rescue Bretta",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Room_Bretta"
-        },
-        maskShardQueensStation: {
-          name: "Mask Shard #10",
-          spoiler: "Queen's Station: requires Mantis Claw",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Fungus2_01"
-        },
-        maskShardWaterways: {
-          name: "Mask Shard #11",
-          spoiler: "Royal Waterways: top left area, swim left",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Waterways_04b"
-        },
-        maskShardStoneSanctuary: {
-          name: "Mask Shard #12",
-          spoiler: "Greenpath: Stone Sanctuary, Lumafly Lantern",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Fungus1_36"
-        },
-        maskShardCrystalPeak: {
-          name: "Mask Shard #13",
-          spoiler: "Crystal Peak: defeat Enraged Guardian",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Mines_32"
-        },
-        maskShardDeepnest: {
-          name: "Mask Shard #14",
-          spoiler: "Deepnest: from Fungal Core (Monarch Wings)",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Fungus2_25"
-        },
-        maskShardHive: {
-          name: "Mask Shard #15",
-          spoiler: "The Hive: use Hive Guardian to break wall",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Hive_04"
-        },
-        maskShardDelicateFlower: {
-          name: "Mask Shard #16",
-          spoiler: "Resting Grounds: Delicate Flower (Grey Mourner)",
-          wiki: "Mask_Shard",
-          id: "Heart Piece",
-          sceneName: "Room_Mansion"
-        }
-      },
-    },
-
-    /* ################ Vessel Fragments ################### */
-
-    vesselFragments: {
-      h2: "Vessel Fragments",
-      id: "hk-vesselfragments",
-      description: "Fragments for increasing max soul. Each 3 Vessel Fragments collected (a full Soul Vessel) provide 1% Game Completion.",
-      percent: 0,
-      maxPercent: 3,
-      entries: {
-        slyVesselFrag1: {
-          name: "Vessel Fragment #1",
-          spoiler: "Sly: 550 Geo",
-          wiki: "Vessel_Fragment"
-        },
-        slyVesselFrag2: {
-          name: "Vessel Fragment #2",
-          spoiler: "Sly: 900 Geo + Shopkeeper's Key",
-          wiki: "Vessel_Fragment"
-        },
-        dreamReward5: {
-          name: "Vessel Fragment #3",
-          spoiler: "Seer: 700 Essence",
-          wiki: "Vessel_Fragment"
-        },
-        vesselFragStagNest: {
-          name: "Vessel Fragment #4",
-          spoiler: "Stag Nest",
-          wiki: "Vessel_Fragment"
-        },
-        /* ########## Vessel Fragments World ############ */
-        /* "Vessel Fragment" sceneData.persistentBoolItems.id */
-        vesselFragmentGreenpath: {
-          name: "Vessel Fragment #5",
-          spoiler: "Greenpath: near Queen's Gardens exit",
-          wiki: "Vessel_Fragment",
-          id: "Vessel Fragment",
-          sceneName: "Fungus1_13"
-        },
-        vesselFragmentCrossroads: {
-          name: "Vessel Fragment #6",
-          spoiler: "Forgotten Crossroads: unlock City of Tears lift",
-          wiki: "Vessel_Fragment",
-          id: "Vessel Fragment",
-          sceneName: "Crossroads_37"
-        },
-        vesselFragmentCityOfTears: {
-          name: "Vessel Fragment #7",
-          spoiler: "City of Tears: above King's Station",
-          wiki: "Vessel_Fragment",
-          id: "Vessel Fragment",
-          sceneName: "Ruins2_09"
-        },
-        vesselFragmentDeepnest: {
-          name: "Vessel Fragment #8",
-          spoiler: "Deepnest: Goam platforming challenge",
-          wiki: "Vessel_Fragment",
-          id: "Vessel Fragment",
-          sceneName: "Deepnest_38"
-        },
-        vesselFragmentFountain: {
-          name: "Vessel Fragment #9",
-          spoiler: "Ancient Basin Fountain: 3000 Geo",
-          wiki: "Vessel_Fragment",
-          id: "Vessel Fragment",
-          sceneName: "Abyss_04"
-        }
-      },
-    },
 
     /* ################ Dream Nail and Essence ################### */
 
-    dreamNail: {
+    /*dreamNail: {
       h2: "Dream Nail and Essence",
       id: "hk-dreamnail",
       description: "A special dream Ability. Can collect Essence and enter dreams. Each milestone here will provide 1% Game Completion.",
@@ -848,11 +1699,11 @@ const HK = {
           wiki: "Seer"
         }
       },
-    },
+    },*/
 
     /* ################ Warrior Dreams ################### */
 
-    warriorDreams: {
+    /*warriorDreams: {
       h2: "Warrior Dreams",
       id: "hk-warriordreams",
       description: `Special kind of bosses in Hollow Knight, which provide Essence and 1% Game Completion after defeat.<br>
@@ -896,11 +1747,11 @@ const HK = {
           wiki: "Markoth"
         },
       },
-    },
+    },*/
 
     /* ################ Dreamers ################### */
 
-    dreamers: {
+    /*dreamers: {
       h2: "Dreamers",
       id: "hk-dreamers",
       description: "Each Dreamer will provide 1% Game Completion.",
@@ -923,11 +1774,11 @@ const HK = {
           wiki: "Herrah"
         }
       },
-    },
+    },*/
 
     /* ################ Colosseum of Fools ################### */
 
-    colosseum: {
+    /*colosseum: {
       h2: "Colosseum of Fools",
       id: "hk-colosseum",
       description: "Completing each Trial in the Colosseum provides 1% Game Completion. This section sums up the original 100% Game Completion Percentage from Hollow Knight in 2017 (without Content Packs).",
@@ -950,11 +1801,11 @@ const HK = {
           wiki: "Trial_of_the_Fool"
         },
       },
-    },
+    },*/
 
     /* ################ Grimm Troupe Content Pack ################### */
 
-    grimmTroupe: {
+    /*grimmTroupe: {
       h2: "Grimm Troupe Content Pack",
       id: "hk-grimmtroupe",
       description: `The first Content Pack. Released October 26th, 2017 (<a href="https://steamcommunity.com/app/367520/discussions/0/1480982338946444782/" target="_blank" title="See the official Patch Notes.">1.2.1.0 Game Update</a>). It added additional +6% to max Game Completion Percentage.<br>
@@ -1017,11 +1868,11 @@ const HK = {
           wikiBanishment: "Nymm",
         }
       },
-    },
+    },*/
 
     /* ################ Lifeblood Content Pack ################### */
 
-    lifeblood: {
+    /*lifeblood: {
       h2: "Lifeblood Content Pack",
       id: "hk-lifeblood",
       description: `The second Content Pack. Released April 20th, 2018 (<a href="https://steamcommunity.com/app/367520/discussions/0/3211505894131332245/" target="_blank" title="See the official Patch Notes.">1.3.1.5 Game Update</a>). Among many quality changes, it added one new boss, which increased the max Game Completion Percentage by +1%.`,
@@ -1034,11 +1885,11 @@ const HK = {
           wiki: "Hive_Knight"
         }
       },
-    },
+    },*/
 
     /* ################ Godmaster Content Pack ################### */
 
-    godmaster: {
+    /*godmaster: {
       h2: "Godmaster Content Pack",
       id: "hk-godmaster",
       description: `The third Content Pack. Released August 23rd, 2018 (<a href="https://hollowknight.fandom.com/wiki/Updates_(Hollow_Knight)#1.4.2.4" target="_blank" title="See the official Patch Notes.">1.4.2.4 Game Update</a>). It added additional +5% to max Game Completion Percentage (up to a total of 112%).`,
@@ -1050,7 +1901,7 @@ const HK = {
           spoiler: "Royal Waterways: Junk Pit, requires Simple Key",
           wiki: "Godtuner"
         },
-        /* ########## Godmaster doors ########## */
+        // ########## Godmaster doors ##########
         pantheonMaster: {
           name: "P1 Pantheon of the Master",
           spoiler: "Godhome: defeat P1 bosses",
@@ -1076,11 +1927,11 @@ const HK = {
           property: "bossDoorStateTier4"
         }
       },
-    },
+    },*/
 
     /* ################ Essentials % -> Collectibles ################### */
 
-    essentialsCollectibles: {
+    /*essentialsCollectibles: {
       h2: "Game Completion % Essentials – Collectibles",
       id: "hk-essentials-collectibles",
       description: "Collectibles that don't count directly towards 112% Game Completion, but are required to achieve full 112%.",
@@ -1214,11 +2065,11 @@ const HK = {
         },
       },
       grubsList: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"],
-    },
+    },*/
 
     /* ################ Essentials % -> Stag Stations ################### */
 
-    essentialsStagStations: {
+    /*essentialsStagStations: {
       h2: "Game Completion % Essentials – Stag Stations",
       id: "hk-essentials-stag-stations",
       description: `Opened Stag Stations don't count directly towards 112% Game Completion, but are required to achieve full 112% by discovering the <span class="spoiler-span blurred">Stag Nest for the Vessel Fragment</span>.`,
@@ -1286,11 +2137,11 @@ const HK = {
           wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
         },
       },
-    },
+    },*/
 
     /* ################ Essentials % -> World Interactions ################### */
 
-    essentialsWorldInteractions: {
+    /*essentialsWorldInteractions: {
       h2: "Game Completion % Essentials – World Interactions",
       id: "hk-essentials-world-interactions",
       description: `Certain interactions the player can make with NPCs in the game or world objects which don't count directly towards 112% Game Completion, but are required to achieve full 112%.`,
@@ -1377,11 +2228,11 @@ const HK = {
           wiki: "Ancient_Basin#Description"
         },
       },
-    },
+    },*/
 
     /* ################ Essentials % -> Bosses ################### */
 
-    essentialsBosses: {
+    /*essentialsBosses: {
       h2: "Game Completion % Essentials – Bosses",
       id: "hk-essentials-bosses",
       description: "Bosses that don't count directly towards 112% Game Completion, but are required to defeat to achieve full 112%.",
@@ -1460,11 +2311,11 @@ const HK = {
           wiki: "Pure_Vessel"
         },
       },
-    },
+    },*/
 
     /* ################ Achievements Essentials -> Collectibles ################### */
 
-    achievementsCollectibles: {
+    /*achievementsCollectibles: {
       h2: "Achievements Essentials – Collectibles",
       id: "hk-achievements-collectibles",
       description: `Collectibles important for unlocking achievements. They don't count or matter towards 112% Game Completion.`,
@@ -1500,11 +2351,11 @@ const HK = {
           wiki: "Void_Heart"
         },
       },
-    },
+    },*/
 
     /* ################ Achievements Essentials -> Maps ################### */
 
-    achievementsMaps: {
+    /*achievementsMaps: {
       h2: "Achievements Essentials – Maps",
       id: "hk-achievements-maps",
       description: `Acquired maps are important for unlocking achievements. They don't count or matter towards 112% Game Completion.`,
@@ -1582,11 +2433,11 @@ const HK = {
           wiki: "Map_and_Quill#Maps"
         },
       },
-    },
+    },*/
 
     /* ################ Achievements Essentials -> World Interactions ################### */
 
-    achievementsWorldInteractions: {
+    /*achievementsWorldInteractions: {
       h2: "Achievements Essentials – World Interactions",
       id: "hk-achievements-world-interactions",
       description: `Certain interactions the player can make with NPCs in the game or world objects important for unlocking achievements. They don't count or matter towards 112% Game Completion. This section includes some choices that the player can make in the game.`,
@@ -1705,12 +2556,12 @@ const HK = {
           7. Path of Wyrm, at new lands entered, (King's Pass)
           8. There journeys end. The kingdom ventured.
           */
-      },
-    },
+      /*},
+    },*/
 
     /* ################ Achievements Essentials -> Bosses ################### */
 
-    achievementsBosses: {
+    /*achievementsBosses: {
       h2: "Achievements Essentials – Bosses",
       id: "hk-achievements-bosses",
       description: `Bosses important for unlocking achievements. They don't count or matter towards 112% Game Completion.`,
@@ -1745,916 +2596,23 @@ const HK = {
           spoiler: "Forgotten Crossroads: Black Egg Temple",
           wiki: "Hollow_Knight"
         },
-        /* 
-        Absolute Radiance (for P5, achievements)
-        Sisters of Battle (for P5, achievements)
-        Winged Nosk (for P5, achievements)
-        */
+        
+        //Absolute Radiance (for P5, achievements)
+        //Sisters of Battle (for P5, achievements)
+        //Winged Nosk (for P5, achievements)
+        
         killedFinalBoss: {
           name: "The Radiance",
           spoiler: "Requires Void Heart & Dream Nail Hollow Knight",
           wiki: "Radiance"
         },
       },
-    },
+    },*/
 
-    /* ################ Hunter's Journal ################### */
-
-    huntersJournal: {
-      h2: "Hunter's Journal",
-      id: "hk-journal",
-      description: `All the 146 base-game Hunter's Journal entries that are counted for Hunter's Mark and Keen Hunter/True Hunter achievements. The 17 most commonly missed Journal entries are right at the top of this list.<br>
-      Numbers above: <b>Completed/Encountered</b> of <b>146</b> Base Total<br>
-      <i class="icon-ok-squared"></i>= note completed.<br>
-      <i class="icon-ok-squared partial"></i>= entry discovered, but note not completed.<br>
-      <i class="icon-cancel"></i>= entry not yet discovered.<br>
-      <b>(no.)</b> = amount left to complete note.`,
-      percent: 0,
-      midPercent: 0,
-      maxPercent: 146,
-      entries: {
-        PrayerSlug: {
-          name: "Maggot (2)",
-          nameDefault: "Maggot",
-          spoiler: "Forgotten Crossroads: False Knight secret room",
-          wiki: "Maggot"
-        },
-        OrangeScuttler: {
-          name: "Lightseed (20)",
-          nameDefault: "Lightseed",
-          spoiler: "Infected Crossroads",
-          wiki: "Lightseed"
-        },
-        Pigeon: {
-          name: "Maskfly (15)",
-          nameDefault: "Maskfly",
-          spoiler: "Greenpath, Queen's Gardens",
-          wiki: "Maskfly"
-        },
-        LazyFlyer: {
-          name: "Aluba (1)",
-          nameDefault: "Aluba",
-          spoiler: "Lake of Unn, Queen's Gardens (near White Lady)",
-          wiki: "Aluba"
-        },
-        AcidFlyer: {
-          name: "Duranda (8)",
-          nameDefault: "Duranda",
-          spoiler: "Greenpath: Nailmaster Sheo's tent path",
-          wiki: "Duranda"
-        },
-        AcidWalker: {
-          name: "Durandoo (8)",
-          nameDefault: "Durandoo",
-          spoiler: "Greenpath, Queen's Gardens",
-          wiki: "Durandoo"
-        },
-        PlantShooter: {
-          name: "Gulka (15)",
-          nameDefault: "Gulka",
-          spoiler: "Greenpath: left of Stone Sanctuary",
-          wiki: "Gulka"
-        },
-        MushroomTurret: {
-          name: "Sporg (20)",
-          nameDefault: "Sporg",
-          spoiler: "Fungal Wastes",
-          wiki: "Sporg"
-        },
-        ZapBug: {
-          name: "Charged Lumafly (1)",
-          nameDefault: "Charged Lumafly",
-          spoiler: "Fog Canyon: Teacher's Archives (tank)",
-          wiki: "Charged_Lumafly"
-        },
-        LaserBug: {
-          name: "Crystal Crawler (15)",
-          nameDefault: "Crystal Crawler",
-          spoiler: "Crystal Peak: try to use spells",
-          wiki: "Crystal_Crawler"
-        },
-        GorgeousHusk: {
-          name: "Gorgeous Husk (1)",
-          nameDefault: "Gorgeous Husk",
-          spoiler: "City of Tears: secret room",
-          wiki: "Gorgeous_Husk"
-        },
-        Worm: {
-          name: "Goam (10)",
-          nameDefault: "Goam",
-          spoiler: "Infected Crossroads: near Fungal Wastes entrance",
-          wiki: "Goam"
-        },
-        BigCentipede: {
-          name: "Garpede (10)",
-          nameDefault: "Garpede",
-          spoiler: "Deepnest: right of Hot Spring",
-          wiki: "Garpede"
-        },
-        AbyssTendril: {
-          name: "Void Tendrils (10)",
-          nameDefault: "Void Tendrils",
-          spoiler: "The Abyss: secret room near Shade Cloak",
-          wiki: "Void_Tendrils"
-        },
-        LobsterLancer: {
-          name: "God Tamer (1)",
-          nameDefault: "God Tamer",
-          spoiler: "Colosseum of Fools: Trial of the Fool boss",
-          wiki: "God_Tamer"
-        },
-        FatFluke: {
-          name: "Flukemunga (8)",
-          nameDefault: "Flukemunga",
-          spoiler: "Royal Waterways: secret area, left of bench",
-          wiki: "Flukemunga"
-        },
-        PaleLurker: {
-          name: "Pale Lurker (1)",
-          nameDefault: "Pale Lurker",
-          spoiler: "Colosseum of Fools: top right breakable wall",
-          wiki: "Pale_Lurker"
-        },
-        Crawler: {
-          name: "Crawlid (0)",
-          nameDefault: "Crawlid",
-          spoiler: "King's Pass, Forgotten Crossroads, Greenpath",
-          wiki: "Crawlid"
-        },
-        Buzzer: {
-          name: "Vengefly (45)",
-          nameDefault: "Vengefly",
-          spoiler: "Howling Cliffs, Forgotten Crossroads, City of Tears",
-          wiki: "Vengefly"
-        },
-        Bouncer: {
-          name: "Gruzzer (25)",
-          nameDefault: "Gruzzer",
-          spoiler: "Forgotten Crossroads",
-          wiki: "Gruzzer"
-        },
-        Climber: {
-          name: "Tiktik (30)",
-          nameDefault: "Tiktik",
-          spoiler: "Forgotten Crossroads, Howling Cliffs, Greenpath",
-          wiki: "Tiktik"
-        },
-        Hopper: {
-          name: "Hopper (25)",
-          nameDefault: "Hopper",
-          spoiler: "Kingdom's Edge",
-          wiki: "Hopper"
-        },
-        Spitter: {
-          name: "Aspid Hunter (20)",
-          nameDefault: "Aspid Hunter",
-          spoiler: "Forgotten Crossroads, Ancient Basin, The Collector",
-          wiki: "Aspid_Hunter"
-        },
-        Hatcher: {
-          name: "Aspid Mother (15)",
-          nameDefault: "Aspid Mother",
-          spoiler: "Forgotten Crossroads, mainly next to the Tram station",
-          wiki: "Aspid_Mother"
-        },
-        Hatchling: {
-          name: "Aspid Hatchling (30)",
-          nameDefault: "Aspid Hatchling",
-          spoiler: "Forgotten Crossroads, summoned by Aspid Mother",
-          wiki: "Aspid_Hatchling"
-        },
-        ZombieRunner: {
-          name: "Wandering Husk (35)",
-          nameDefault: "Wandering Husk",
-          spoiler: "Forgotten Crossroads, City of Tears, Deepnest",
-          wiki: "Wandering_Husk"
-        },
-        ZombieHornhead: {
-          name: "Husk Hornhead (35)",
-          nameDefault: "Husk Hornhead",
-          spoiler: "Forgotten Crossroads, City of Tears, Deepnest",
-          wiki: "Husk_Hornhead"
-        },
-        ZombieLeaper: {
-          name: "Leaping Husk (35)",
-          nameDefault: "Leaping Husk",
-          spoiler: "Forgotten Crossroads, City of Tears, Howling Cliffs",
-          wiki: "Leaping_Husk"
-        },
-        ZombieBarger: {
-          name: "Husk Bully (35)",
-          nameDefault: "Husk Bully",
-          spoiler: "Forgotten Crossroads, City of Tears, Howling Cliffs",
-          wiki: "Husk_Bully"
-        },
-        ZombieShield: {
-          name: "Husk Warrior (10)",
-          nameDefault: "Husk Warrior",
-          spoiler: "Forgotten Crossroads: right of the Stag Station",
-          wiki: "Husk_Warrior"
-        },
-        ZombieGuard: {
-          name: "Husk Guard (6)",
-          nameDefault: "Husk Guard",
-          spoiler: "Forgotten Crossroads: upper right area",
-          wiki: "Husk_Guard"
-        },
-        BigBuzzer: {
-          name: "Vengefly King (2)",
-          nameDefault: "Vengefly King",
-          spoiler: "Greenpath, Colosseum: Trial of the Warrior",
-          wiki: "Vengefly_King"
-        },
-        BigFly: {
-          name: "Gruz Mother (3)",
-          nameDefault: "Gruz Mother",
-          spoiler: "Forgotten Crossroads: lower right area",
-          wiki: "Gruz_Mother"
-        },
-        Mawlek: {
-          name: "Brooding Mawlek (1)",
-          nameDefault: "Brooding Mawlek",
-          spoiler: "Forgotten Crossroads: down from Grubfather",
-          wiki: "Brooding_Mawlek"
-        },
-        FalseKnight: {
-          name: "False Knight (1)",
-          nameDefault: "False Knight",
-          spoiler: "Forgotten Crossroads: middle area map symbol",
-          wiki: "False_Knight"
-        },
-        Roller: {
-          name: "Baldur (20)",
-          nameDefault: "Baldur",
-          spoiler: "Ancestral Mound, Crystallised Mound, Howling Cliffs",
-          wiki: "Baldur"
-        },
-        Blocker: {
-          name: "Elder Baldur (1)",
-          nameDefault: "Elder Baldur",
-          spoiler: "Ancestral Mound, Greenpath, Howling Cliffs",
-          wiki: "Elder_Baldur"
-        },
-        MossmanRunner: {
-          name: "Mosskin (25)",
-          nameDefault: "Mosskin",
-          spoiler: "Greenpath: usually near a Volatile Mosskin",
-          wiki: "Mosskin"
-        },
-        MossmanShaker: {
-          name: "Volatile Mosskin (25)",
-          nameDefault: "Volatile Mosskin",
-          spoiler: "Greenpath",
-          wiki: "Volatile_Mosskin"
-        },
-        Mosquito: {
-          name: "Squit (25)",
-          nameDefault: "Squit",
-          spoiler: "Greenpath and the Overgrown Mound",
-          wiki: "Squit"
-        },
-        BlobFlyer: {
-          name: "Obble (20)",
-          nameDefault: "Obble",
-          spoiler: "Greenpath: top left of Stone Sanctuary",
-          wiki: "Obble"
-        },
-        FungifiedZombie: {
-          name: "Fungified Husk (10)",
-          nameDefault: "Fungified Husk",
-          spoiler: "Found only in Fungal Wastes",
-          wiki: "Fungified_Husk"
-        },
-        MossCharger: {
-          name: "Moss Charger (15)",
-          nameDefault: "Moss Charger",
-          spoiler: "Found only in Greenpath",
-          wiki: "Moss_Charger"
-        },
-        MegaMossCharger: {
-          name: "Massive Moss Charger (1)",
-          nameDefault: "Massive Moss Charger",
-          spoiler: "Greenpath: bottom left near Fog Canyon",
-          wiki: "Massive_Moss_Charger"
-        },
-        SnapperTrap: {
-          name: "Fool Eater (15)",
-          nameDefault: "Fool Eater",
-          spoiler: "Greenpath and Queen's Gardens",
-          wiki: "Fool_Eater"
-        },
-        MossKnight: {
-          name: "Moss Knight (8)",
-          nameDefault: "Moss Knight",
-          spoiler: "Found only in Greenpath",
-          wiki: "Moss_Knight"
-        },
-        GrassHopper: {
-          name: "Loodle (15)",
-          nameDefault: "Loodle",
-          spoiler: "Found only in Queen's Gardens",
-          wiki: "Loodle"
-        },
-        MossFlyer: {
-          name: "Mossfly (25)",
-          nameDefault: "Mossfly",
-          spoiler: "Queen's Gardens, Overgrown Mound",
-          wiki: "Mossfly"
-        },
-        MossKnightFat: {
-          name: "Mossy Vagabond (10)",
-          nameDefault: "Mossy Vagabond",
-          spoiler: "Queen's Gardens: near exit to Fungal Wastes",
-          wiki: "Mossy_Vagabond"
-        },
-        MossWalker: {
-          name: "Mosscreep (30)",
-          nameDefault: "Mosscreep",
-          spoiler: "Greenpath and Queen's Gardens",
-          wiki: "Mosscreep"
-        },
-        InfectedKnight: {
-          name: "Broken Vessel (1)",
-          nameDefault: "Broken Vessel",
-          spoiler: "Ancient Basin: far left, needs Crystal Heart",
-          wiki: "Broken_Vessel"
-        },
-        Jellyfish: {
-          name: "Ooma (12)",
-          nameDefault: "Ooma",
-          spoiler: "Fog Canyon: almost everywhere",
-          wiki: "Ooma"
-        },
-        JellyCrawler: {
-          name: "Uoma (20)",
-          nameDefault: "Uoma",
-          spoiler: "Fog Canyon: almost everywhere",
-          wiki: "Uoma"
-        },
-        MegaJellyfish: {
-          name: "Uumuu (1)",
-          nameDefault: "Uumuu",
-          spoiler: "Fog Canyon: inside Teacher's Archives",
-          wiki: "Uumuu"
-        },
-        FungoonBaby: {
-          name: "Fungling (30)",
-          nameDefault: "Fungling",
-          spoiler: "Fungal Wastes, Fungal Core, Junk Pit",
-          wiki: "Fungling"
-        },
-        Mantis: {
-          name: "Mantis Warrior (25)",
-          nameDefault: "Mantis Warrior",
-          spoiler: "Fungal Wastes: Mantis Village",
-          wiki: "Mantis_Warrior"
-        },
-        MushroomRoller: {
-          name: "Shrumal Warrior (20)",
-          nameDefault: "Shrumal Warrior",
-          spoiler: "Fungal Wastes, Fungal Core",
-          wiki: "Shrumal_Warrior"
-        },
-        MushroomBrawler: {
-          name: "Shrumal Ogre (8)",
-          nameDefault: "Shrumal Ogre",
-          spoiler: "Fungal Wastes, bottom of Fungal Core",
-          wiki: "Shrumal_Ogre"
-        },
-        MushroomBaby: {
-          name: "Shrumeling (20)",
-          nameDefault: "Shrumeling",
-          spoiler: "Fungal Wastes, near Shrumal Warriors",
-          wiki: "Shrumeling"
-        },
-        MantisFlyerChild: {
-          name: "Mantis Youth (25)",
-          nameDefault: "Mantis Youth",
-          spoiler: "Fungal Wastes: Mantis Village",
-          wiki: "Mantis_Youth"
-        },
-        FungusFlyer: {
-          name: "Fungoon (20)",
-          nameDefault: "Fungoon",
-          spoiler: "Found only in Fungal Wastes",
-          wiki: "Fungoon"
-        },
-        FungCrawler: {
-          name: "Ambloom (15)",
-          nameDefault: "Ambloom",
-          spoiler: "Fungal Wastes, Fungal Core",
-          wiki: "Ambloom"
-        },
-        MantisLord: {
-          name: "Mantis Lords (1)",
-          nameDefault: "Mantis Lords",
-          spoiler: "Fungal Wastes: Mantis Village, switch lever",
-          wiki: "Mantis_Lords"
-        },
-        BlackKnight: {
-          name: "Watcher Knight (10)",
-          nameDefault: "Watcher Knight",
-          spoiler: "City of Tears: Watcher's Spire, Monarch Wings",
-          wiki: "Watcher_Knight"
-        },
-        ElectricMage: {
-          name: "Volt Twister (6)",
-          nameDefault: "Volt Twister",
-          spoiler: "Colosseum of Fools: Trial of the Fool",
-          wiki: "Volt_Twister"
-        },
-        Mage: {
-          name: "Soul Twister (20)",
-          nameDefault: "Soul Twister",
-          spoiler: "City of Tears: Soul Sanctum, Trial of the Fool",
-          wiki: "Soul_Twister"
-        },
-        MageKnight: {
-          name: "Soul Warrior (2)",
-          nameDefault: "Soul Warrior",
-          spoiler: "City of Tears: Soul Sanctum, Trial of the Fool",
-          wiki: "Soul_Warrior"
-        },
-        RoyalDandy: {
-          name: "Husk Dandy (25)",
-          nameDefault: "Husk Dandy",
-          spoiler: "City of Tears: right section",
-          wiki: "Husk_Dandy"
-        },
-        RoyalCoward: {
-          name: "Cowardly Husk (25)",
-          nameDefault: "Cowardly Husk",
-          spoiler: "City of Tears: right section",
-          wiki: "Cowardly_Husk"
-        },
-        RoyalPlumper: {
-          name: "Gluttonous Husk (25)",
-          nameDefault: "Gluttonous Husk",
-          spoiler: "City of Tears: right section",
-          wiki: "Gluttonous_Husk"
-        },
-        FlyingSentrySword: {
-          name: "Winged Sentry (30)",
-          nameDefault: "Winged Sentry",
-          spoiler: "City of Tears, Royal Waterways, Ancient Basin",
-          wiki: "Winged_Sentry"
-        },
-        FlyingSentryJavelin: {
-          name: "Lance Sentry (25)",
-          nameDefault: "Lance Sentry",
-          spoiler: "City of Tears, Royal Waterways, Ancient Basin",
-          wiki: "Lance_Sentry"
-        },
-        Sentry: {
-          name: "Husk Sentry (25)",
-          nameDefault: "Husk Sentry",
-          spoiler: "City of Tears, Royal Waterways, Isma's Grove",
-          wiki: "Husk_Sentry"
-        },
-        SentryFat: {
-          name: "Heavy Sentry (20)",
-          nameDefault: "Heavy Sentry",
-          spoiler: "Found only in City of Tears",
-          wiki: "Heavy_Sentry"
-        },
-        MageBlob: {
-          name: "Mistake (25)",
-          nameDefault: "Mistake",
-          spoiler: "City of Tears: Soul Sanctum, Trial of the Fool",
-          wiki: "Mistake"
-        },
-        GreatShieldZombie: {
-          name: "Great Husk Sentry (10)",
-          nameDefault: "Great Husk Sentry",
-          spoiler: "City of Tears, Watcher's Spire",
-          wiki: "Great_Husk_Sentry"
-        },
-        JarCollector: {
-          name: "The Collector (1)",
-          nameDefault: "The Collector",
-          spoiler: "City of Tears: Tower of Love, Love Key",
-          wiki: "The_Collector"
-        },
-        MageBalloon: {
-          name: "Folly (15)",
-          nameDefault: "Folly",
-          spoiler: "City of Tears: Soul Sanctum, Trial of the Fool",
-          wiki: "Folly"
-        },
-        MageLord: {
-          name: "Soul Master (1)",
-          nameDefault: "Soul Master",
-          spoiler: "City of Tears: Soul Sanctum",
-          wiki: "Soul_Master"
-        },
-        FlipHopper: {
-          name: "Pilflip (20)",
-          nameDefault: "Pilflip",
-          spoiler: "Royal Waterways: central part",
-          wiki: "Pilflip"
-        },
-        Flukeman: {
-          name: "Flukemon (20)",
-          nameDefault: "Flukemon",
-          spoiler: "Royal Waterways: central part",
-          wiki: "Flukemon"
-        },
-        Inflater: {
-          name: "Hwurmp (20)",
-          nameDefault: "Hwurmp",
-          spoiler: "Royal Waterways, Isma's Grove",
-          wiki: "Hwurmp"
-        },
-        Flukefly: {
-          name: "Flukefey (15)",
-          nameDefault: "Flukefey",
-          spoiler: "Found only in Royal Waterways",
-          wiki: "Flukefey"
-        },
-        FlukeMother: {
-          name: "Flukemarm (1)",
-          nameDefault: "Flukemarm",
-          spoiler: "Royal Waterways: bottom, Desolate Dive",
-          wiki: "Flukemarm"
-        },
-        DungDefender: {
-          name: "Dung Defender (1)",
-          nameDefault: "Dung Defender",
-          spoiler: "Royal Waterways: right area",
-          wiki: "Dung_Defender"
-        },
-        CrystalCrawler: {
-          name: "Glimback (15)",
-          nameDefault: "Glimback",
-          spoiler: "Crystal Peak, Forgotten Crossroads toll booth",
-          wiki: "Glimback"
-        },
-        CrystalFlyer: {
-          name: "Crystal Hunter (20)",
-          nameDefault: "Crystal Hunter",
-          spoiler: "Crystal Peak, Crystallized Mound",
-          wiki: "Crystal_Hunter"
-        },
-        BeamMiner: {
-          name: "Crystallised Husk (15)",
-          nameDefault: "Crystallised Husk",
-          spoiler: "Crystal Peak: top right areas",
-          wiki: "Crystallised_Husk"
-        },
-        ZombieMiner: {
-          name: "Husk Miner (20)",
-          nameDefault: "Husk Miner",
-          spoiler: "Found only in Crystal Peak",
-          wiki: "Husk_Miner"
-        },
-        MegaBeamMiner: {
-          name: "Crystal Guardian (2)",
-          nameDefault: "Crystal Guardian",
-          spoiler: "Crystal Peak: center bench area",
-          wiki: "Crystal_Guardian"
-        },
-        MinesCrawler: {
-          name: "Shardmite (15)",
-          nameDefault: "Shardmite",
-          spoiler: "Found only in Crystal Peak",
-          wiki: "Shardmite"
-        },
-        AngryBuzzer: {
-          name: "Furious Vengefly (15)",
-          nameDefault: "Furious Vengefly",
-          spoiler: "Infected Crossroads, Trial of the Fool",
-          wiki: "Furious_Vengefly"
-        },
-        BurstingBouncer: {
-          name: "Volatile Gruzzer (15)",
-          nameDefault: "Volatile Gruzzer",
-          spoiler: "Infected Crossroads, Colosseum Trials",
-          wiki: "Volatile_Gruzzer"
-        },
-        BurstingZombie: {
-          name: "Violent Husk (15)",
-          nameDefault: "Violent Husk",
-          spoiler: "Found only in Infected Crossroads",
-          wiki: "Violent_Husk"
-        },
-        SpittingZombie: {
-          name: "Slobbering Husk (15)",
-          nameDefault: "Slobbering Husk",
-          spoiler: "Found only in Infected Crossroads",
-          wiki: "Slobbering_Husk"
-        },
-        BabyCentipede: {
-          name: "Dirtcarver (35)",
-          nameDefault: "Dirtcarver",
-          spoiler: "Deepnest, Carver Hatcher",
-          wiki: "Dirtcarver"
-        },
-        CentipedeHatcher: {
-          name: "Carver Hatcher (15)",
-          nameDefault: "Carver Hatcher",
-          spoiler: "Deepnest: top area Failed Tramway",
-          wiki: "Carver_Hatcher"
-        },
-        LesserMawlek: {
-          name: "Lesser Mawlek (10)",
-          nameDefault: "Lesser Mawlek",
-          spoiler: "Ancient Basin: left of tram, Trial of the Fool",
-          wiki: "Lesser_Mawlek"
-        },
-        SlashSpider: {
-          name: "Stalking Devout (15)",
-          nameDefault: "Stalking Devout",
-          spoiler: "Deepnest: left area, Distant Village",
-          wiki: "Stalking_Devout"
-        },
-        SpiderCorpse: {
-          name: "Corpse Creeper (15)",
-          nameDefault: "Corpse Creeper",
-          spoiler: "Found only in Deepnest: middle area",
-          wiki: "Corpse_Creeper"
-        },
-        ShootSpider: {
-          name: "Deephunter (20)",
-          nameDefault: "Deephunter",
-          spoiler: "Found only in Deepnest",
-          wiki: "Deephunter"
-        },
-        MiniSpider: {
-          name: "Deepling (25)",
-          nameDefault: "Deepling",
-          spoiler: "Deepnest: left areas",
-          wiki: "Deepling"
-        },
-        SpiderFlyer: {
-          name: "Little Weaver (20)",
-          nameDefault: "Little Weaver",
-          spoiler: "Deepnest: left areas",
-          wiki: "Little_Weaver"
-        },
-        MimicSpider: {
-          name: "Nosk (1)",
-          nameDefault: "Nosk",
-          spoiler: "Deepnest: left of Hot Spring, use Crystal Heart",
-          wiki: "Nosk"
-        },
-        BeeHatchling: {
-          name: "Hiveling (30)",
-          nameDefault: "Hiveling",
-          spoiler: "The Hive, Kingdom's Edge",
-          wiki: "Hiveling"
-        },
-        BeeStinger: {
-          name: "Hive Soldier (15)",
-          nameDefault: "Hive Soldier",
-          spoiler: "Found only in the Hive",
-          wiki: "Hive_Soldier"
-        },
-        BigBee: {
-          name: "Hive Guardian (12)",
-          nameDefault: "Hive Guardian",
-          spoiler: "Found only in the Hive",
-          wiki: "Hive_Guardian"
-        },
-        HiveKnight: {
-          name: "Hive Knight (1)",
-          nameDefault: "Hive Knight",
-          spoiler: "The Hive: right area",
-          wiki: "Hive_Knight"
-        },
-        BlowFly: {
-          name: "Boofly (20)",
-          nameDefault: "Boofly",
-          spoiler: "Found only in Kingdom's Edge",
-          wiki: "Boofly"
-        },
-        CeilingDropper: {
-          name: "Belfly (15)",
-          nameDefault: "Belfly",
-          spoiler: "City of Tears, Royal Waterways, Kingdom's Edge",
-          wiki: "Belfly"
-        },
-        GiantHopper: {
-          name: "Great Hopper (10)",
-          nameDefault: "Great Hopper",
-          spoiler: "Kingdom's Edge, Trial of the Conqueror",
-          wiki: "Great_Hopper"
-        },
-        GrubMimic: {
-          name: "Grub Mimic (5)",
-          nameDefault: "Grub Mimic",
-          spoiler: "Crystal Peak, Deepnest, Trial of the Conqueror",
-          wiki: "Grub_Mimic"
-        },
-        MawlekTurret: {
-          name: "Mawlurk (10)",
-          nameDefault: "Mawlurk",
-          spoiler: "Ancient Basin: left area",
-          wiki: "Mawlurk"
-        },
-        HealthScuttler: {
-          name: "Lifeseed (10)",
-          nameDefault: "Lifeseed",
-          spoiler: "Hallownest: inside Lifeblood Cocoons",
-          wiki: "Lifeseed"
-        },
-        ZombieHive: {
-          name: "Husk Hive (10)",
-          nameDefault: "Husk Hive",
-          spoiler: "found only in the Hive",
-          wiki: "Husk_Hive"
-        },
-        Hornet: {
-          name: "Hornet (2)",
-          nameDefault: "Hornet",
-          spoiler: "Greenpath, Kingdom's Edge, Godhome",
-          wiki: "Hornet"
-        },
-        AbyssCrawler: {
-          name: "Shadow Creeper (20)",
-          nameDefault: "Shadow Creeper",
-          spoiler: "Ancient Basin, the Abyss",
-          wiki: "Shadow_Creeper"
-        },
-        SuperSpitter: {
-          name: "Primal Aspid (25)",
-          nameDefault: "Primal Aspid",
-          spoiler: "Kingdom's Edge, Colosseum of Fools Trials",
-          wiki: "Primal_Aspid"
-        },
-        Sibling: {
-          name: "Sibling (25)",
-          nameDefault: "Sibling",
-          spoiler: "The Abyss, lighthouse, Birthplace",
-          wiki: "Sibling"
-        },
-        PalaceFly: {
-          name: "Wingmould (10)",
-          nameDefault: "Wingmould",
-          spoiler: "Found only in the White Palace",
-          wiki: "Wingmould"
-        },
-        EggSac: {
-          name: "Bluggsac (5)",
-          nameDefault: "Bluggsac",
-          spoiler: "Royal Waterways, Crystal Peak, Deepnest, Hallownest",
-          wiki: "Bluggsac"
-        },
-        Mummy: {
-          name: "Entombed Husk (10)",
-          nameDefault: "Entombed Husk",
-          spoiler: "Resting Grounds: bottom area tombs",
-          wiki: "Entombed_Husk"
-        },
-        OrangeBalloon: {
-          name: "Infected Balloon (10)",
-          nameDefault: "Infected Balloon",
-          spoiler: "Ancient Basin: left areas",
-          wiki: "Infected_Balloon"
-        },
-        HeavyMantis: {
-          name: "Mantis Traitor (15)",
-          nameDefault: "Mantis Traitor",
-          spoiler: "Queen's Gardens, Trial of the Fool",
-          wiki: "Mantis_Traitor"
-        },
-        TraitorLord: {
-          name: "Traitor Lord (1)",
-          nameDefault: "Traitor Lord",
-          spoiler: "Queen's Gardens: upper left, Shade Cloak",
-          wiki: "Traitor_Lord"
-        },
-        MantisHeavyFlyer: {
-          name: "Mantis Petra (16)",
-          nameDefault: "Mantis Petra",
-          spoiler: "Queen's Gardens, Trial of the Fool",
-          wiki: "Mantis_Petra"
-        },
-        GardenZombie: {
-          name: "Spiny Husk (20)",
-          nameDefault: "Spiny Husk",
-          spoiler: "Found only in Queen's Gardens",
-          wiki: "Spiny_Husk"
-        },
-        RoyalGuard: {
-          name: "Kingsmould (2)",
-          nameDefault: "Kingsmould",
-          spoiler: "Found only in the White Palace",
-          wiki: "Kingsmould"
-        },
-        WhiteRoyal: {
-          name: "Royal Retainer (10)",
-          nameDefault: "Royal Retainer",
-          spoiler: "Found only in the White Palace",
-          wiki: "Royal_Retainer"
-        },
-        Oblobble: {
-          name: "Oblobble (3)",
-          nameDefault: "Oblobble",
-          spoiler: "Trial of the Conqueror, Godhome",
-          wiki: "Oblobbles"
-        },
-        Blobble: {
-          name: "Battle Obble (15)",
-          nameDefault: "Battle Obble",
-          spoiler: "Colosseum of Fools: Trials #2 and #3",
-          wiki: "Battle_Obble"
-        },
-        ColMosquito: {
-          name: "Armoured Squit (15)",
-          nameDefault: "Armoured Squit",
-          spoiler: "Colosseum of Fools: Trials #2 and #3",
-          wiki: "Armoured_Squit"
-        },
-        ColRoller: {
-          name: "Sharp Baldur (20)",
-          nameDefault: "Sharp Baldur",
-          spoiler: "Colosseum of Fools: Trials #1 and #3",
-          wiki: "Sharp_Baldur"
-        },
-        ColFlyingSentry: {
-          name: "Winged Fool (25)",
-          nameDefault: "Winged Fool",
-          spoiler: "Colosseum of Fools: Trials #2 and #3",
-          wiki: "Winged_Fool"
-        },
-        ColMiner: {
-          name: "Sturdy Fool (25)",
-          nameDefault: "Sturdy Fool",
-          spoiler: "Colosseum of Fools: Trials #1 and #3",
-          wiki: "Sturdy_Fool"
-        },
-        ColShield: {
-          name: "Shielded Fool (25)",
-          nameDefault: "Shielded Fool",
-          spoiler: "Colosseum of Fools: All Trials",
-          wiki: "Shielded_Fool"
-        },
-        ColWorm: {
-          name: "Heavy Fool (20)",
-          nameDefault: "Heavy Fool",
-          spoiler: "Colosseum of Fools: Trials #2 and #3",
-          wiki: "Heavy_Fool"
-        },
-        ColHopper: {
-          name: "Death Loodle (15)",
-          nameDefault: "Death Loodle",
-          spoiler: "Colosseum of Fools: Trial of the Fool",
-          wiki: "Death_Loodle"
-        },
-        GhostAladar: {
-          name: "Gorb (1)",
-          nameDefault: "Gorb",
-          spoiler: "Howling Cliffs: top area",
-          wiki: "Gorb"
-        },
-        GhostXero: {
-          name: "Xero (1)",
-          nameDefault: "Xero",
-          spoiler: "Resting Grounds: left area",
-          wiki: "Xero"
-        },
-        GhostHu: {
-          name: "Elder Hu (1)",
-          nameDefault: "Elder Hu",
-          spoiler: "Fungal Wastes: above acid bridge",
-          wiki: "Elder_Hu"
-        },
-        GhostMarmu: {
-          name: "Marmu (1)",
-          nameDefault: "Marmu",
-          spoiler: "Queen's Gardens: left of Stag Station",
-          wiki: "Marmu"
-        },
-        GhostNoEyes: {
-          name: "No Eyes (1)",
-          nameDefault: "No Eyes",
-          spoiler: "Greenpath: Stone Sanctuary, requires Lumafly Lantern",
-          wiki: "No_Eyes"
-        },
-        GhostMarkoth: {
-          name: "Markoth (1)",
-          nameDefault: "Markoth",
-          spoiler: "Kingdom's Edge, requires Shade Cloak",
-          wiki: "Markoth"
-        },
-        GhostGalien: {
-          name: "Galien (1)",
-          nameDefault: "Galien",
-          spoiler: "Deepnest: below Failed Tramway",
-          wiki: "Galien"
-        },
-        ShadeJournal: {
-          name: "Shade (0)",
-          nameDefault: "Shade",
-          spoiler: "Unlocked automatically after getting the Journal",
-          wiki: "Shade"
-        },
-      },
-    },
-
+  
     /* ################ Optional Journal Entries ################### */
 
-    huntersJournalOptional: {
+    /*huntersJournalOptional: {
       h2: "Optional Journal Entries",
       id: "hk-journal-optional",
       description: "The remaining Hunter's Journal entries which don't count for Hunter's Mark and Keen/True Hunter achievements. Note: 6 entries can be permanently unobtainable, depending on your choices in the save file (<span class='spoiler-span blurred'>Grey Prince Zote, all 3 Zotelings, Grimmkin Nightmare and Nightmare King</span>).",
@@ -2804,11 +2762,11 @@ const HK = {
           wiki: "Void_Idol"
         },
       },
-    },
+    },*/
 
     /* ###################################### Collectibles -> Charm Notches ############################################## */
 
-    charmNotches: {
+    /*charmNotches: {
       h2: "Charm Notches",
       id: "hk-charm-notches",
       description: `Charm Notches are required to equip Charms. They can be found in the game world, bought from Salubra or won from certain challenges.`,
@@ -2856,11 +2814,11 @@ const HK = {
           wiki: "Category:Charms#Notches"
         },
       },
-    },
+    },*/
 
     /* ###################################### Collectibles -> Grubs ############################################## */
 
-    grubs: {
+    /*grubs: {
       h2: "Grubs",
       id: "hk-grubs",
       description: `Creatures found trapped in glass jars throughout Hallownest. They can be freed from their jar after which the Grubfather grants a reward for each Grub that is saved.<br>
@@ -3191,11 +3149,12 @@ const HK = {
           wiki: "Grub#Rewards_and_locations"
         },
       },
-    },
+    },*/
+
 
     /* ###################################### Collectibles -> Whispering Roots ############################################## */
 
-    whisperingRoots: {
+    /*whisperingRoots: {
       h2: "Whispering Roots",
       id: "hk-whispering-roots",
       description: `There are 15 Whispering Roots in the game, containing a total of 482 Essence. Whispering Root Pin from Iselda reveals the locations of every Whispering Root in an area after that area's Map has been purchased.`,
@@ -3308,11 +3267,11 @@ const HK = {
           wiki: "Whispering_Root"
         },
       },
-    },
+    },*/
 
     /* ###################################### Collectibles -> Relics - Wanderer's Journal ############################################## */
 
-    relicsWanderersJournal: {
+    /*relicsWanderersJournal: {
       h2: "Relics - Wanderer's Journal",
       id: "hk-relics-journal",
       description: `Tablets found commonly throughout Hallownest. They are always found next to corpses that are assumed to be the authors of the journal. Can be sold to Relic Seeker Lemm for 200 Geo.<br>
@@ -3419,11 +3378,11 @@ const HK = {
           wiki: "Wanderer%27s_Journal"
         },
       },
-    },
+    },*/
 
     /* ###################################### Collectibles -> Relics - Hallownest Seal ############################################## */
 
-    relicsHallownestSeal: {
+    /*relicsHallownestSeal: {
       h2: "Relics - Hallownest Seal",
       id: "hk-relics-seal",
       description: `Official symbols of the Pale King and the Five Great Knights. The seals can be found in various locations throughout the world. Can be sold to Relic Seeker Lemm for 450 Geo. Seal #16 is missable when a player enters the <span class="spoiler-span blurred">Beast's Den</span> through the secret path without <span class="spoiler-span blurred">being trapped by using the bench</span>.<br>
@@ -3551,11 +3510,11 @@ const HK = {
           wiki: "Hallownest_Seal"
         },
       },
-    },
+    },*/
 
     /* ###################################### Collectibles -> Relics - King's Idol ############################################## */
 
-    relicsKingsIdol: {
+    /*relicsKingsIdol: {
       h2: "Relics - King's Idol",
       id: "hk-relics-idol",
       description: `Idols made of a mysterious white metal that depict the Pale King. They are found in various locations throughout Hallownest. Can be sold to Relic Seeker Lemm for 800 Geo.<br>
@@ -3620,11 +3579,11 @@ const HK = {
           wiki: "King%27s_Idol"
         },
       },
-    },
+    },*/
 
     /* ###################################### Collectibles -> Relics - Arcane Egg ############################################## */
 
-    relicsArcaneEgg: {
+    /*relicsArcaneEgg: {
       h2: "Relics - Arcane Egg",
       id: "hk-relics-egg",
       description: `Jet black stone eggs originating from a civilisation that existed before the Kingdom of Hallownest was founded. Egg #4 is missable when the player will go right instead of left in the <span class="spoiler-span blurred">Lifeblood Core room in the Abyss</span> and will touch the Charm. Can be sold to Relic Seeker Lemm for 1200 Geo.<br>
@@ -3661,11 +3620,11 @@ const HK = {
           wiki: "Abyss#Lifeblood_Chamber"
         },
       },
-    },
+    },*/
 
     /* ###################################### Collectibles -> Rancid Eggs ############################################## */
 
-    rancidEggs: {
+    /*rancidEggs: {
       h2: "Rancid Eggs",
       id: "hk-rancid-eggs",
       description: `A collectable item recovered from the corpses of Bluggsacs. Either an already-dead Bluggsac has to be found or a living one has to be killed to make it drop a Rancid Egg. A certain NPC in the game may be <em>very</em> interested in these... Egg #16 is missable when a player enters the <span class="spoiler-span blurred">Beast's Den</span> through the secret path without <span class="spoiler-span blurred">being trapped by using the bench</span>.`,
@@ -3823,11 +3782,11 @@ const HK = {
           wiki: "Tuk"
         },
       },
-    },
+    },*/
 
     /* ###################################### Collectibles -> Items ############################################## */
 
-    items: {
+    /*items: {
       h2: "Items",
       id: "hk-items",
       description: `Certain acquirable items, map markers or collectibles in the game that won't fit any specific category. Using custom map pins to mark interesting locations on the map is very useful while playing Hollow Knight. 1440 Geo is needed to buy all map pins from Iselda.`,
@@ -3942,11 +3901,11 @@ const HK = {
           wiki: "Divine#Unbreakable_Charms"
         },
       },
-    },
+    },*/
 
     /* ###################################### Geo Caches -> Geo Chests ############################################## */
 
-    geoChests: {
+    /*geoChests: {
       h2: "Geo Chests",
       id: "hk-geo-chests",
       description: `All Geo Chests in the game, including one empty one and one with 1 Geo. A total of 2380 Geo can be collected from Geo Chests. Equipping the Fragile Greed Charm won't increase the amount of Geo found inside Geo Chests.`,
@@ -4052,11 +4011,11 @@ const HK = {
           wiki: "Geo#How_to_Acquire"
         },
       },
-    },
+    },*/
 
     /* ###################################### Geo Caches -> Geo Rocks ############################################## */
 
-    geoRocks: {
+    /*geoRocks: {
       h2: "Geo Rocks",
       id: "hk-geo-rocks",
       description: `All Geo Rocks that can be found in the game. Only fully destroyed Geo Rocks are counted. Partially hit Geo Rocks won't be counted. Equipping the Fragile Greed Charm won't increase the amount of Geo found inside Geo Rocks. A total of 5074 Geo can be collected from Geo Rocks (credit: <a href="https://github.com/ReznoRMichael/hollow-knight-completion-check/pull/9" target="_blank">Araraura</a>).`,
@@ -5720,11 +5679,11 @@ const HK = {
           wiki: "Geo#How_to_Acquire"
         },
       },
-    },
+    },*/
 
     /* ###################################### Secrets -> World Interactions ############################################## */
 
-    worldInteractions: {
+    /*worldInteractions: {
       h2: "World Interactions",
       id: "hk-world-interactions",
       description: `Certain interactions the player can make with NPCs in the game or world objects. All these here don't count towards either 112% Game Completion or Achievements.`,
@@ -5854,11 +5813,11 @@ const HK = {
           wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
       },
-    },
+    },*/
 
     /* ###################################### Secrets -> Secret Rooms ############################################## */
 
-    secretRooms: {
+    /*secretRooms: {
       h2: "Secret Rooms",
       id: "hk-secret-rooms",
       description: `Certain Secret Rooms in the game. <span class="spoiler-span blurred">Grimm's Tent Secret</span> is missable when the player will <span class="spoiler-span blurred">Banish the Troupe or complete the Ritual</span>.`,
@@ -5922,17 +5881,17 @@ const HK = {
           sceneName: "White_Palace_09",
           wiki: "White_Palace#Throne_room_Lore_Tablet"
         },
-        /* 
-        #52 Quake Floor 🗺️ Palace Caged Lever ⌨️ White_Palace_15
-        #53 Breakable Wall Waterways 🗺️ Palace Spike Drop ⌨️ White_Palace_12
-        #54 Break Floor 1 🗺️ Palace Spike Drop ⌨️ White_Palace_12
-        */
+        
+        //#52 Quake Floor 🗺️ Palace Caged Lever ⌨️ White_Palace_15
+        //#53 Breakable Wall Waterways 🗺️ Palace Spike Drop ⌨️ White_Palace_12
+        //#54 Break Floor 1 🗺️ Palace Spike Drop ⌨️ White_Palace_12
+        
       },
-    },
+    },*/
 
     /* ###################################### Secrets -> Cornifer's Notes ############################################## */
 
-    corniferNotes: {
+    /*corniferNotes: {
       h2: "Cornifer's Notes",
       id: "hk-cornifer-notes",
       description: `Cornifer the Cartographer leaves his note on the ground every time he leaves the current area. The note will be at the same spot where Cornifer was met. He leaves an area once a specific condition from that area was met, like defeating a boss or learning a new ability. After reading a note it will stop glowing and the entry will be marked as completed.`,
@@ -6008,11 +5967,11 @@ const HK = {
           wiki: "Cornifer#Locations"
         },
       },
-    },
+    },*/
 
     /* ################ Game Statistics ################### */
 
-    statistics: {
+    /*statistics: {
       h2: "Game Statistics",
       id: "hk-statistics",
       description: "Dedicated to numbers and stats fans. Everything what the game may not always tell you directly, but what can be read from a save file.",
@@ -6025,9 +5984,9 @@ const HK = {
           maxDefault: 164,
           wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
-        /* 
-        Add 4 remaining to Hunter Notes max
-        */
+        
+        //Add 4 remaining to Hunter Notes max
+
         journalNotesCompleted: {
           name: "Hunter Notes Completed",
           spoiler: "Hunter's Journal (158-164 max)",
@@ -6133,11 +6092,11 @@ const HK = {
           wiki: "Grey_Prince_Zote"
         }
       },
-    },
+    },*/
 
     /* ################################################# Godhome Statistics ############################################## */
 
-    godhomeStatistics: {
+    /*godhomeStatistics: {
       h2: "Godhome Statistics",
       id: "hk-godhome-statistics",
       description: "Everything in Godhome, that didn't fit any other category.",
@@ -6183,11 +6142,11 @@ const HK = {
           wiki: "Eternal_Ordeal"
         }
       },
-    },
+    },*/
 
     /* ################################################### Pantheon of the Master #################################################### */
 
-    pantheonOfTheMaster: {
+    /*pantheonOfTheMaster: {
       h2: "P1 – Pantheon of the Master",
       id: "hk-pantheon-master",
       property: "bossDoorStateTier1",
@@ -6234,11 +6193,11 @@ const HK = {
           wiki: "Pantheons"
         },
       },
-    },
+    },*/
 
     /* ################################################### Pantheon of the Artist #################################################### */
 
-    pantheonOfTheArtist: {
+    /*pantheonOfTheArtist: {
       h2: "P2 – Pantheon of the Artist",
       id: "hk-pantheon-artist",
       property: "bossDoorStateTier2",
@@ -6285,11 +6244,11 @@ const HK = {
           wiki: "Pantheons"
         },
       },
-    },
+    },*/
 
     /* ################################################### Pantheon of the Sage #################################################### */
 
-    pantheonOfTheSage: {
+    /*pantheonOfTheSage: {
       h2: "P3 – Pantheon of the Sage",
       id: "hk-pantheon-sage",
       property: "bossDoorStateTier3",
@@ -6336,11 +6295,11 @@ const HK = {
           wiki: "Pantheons"
         },
       },
-    },
+    },*/
 
     /* ################################################### Pantheon of the Knight #################################################### */
 
-    pantheonOfTheKnight: {
+    /*pantheonOfTheKnight: {
       h2: "P4 – Pantheon of the Knight",
       id: "hk-pantheon-knight",
       property: "bossDoorStateTier4",
@@ -6387,11 +6346,11 @@ const HK = {
           wiki: "Pantheons"
         },
       },
-    },
+    },*/
 
     /* ################################################### Pantheon of Hallownest #################################################### */
 
-    pantheonOfHallownest: {
+    /*pantheonOfHallownest: {
       h2: "P5 – Pantheon of Hallownest",
       id: "hk-pantheon-hallownest",
       property: "bossDoorStateTier5",
@@ -6438,11 +6397,11 @@ const HK = {
           wiki: "Pantheons"
         },
       },
-    },
+    },*/
 
     /* ################################################### Hall of Gods ############################################################# */
 
-    hallOfGods: {
+    /*hallOfGods: {
       h2: "Hall of Gods",
       id: "hk-hall-of-gods",
       property: "statueState",
@@ -7681,7 +7640,7 @@ const HK = {
           wiki: "Hall_of_Gods#Radiance"
         },
       },
-    }
+    }*/
 
 
   },

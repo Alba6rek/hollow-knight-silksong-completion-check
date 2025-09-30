@@ -16,12 +16,6 @@ import MAP from "./hk-dictionary.js";
     case "hk-hints":
       break;
 
-    case "hk-equipment":
-
-      // double % for equipment
-      section.percent += 2;
-      break;
-
     // Hunter's Journal entries
     case "hk-journal":
       section.percent++;

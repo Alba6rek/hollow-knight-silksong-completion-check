@@ -44,7 +44,7 @@ const SYMBOL_ASCENDED = "<i class='reznoricon-ascended'></i>"; // Ascended
 const SYMBOL_RADIANT = "<i class='reznoricon-radiant'></i>"; // Radiant
 const SYMBOL_EMPTY = "<span class='padding-left'></span>"; // No symbol
 const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
-const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
+const WIKI_LINK = "https://hollowknightsilksong.wiki.fextralife.com/";
 
 const ROOT = document.documentElement;
 const SCROLL_BUTTON = document.querySelector(".scroll-up-button");
@@ -191,8 +191,6 @@ function GenerateInnerHTML(db) {
   let witchCrestImage = `<img src='${WITCH_CREST_IMAGE}' class='crest' alt='Witch image' title='Witch Crest'>`;
 
 
-  SHELL_SHARDS_IMAGE
-
   /* ############################## create all main entries ########################################################################## */
 
 
@@ -206,18 +204,18 @@ function GenerateInnerHTML(db) {
     switch (section) {
 
       /* Main % */
-      case "bosses":
+      case "crests":
 
         textFill += [
           `<div class="tab-switch-buttons">`,
           `<button id="button-switch-main" name="main" class="button tab-switch" type="button">Main %</button>`,
-          `<button id="button-switch-essentials" name="essentials" class="button tab-switch" type="button">Essentials %</button>`,
+          //`<button id="button-switch-essentials" name="essentials" class="button tab-switch" type="button">Essentials %</button>`,
           `<button id="button-switch-journal" name="journal" class="button tab-switch" type="button">Journal</button>`,
           `<button id="button-switch-collectibles" name="collectibles" class="button tab-switch" type="button">Collectibles</button>`,
-          `<button id="button-switch-geocaches" name="geocaches" class="button tab-switch" type="button">Geo Caches</button>`,
-          `<button id="button-switch-secrets" name="secrets" class="button tab-switch" type="button">Secrets</button>`,
-          `<button id="button-switch-godhome" name="godhome" class="button tab-switch" type="button">Godmaster</button>`,
-          `<button id="button-switch-statistics" name="statistics" class="button tab-switch" type="button">Statistics</button>`,
+          //`<button id="button-switch-geocaches" name="geocaches" class="button tab-switch" type="button">Geo Caches</button>`,
+          //`<button id="button-switch-secrets" name="secrets" class="button tab-switch" type="button">Secrets</button>`,
+          //`<button id="button-switch-godhome" name="godhome" class="button tab-switch" type="button">Godmaster</button>`,
+          //`<button id="button-switch-statistics" name="statistics" class="button tab-switch" type="button">Statistics</button>`,
           `</div>`,
         ].join("\n");
 
@@ -226,11 +224,11 @@ function GenerateInnerHTML(db) {
         break;
 
       /* Essentials % */
-      case "essentialsCollectibles":
+      /*case "essentialsCollectibles":
 
         textFill += `<div id="tab-essentials" class="large-section">`;
 
-        break;
+        break;*/
 
       /* Journal */
       case "huntersJournal":
@@ -240,37 +238,37 @@ function GenerateInnerHTML(db) {
         break;
 
       /* Collectibles */
-      case "charmNotches":
+      case "flea":
 
         textFill += `<div id="tab-collectibles" class="large-section">`;
 
         break;
 
       /* Geo Caches */
-      case "geoChests":
+      /*case "geoChests":
 
         textFill += `<div id="tab-geocaches" class="large-section">`;
 
-        break;
+        break;*/
 
       /* Secrets */
-      case "worldInteractions":
+      /*case "worldInteractions":
 
         textFill += `<div id="tab-secrets" class="large-section">`;
 
-        break;
+        break;*/
 
       /* Statistics */
-      case "statistics":
+      /*case "statistics":
 
         textFill += `<div id="tab-statistics" class="large-section">`;
 
-        break;
+        break;*/
 
       /* Godmaster */
-      case "godhomeStatistics":
+      /*case "godhomeStatistics":
 
-        textFill += `<div id="tab-godhome" class="large-section">`;
+        textFill += `<div id="tab-godhome" class="large-section">`;*/
 
         break;
     }
@@ -677,14 +675,18 @@ function GenerateInnerHTML(db) {
     switch (section) {
 
       /* ending the tabs */
-      case "godmaster": // Main %
+      case "toolPouchUpgrades": // Main %
+      case "huntersJournal": // Journal
+      case "flea": // Collectibles
+
+      /*case "toolPouchUpgrades": // Main %
       case "achievementsBosses": // Essentials %
-      case "huntersJournalOptional": // Journal
+      case "huntersJournal": // Journal
       case "items": // Collectibles
       case "geoRocks": // Geo Caches
       case "corniferNotes": // Secrets
       case "statistics": // Statistics
-      case "hallOfGods": // Godmaster
+      case "hallOfGods": // Godmaster*/
 
         finalHTMLFill += `</div>`;
 
@@ -760,13 +762,25 @@ function CompletionFillNoSave(section) {
   switch (section.id) {
 
     case "hk-intro":
-    case "hk-bosses":
-    case "hk-charms":
+    case "hk-crests":
+    case "hk-Needleupgrades":
+    case "hk-redTools":
+    case "hk-blueTools":
+    case "hk-yellowTools":
     case "hk-equipment":
+    case "hk-skills":
+    case "hk-silkHeart":
+    case "hk-miscellaneous":
+    case "hk-spoolFragments":
+    case "hk-maskshards":
+    case "hk-craftingKitUpgrades":
+    case "hk-toolPouchUpgrades":
+
+    /*case "hk-charms":
+      case "hk-bosses":
     case "hk-nailupgrades":
     case "hk-nailarts":
     case "hk-spells":
-    case "hk-maskshards":
     case "hk-vesselfragments":
     case "hk-dreamnail":
     case "hk-warriordreams":
@@ -774,7 +788,7 @@ function CompletionFillNoSave(section) {
     case "hk-colosseum":
     case "hk-grimmtroupe":
     case "hk-lifeblood":
-    case "hk-godmaster":
+    case "hk-godmaster":*/
 
       symbol = "%";
 
@@ -839,9 +853,9 @@ function CompletionFill(section) {
     if (section.id === "hk-maskshards") {
       let perc = section.percent;
       (perc % 4) ? cp = Math.floor(perc / 4): cp = perc / 4;
-    } else if (section.id === "hk-vesselfragments") {
+    } else if (section.id === "hk-spoolFragments") {
       let perc = section.percent;
-      (perc % 3) ? cp = Math.floor(perc / 3): cp = perc / 3;
+      (perc % 2) ? cp = Math.floor(perc / 2): cp = perc / 2;
     }
 
     // switches the box to red when a section (h2) is 0
@@ -883,21 +897,34 @@ function CompletionFill(section) {
         symbol = "%";
 
         break;
+    case "hk-intro":
+    case "hk-crests":
+    case "hk-Needleupgrades":
+    case "hk-redTools":
+    case "hk-blueTools":
+    case "hk-yellowTools":
+    case "hk-equipment":
+    case "hk-skills":
+    case "hk-silkHeart":
+    case "hk-miscellaneous":
+    case "hk-spoolFragments":
+    case "hk-maskshards":
+    case "hk-craftingKitUpgrades":
+    case "hk-toolPouchUpgrades":
+
+    /*case "hk-charms":
       case "hk-bosses":
-      case "hk-charms":
-      case "hk-equipment":
-      case "hk-nailupgrades":
-      case "hk-nailarts":
-      case "hk-spells":
-      case "hk-maskshards":
-      case "hk-vesselfragments":
-      case "hk-dreamnail":
-      case "hk-warriordreams":
-      case "hk-dreamers":
-      case "hk-colosseum":
-      case "hk-grimmtroupe":
-      case "hk-lifeblood":
-      case "hk-godmaster":
+    case "hk-nailupgrades":
+    case "hk-nailarts":
+    case "hk-spells":
+    case "hk-vesselfragments":
+    case "hk-dreamnail":
+    case "hk-warriordreams":
+    case "hk-dreamers":
+    case "hk-colosseum":
+    case "hk-grimmtroupe":
+    case "hk-lifeblood":
+    case "hk-godmaster":*/
 
         symbol = "%";
 
