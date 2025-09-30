@@ -2,7 +2,7 @@
 Any support, please redirect it to [ReznoRMichael](https://github.com/ReznoRMichael/hollow-knight-completion-check).
 
 # Save Completion Analyzer for Hollow Knight: Silksong
-> This is a rework for the the main project (Analyzer for Hollow Knight: Silksong), will help you with game completion.
+> This is a rework for the main project (Analyzer for Hollow Knight), will help you with game completion.
 
 ## Hollow Knight: Silksong Save game locations
 
