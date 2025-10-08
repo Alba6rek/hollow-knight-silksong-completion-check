@@ -22163,6 +22163,15 @@ function CheckIfDataTrue(section, dataObject, playerData) {
           playerData[i] === 3 ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
           break;
 
+        // This for Tool Pouch Upgrades for laddybug (check if he finished the challange or get the item from pickup in act 3)
+        case "ladybugCraftPickupToolPouch":
+          var scenel = worldData.serializedList;
+          var CraftPickupToolitem = scenel.find(function (scenel) {
+            return scenel.SceneName === dataObject[i].sceneName && scenel.ID === dataObject[i].id;
+          });
+          CraftPickupToolitem !== undefined && CraftPickupToolitem.Value === true || playerData.pinGalleriesCompleted >= 1 ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
+          break;
+
         //World Scene
         default:
           var sceneList = worldData.serializedList;

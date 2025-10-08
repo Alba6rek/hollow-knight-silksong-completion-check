@@ -1050,12 +1050,23 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
               (playerData[i] === 3) ? SetIconGreen(section, i): SetIconRed(section, i);
               break;
 
+            // This for Tool Pouch Upgrades for laddybug (check if he finished the challange or get the item from pickup in act 3)
+            case "ladybugCraftPickupToolPouch":
+              let scenel = worldData.serializedList;
+              let CraftPickupToolitem = scenel.find(scenel => scenel.SceneName === dataObject[i].sceneName && scenel.ID === dataObject[i].id);
+              ((CraftPickupToolitem !== undefined && CraftPickupToolitem.Value === true) 
+              || playerData.pinGalleriesCompleted >= 1) ? SetIconGreen(section, i): SetIconRed(section, i);
+
+              break;
+
             //World Scene
               default:
               let sceneList = worldData.serializedList;
               let sceneInfo = sceneList.find(sceneList => sceneList.SceneName === dataObject[i].sceneName && sceneList.ID === dataObject[i].id);
               (sceneInfo !== undefined && sceneInfo.Value === true) ? SetIconGreen(section, i): SetIconRed(section, i);
               break;
+
+
 
           }
     }
