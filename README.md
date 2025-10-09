@@ -36,3 +36,27 @@ You can use this if you want to check your save progress without access to your 
 * [Webpack](https://github.com/webpack/webpack)
 * [Babel](https://github.com/babel/babel)
 * [Nodejs](https://nodejs.org/en)
+
+## versions:
+### version 0.1.0 (01/10/2025):
+* Added Crests
+* Added Needle Upgrades
+* Added Silk Heart
+* Added Red Tools
+* Added Blue Tools
+* Added Yellow Tools
+* Added Equipment
+* Added Skills
+* Added Miscellaneous
+* Added Mask Shards
+* Added Spool Fragments
+* Added Crafting Kit Upgrades
+* Added Tool Pouch Upgrades
+* Added Hunter's Journal
+
+### version 0.2.0 (10/10/2025):
+* Added Memory Locket
+* Added Craftmetal
+* Added Keys
+* Fixed loodie toolkit issue (Thank you Lilu)
+
