@@ -1096,7 +1096,6 @@ const HK = {
       },
     },
 
-
     /* ################ Crafting Kit Upgrades ################### */
 
     craftingKitUpgrades: {
@@ -1177,6 +1176,326 @@ const HK = {
         },
         
       }
+    },
+
+    /* ################ Essentials % -> Memory Locket ################### */
+
+    essentialsMemoryLocket: {
+      h2: "Memory Locket",
+      id: "hk-essentials-memoryLocket",
+      description: "Memory Locket that don't count directly towards Game Completion, but are required to achieve the completion.",
+      percent: 0,
+      maxPercent: 20,
+      entries: {
+        marrowMemoryLocket: {
+          name: "#1 Memory Locket",
+          spoiler: "Marrow, northeast of the Bellway station, Cling Grip required",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Bone_18"
+        },
+        hunterMarchMemoryLocket: {
+          name: "#2 Memory Locket",
+          spoiler: "Hunter's March, below the Chapel of the Beast",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Ant_20"
+        },
+        PurchasedPilgrimsRestMemoryLocket: {
+          name: "#3 Memory Locket",
+          spoiler: "Mort: 150 rosaries or Grindle: 250 rosaries (Act3)",
+          wiki: "Memory+Locket",
+          id: "",
+          sceneName: ""
+        },
+        greymoorMemoryLocket01: {
+          name: "#4 Memory Locket",
+          spoiler: "Greymoor, West of the Bellway",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Greymoor_16"
+        },
+        rockRollersWish: {
+          name: "#5 Memory Locket",
+          spoiler: "Bone Bottom, complet Volatile Flintbeetles Wish",
+          wiki: "Memory+Locket",
+          id: "",
+          sceneName: "Rock Rollers"
+        },
+        PurchasedBelltownMemoryLocket: {
+          name: "#6 Memory Locket",
+          spoiler: "Frey: 330 rosaries, complete Threadspun Town",
+          wiki: "Memory+Locket",
+          id: "",
+          sceneName: ""
+        },
+        blastedStepsMemoryLocket: {
+          name: "#7 Memory Locket",
+          spoiler: "Blasted Steps, require Cling Grip",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup (1)",
+          sceneName: "Coral_02"
+        },
+        wormwaysMemoryLocket: {
+          name: "#8 Memory Locket",
+          spoiler: "Wormways, Southwest, require Simple Key",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Crawl_09"
+        },
+        bilewaterMemoryLocket01: {
+          name: "#9 Memory Locket",
+          spoiler: "Bilewater, hidden room northwest of the Bellway",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Shadow_20"
+        },
+        choralChambersMemoryLocket: {
+          name: "#10 Memory Locket",
+          spoiler: "Choral Chambers, Bellway Station, accessed from Exhaust Organ",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Bellway_City"
+        },
+        underworksMemoryLocket: {
+          name: "#11 Memory Locket",
+          spoiler: "Underworks, hidden entrance above benches by the confessional",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Under_08"
+        },
+        deepDocksMemoryLocket: {
+          name: "#12 Memory Locket",
+          spoiler: "Deep Docks, west of the diving bell",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Dock_13"
+        },
+        whisperingVaultsMemoryLocket: {
+          name: "#13 Memory Locket",
+          spoiler: "Whispering Vaults, below the exit to the outside area",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Library_08"
+        },
+        sandsOfKarakMemoryLocket: {
+          name: "#14 Memory Locket",
+          spoiler: "Sands of Karak, Southwest, Clawline required",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Coral_23"
+        },
+        greymoorMemoryLocket02: {
+          name: "#15 Memory Locket",
+          spoiler: "Greymoor, Halfway Home, above the left-hand door",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Halfway_01"
+        },
+        MemoriumMemoryLocket: {
+          name: "#16 Memory Locket",
+          spoiler: "Memorium, central area, parkour",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Arborium_05"
+        },
+        slabMemoryLocket: {
+          name: "#17 Memory Locket",
+          spoiler: "Slab, shortcut cave between the Bellway area and the upper areas",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Slab_Cell_Quiet"
+        },
+        BilewaterMemoryLocket02: {
+          name: "#18 Memory Locket",
+          spoiler: "Bilewater, west of hidden bench, inside breakable cocoon",
+          wiki: "Memory+Locket",
+          id: "Sack Corpse Pickup",
+          sceneName: "Shadow_27"
+        },
+        bellhartMemoryLocket: {
+          name: "#19 Memory Locket",
+          spoiler: "Bellhart, above the Bellhome, require Silk Soar (Act3)",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Belltown"
+        },
+        farFieldsMemoryLocket: {
+          name: "#20 Memory Locket",
+          spoiler: "Far Fields, hidden in east of Skarrsinger Karmelita entrance (Act3)",
+          wiki: "Memory+Locket",
+          id: "Collectable Item Pickup",
+          sceneName: "Bone_East_25"
+        },
+
+      },
+    },
+
+    /* ################ Essentials % -> Craftmetal ################### */
+
+    essentialsCraftmetal: {
+      h2: "Craftmetal",
+      id: "hk-essentials-craftmetal",
+      description: "Craftmetal that don't count directly towards Game Completion, but are required to achieve the completion.",
+      percent: 0,
+      maxPercent: 8,
+      entries: {
+        PurchasedBonebottomToolMetal: {
+          name: "#1 Craftmetal",
+          spoiler: "Pebb: 60 Rosaries",
+          wiki: "Craftmetal",
+          id: "",
+          sceneName: ""
+        },
+        marrowCraftmetal: {
+          name: "#2 Craftmetal",
+          spoiler: "Marrow, Larg room in east room, bottomleft corner",
+          wiki: "Craftmetal",
+          id: "Collectable Item Pickup - Tool Metal",
+          sceneName: "Bone_07"
+        },
+        deepDocksCraftmetal: {
+          name: "#3 Craftmetal",
+          spoiler: "Deep Docks, behind locked room, inside chest",
+          wiki: "Craftmetal",
+          id: "City Shard Chest",
+          sceneName: "Dock_03"
+        },
+        blastedStepsCraftmetal: {
+          name: "#4 Craftmetal",
+          spoiler: "Blasted Steps, hole before the Last Judge",
+          wiki: "Craftmetal",
+          id: "Collectable Item Pickup - Tool Metal",
+          sceneName: "Coral_32"
+        },
+        MerchantEnclaveToolMetal: {
+          name: "#5 Craftmetal",
+          spoiler: "Jubilana: 180 Rosaries, complete Lost Merchant wish",
+          wiki: "Craftmetal",
+          id: "",
+          sceneName: ""
+        },
+        wispThicketCraftmetal: {
+          name: "#6 Craftmetal",
+          spoiler: "Wisp Thicket, behind a breakable ceiling",
+          wiki: "Craftmetal",
+          id: "Collectable Item Pickup - Tool Metal",
+          sceneName: "Wisp_05"
+        },
+         underworksCraftmetal: {
+          name: "#7 Craftmetal",
+          spoiler: "Underworks, central, south of where Clawline can be found",
+          wiki: "Craftmetal",
+          id: "Collectable Item Pickup - Tool Metal",
+          sceneName: "Under_19b"
+        },
+        putrifiedDuctsCraftmetal: {
+          name: "#8 Craftmetal",
+          spoiler: "Putrified Ducts, far eastern end of the Pale Lake",
+          wiki: "Craftmetal",
+          id: "Collectable Item Pickup - Tool Metal",
+          sceneName: "Aqueduct_05"
+        },
+
+      },
+    },
+
+    /* ################ Essentials % -> Keys ################### */
+        
+    essentialsKeys: {
+      h2: "Keys",
+      id: "hk-essentials-keys",
+      description: "Keys that don't count directly towards Game Completion, but are required to achieve the completion.",
+      percent: 0,
+      maxPercent: 11,
+      entries: {
+        purchasedGrindleSimpleKey: {
+          name: "Sample Key #1",
+          spoiler: "Pebb: 500 rosaries (Act1&2), or Grindle: 600 rosaries (Act3)",
+          wiki: "Simple+Key",
+          id: "",
+          sceneName: ""
+        },
+        CollectedDustCageKey: {
+          name: "Sample Key #2",
+          spoiler: "Sinner's Road, northeast, defeat Roachkeeper",
+          wiki: "Simple+Key",
+          id: "",
+          sceneName: ""
+        },
+        MerchantEnclaveSimpleKey: {
+          name: "Sample Key #3",
+          spoiler: "Jubilana: 650 rosaries, complete Wandering Merchant wish",
+          wiki: "Simple+Key",
+          id: "",
+          sceneName: ""
+        },
+        bellshrineCoralSimpleKey: {
+          name: "Sample Key #4",
+          spoiler: "Sands of Karak, east, in bench",
+          wiki: "Simple+Key",
+          id: "Collectable Item Pickup",
+          sceneName: "Bellshrine_Coral"
+        },
+        HasSlabKeyA: {
+          name: "Key of Indolent",
+          spoiler: "Slab, middle west, hanging inside a room",
+          wiki: "Key+of+Indolent",
+          id: "",
+          sceneName: ""
+        },
+        HasSlabKeyB: {
+          name: "Key of Heretic",
+          spoiler: "Slab, after defeating enemies in northwest room",
+          wiki: "Key+of+Heretic",
+          id: "",
+          sceneName: ""
+        },
+        HasSlabKeyC: {
+          name: "Key of Apostate",
+          spoiler: "Putrified Ducts, west of Huntress's home",
+          wiki: "Key+of+Apostate",
+          id: "",
+          sceneName: ""
+        },
+        collectedWardBossKey: {
+          name: "White Key",
+          spoiler: "Songclave, far right edge, or Jubilana: 220 after Wandering Merchant wish",
+          wiki: "White+Key",
+          id: "",
+          sceneName: ""
+        },
+        BelltownGreeterHouseFullDlg: {
+          name: "Bellhome Key",
+          spoiler: "Pavo: complete Bellhart's Glory wish and 2 of wishes on Bellhart Wishwall ",
+          wiki: "Bellhome+Guide",
+          id: "",
+          sceneName: ""
+        },
+        BallowGivenKey: {
+          name: "Diving Bell Key",
+          spoiler: "(Act 3), The Dark Below Quest, Deep Docks, talk to Ballow",
+          wiki: "Diving+Bell+Key",
+          id: "",
+          sceneName: ""
+        },
+        BallowGivenKey: {
+          name: "Diving Bell Key",
+          spoiler: "(Act 3), The Dark Below Quest, Deep Docks, talk to Ballow",
+          wiki: "Diving+Bell+Key",
+          id: "",
+          sceneName: ""
+        },
+        CrowSummonsAppearedScene: {
+          name: "Craw Summons",
+          spoiler: "(Act 3), completed Awaiting the End, and hit the lever inside the Craw house on Craw Lake, there is a chance to summon evertime rests at certain benches",
+          wiki: "Craw+Summons",
+          id: "",
+          sceneName: ""
+        },
+        
+
+      },
     },
 
     /* ################ Hunter's Journal ################### */

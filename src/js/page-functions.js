@@ -209,7 +209,7 @@ function GenerateInnerHTML(db) {
         textFill += [
           `<div class="tab-switch-buttons">`,
           `<button id="button-switch-main" name="main" class="button tab-switch" type="button">Main %</button>`,
-          //`<button id="button-switch-essentials" name="essentials" class="button tab-switch" type="button">Essentials %</button>`,
+          `<button id="button-switch-essentials" name="essentials" class="button tab-switch" type="button">Essentials %</button>`,
           `<button id="button-switch-journal" name="journal" class="button tab-switch" type="button">Journal</button>`,
           `<button id="button-switch-collectibles" name="collectibles" class="button tab-switch" type="button">Collectibles</button>`,
           //`<button id="button-switch-geocaches" name="geocaches" class="button tab-switch" type="button">Geo Caches</button>`,
@@ -224,11 +224,11 @@ function GenerateInnerHTML(db) {
         break;
 
       /* Essentials % */
-      /*case "essentialsCollectibles":
+      case "essentialsMemoryLocket":
 
         textFill += `<div id="tab-essentials" class="large-section">`;
 
-        break;*/
+        break;
 
       /* Journal */
       case "huntersJournal":
@@ -678,6 +678,7 @@ function GenerateInnerHTML(db) {
       case "toolPouchUpgrades": // Main %
       case "huntersJournal": // Journal
       case "flea": // Collectibles
+      case "essentialsKeys": // Essentials %
 
       /*case "toolPouchUpgrades": // Main %
       case "achievementsBosses": // Essentials %

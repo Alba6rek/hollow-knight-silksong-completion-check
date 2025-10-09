@@ -199,6 +199,19 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckIfDataTrue(HK.sections.toolPouchUpgrades, HK.sections.toolPouchUpgrades.entries, HKPlayerData, HKWorldItems);
 
+  // ---------------- Essentials % -> Memory Locket ---------------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.essentialsMemoryLocket, HK.sections.essentialsMemoryLocket.entries, HKPlayerData, HKWorldItems);
+    
+  // ---------------- Essentials % -> Craftmetal ---------------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.essentialsCraftmetal, HK.sections.essentialsCraftmetal.entries, HKPlayerData, HKWorldItems);
+
+  // ---------------- Essentials % -> Keys ---------------------------------------------------------------------------------------------------- //
+
+  CheckIfDataTrue(HK.sections.essentialsKeys, HK.sections.essentialsKeys.entries, HKPlayerData, HKWorldItems);
+
+  
   // ---------------- flea ---------------------------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.flea, HK.sections.flea.entries, HKPlayerData);
@@ -1014,10 +1027,13 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
     else if (section.id === "hk-maskshards" 
       || section.id === "hk-spoolFragments"
       || section.id === "hk-toolPouchUpgrades"
-      || section.id === "hk-craftingKitUpgrades")
+      || section.id === "hk-craftingKitUpgrades"
+      || section.id === "hk-essentials-craftmetal"
+      || section.id === "hk-essentials-keys"
+      || section.id === "hk-essentials-memoryLocket")
     {
           switch (i) {
-            //buy from sellers
+            //buy from sellers, defeating enemies, or collected items
             case "PurchasedBonebottomHeartPiece":
             case "MerchantEnclaveShellFragment":
             case "PurchasedBelltownSpoolSegment":
@@ -1028,18 +1044,47 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
             case "PurchasedArchitectToolKit":
             case "purchasedGrindleToolKit":
             case "PurchasedPilgrimsRestToolPouch":
+            case "PurchasedBonebottomToolMetal":
+            case "MerchantEnclaveToolMetal":
+            case "MerchantEnclaveSimpleKey":
+            case "CollectedDustCageKey":
+            case "HasSlabKeyA":
+            case "HasSlabKeyB":
+            case "HasSlabKeyC":
+            case "collectedWardBossKey":
+            case "BelltownGreeterHouseFullDlg":
+            case "PurchasedArchitectKey":
+            case "BallowGivenKey":
+            case "PurchasedPilgrimsRestMemoryLocket":
+            case "PurchasedBelltownMemoryLocket":
               (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
               break;
+
+            //White Key Condition
+            case "wardKey":
+              (playerData["MerchantEnclaveWardKey"] === true || playerData["collectedWardKey"] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
+              break;
+
+            //check crow summons if ther are appeared or not, (but not picked up cuz still idk how and im lazy to search :3)
+            case "CrowSummonsAppearedScene":
+              (playerData[i] !== undefined && playerData[i] !== "" ) ? SetIconGreen(section, i): SetIconRed(section, i);
+              break;
+
+            //simplekey from pebb or gringle
+            case "purchasedGrindleSimpleKey":
+              (playerData["purchasedGrindleSimpleKey"] === true || playerData["PurchasedBonebottomFaithToken"] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
+              break;
+              
 
             //Finishing wishes
             case "beastflyHuntWish":
             case "sprintmasterRaceWish":
             case "destroyThreadCoresWish":
-            case "destroyThreadCoresWish":
             case "antTrapperWish":
             case "saveShermaWish":
             case "crowFeathersWish":
             case "journalWish":
+            case "rockRollersWish":
               let wishList = playerData.QuestCompletionData.savedData;
               let foundWish = wishList.find(wishList => wishList.Name === dataObject[i].sceneName);
                (foundWish !== undefined && foundWish.Data.IsCompleted === true) ? SetIconGreen(section, i): SetIconRed(section, i);

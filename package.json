@@ -1,6 +1,6 @@
 {
   "name": "hollow-knight-silksong-completion-check",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Hollow Knight: Silksong Save Game Completion Analyzer Web Tool",
   "main": "index.html",
   "scripts": {
